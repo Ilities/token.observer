@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Daily Price Update Script for model.observer
+ * Daily Price Update Script for token.observer
  *
  * Fetches latest prices from various sources and updates the dataset.
  * Sources:
@@ -42,7 +42,7 @@ async function fetchWithRetry(url, options = {}, retries = 3) {
       const response = await fetch(url, {
         ...options,
         headers: {
-          "User-Agent": "model.observer/1.0 (Price Update Bot)",
+          "User-Agent": "token.observer/1.0 (Price Update Bot)",
           ...options.headers,
         },
       });

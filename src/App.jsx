@@ -39,7 +39,7 @@ function Footer() {
               letterSpacing: "-0.01em",
             }}
           >
-            model<span style={{ color: "var(--academia-crimson)" }}>.observer</span>
+            token<span style={{ color: "var(--academia-crimson)" }}>.observer</span>
           </div>
           <div
             style={{

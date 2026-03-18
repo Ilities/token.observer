@@ -1,4 +1,4 @@
-# model.observer
+# token.observer
 
 > Are AI models becoming a commodity? The math says yes.
 

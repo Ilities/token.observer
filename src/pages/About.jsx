@@ -15,7 +15,7 @@ export default function About() {
               marginBottom: 16,
             }}
           >
-            About model.observer
+            About token.observer
           </span>
           <h1
             style={{
@@ -26,7 +26,7 @@ export default function About() {
               lineHeight: 1.1,
             }}
           >
-            What is model.observer?
+            What is token.observer?
           </h1>
           <hr
             className="ornate-divider"

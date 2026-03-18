@@ -46,7 +46,7 @@ export default function Nav() {
             transition: "color 0.3s ease-out",
           }}
         >
-          model<span style={{ color: "var(--academia-crimson)" }}>.observer</span>
+          token<span style={{ color: "var(--academia-crimson)" }}>.observer</span>
         </Link>
 
         <div
