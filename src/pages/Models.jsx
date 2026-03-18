@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { MODELS, TIERS } from "../data/models";
 import ModelCard from "../components/ModelCard";
-import CrossoverTable from "../components/CrossoverTable";
 
 export function ModelsList() {
   return (
@@ -384,32 +383,6 @@ export function ModelDetail() {
             </div>
           </div>
         )}
-
-        {/* Crossover table */}
-        <div style={{ marginBottom: 48 }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: 24,
-              fontWeight: 500,
-              marginBottom: 24,
-              color: "var(--academia-foreground)",
-            }}
-          >
-            Monthly cost — all usage profiles
-          </h2>
-          <div
-            className="card corner-flourish"
-            style={{
-              background: "var(--academia-background-alt)",
-              overflow: "hidden",
-            }}
-          >
-            <div style={{ padding: 0 }}>
-              <CrossoverTable model={model} />
-            </div>
-          </div>
-        </div>
 
         {/* All providers */}
         <div style={{ marginBottom: 48 }}>
