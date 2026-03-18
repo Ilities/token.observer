@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "homepage": "https://jussi.github.io/model.observer",
   "scripts": {
     "dev": "vp dev",
     "build": "vp build",
