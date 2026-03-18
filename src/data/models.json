@@ -1,0 +1,948 @@
+{
+  "GPU_CONFIGS": {
+    "rtx4090": {
+      "name": "RTX 4090",
+      "vram": "24GB",
+      "costPerHr": 0.48,
+      "provider": "RunPod Community",
+      "notes": "Small models only (<13B)"
+    },
+    "rtx5090": {
+      "name": "RTX 5090",
+      "vram": "32GB",
+      "costPerHr": 0.65,
+      "provider": "Vast.ai",
+      "notes": "Latest consumer GPU, better for 20-50B models"
+    },
+    "a10": {
+      "name": "A10 24GB",
+      "vram": "24GB",
+      "costPerHr": 0.6,
+      "provider": "RunPod Secure",
+      "notes": "Datacenter reliability, same VRAM as 4090"
+    },
+    "a100": {
+      "name": "A100 80GB",
+      "vram": "80GB",
+      "costPerHr": 1.33,
+      "provider": "RunPod Community",
+      "notes": "Best value datacenter GPU"
+    },
+    "l40s": {
+      "name": "L40S 48GB",
+      "vram": "48GB",
+      "costPerHr": 1.1,
+      "provider": "Lambda Labs",
+      "notes": "Good mid-range, 48GB sweet spot"
+    },
+    "h100": {
+      "name": "H100 80GB",
+      "vram": "80GB",
+      "costPerHr": 2.17,
+      "provider": "RunPod Community",
+      "notes": "Best single-GPU inference"
+    },
+    "h100x4": {
+      "name": "4× H100 80GB",
+      "vram": "320GB",
+      "costPerHr": 8.68,
+      "provider": "RunPod Community",
+      "notes": "Required for MiniMax M2.5"
+    },
+    "h100x8": {
+      "name": "8× H100 80GB",
+      "vram": "640GB",
+      "costPerHr": 17.36,
+      "provider": "RunPod Community",
+      "notes": "Full precision large MoE"
+    },
+    "b200": {
+      "name": "B200 180GB",
+      "vram": "180GB",
+      "costPerHr": 3.5,
+      "provider": "Lambda Labs",
+      "notes": "Next-gen, massive VRAM for large models"
+    },
+    "gb200": {
+      "name": "GB200 NVL72",
+      "vram": "13TB (shared)",
+      "costPerHr": 45.0,
+      "provider": "Oracle Cloud",
+      "notes": "Rack-scale, ultimate inference cluster"
+    }
+  },
+  "CLOUD_PROVIDERS": {
+    "runpod": {
+      "name": "RunPod",
+      "url": "https://runpod.io",
+      "type": "GPU Cloud",
+      "billing": "per-second",
+      "minBilling": 60
+    },
+    "vastai": {
+      "name": "Vast.ai",
+      "url": "https://vast.ai",
+      "type": "GPU Marketplace",
+      "billing": "per-second",
+      "minBilling": 0
+    },
+    "lambda": {
+      "name": "Lambda Labs",
+      "url": "https://lambdalabs.com",
+      "type": "GPU Cloud",
+      "billing": "per-hour",
+      "minBilling": 1
+    },
+    "crusoe": {
+      "name": "Crusoe",
+      "url": "https://crusoeenergy.com",
+      "type": "GPU Cloud",
+      "billing": "per-hour",
+      "minBilling": 1
+    },
+    "oracle": {
+      "name": "Oracle Cloud",
+      "url": "https://oracle.com/cloud",
+      "type": "Hyperscaler",
+      "billing": "per-hour",
+      "minBilling": 1
+    },
+    "together": {
+      "name": "Together AI",
+      "url": "https://together.ai",
+      "type": "Inference API",
+      "billing": "per-token",
+      "minBilling": 0
+    },
+    "deepinfra": {
+      "name": "DeepInfra",
+      "url": "https://deepinfra.com",
+      "type": "Inference API",
+      "billing": "per-token",
+      "minBilling": 0
+    },
+    "groq": {
+      "name": "Groq",
+      "url": "https://groq.com",
+      "type": "Inference API",
+      "billing": "per-token",
+      "minBilling": 0
+    },
+    "anyscale": {
+      "name": "Anyscale",
+      "url": "https://anyscale.com",
+      "type": "Inference API",
+      "billing": "per-token",
+      "minBilling": 0
+    },
+    "fireworks": {
+      "name": "Fireworks AI",
+      "url": "https://fireworks.ai",
+      "type": "Inference API",
+      "billing": "per-token",
+      "minBilling": 0
+    }
+  },
+  "MODELS": [
+    {
+      "id": "qwen35-9b",
+      "name": "Qwen3.5 9B",
+      "family": "Qwen",
+      "type": "Dense",
+      "totalParams": "9B",
+      "activeParams": "9B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "18GB (FP16)",
+      "minGpu": "rtx4090",
+      "architecture": "Dense transformer, optimized for edge",
+      "context": "128K",
+      "benchmarks": {
+        "mmlu": 82.5,
+        "mmluPro": 78.2,
+        "swebench": 65.8,
+        "gpqa": 79.5,
+        "livecodebench": 71.2,
+        "arena": 1185
+      },
+      "closestApi": "GPT-4o Mini",
+      "apiProviders": [
+        { "name": "Alibaba Cloud", "input": 0.05, "output": 0.2 },
+        { "name": "OpenRouter", "input": 0.07, "output": 0.28 },
+        { "name": "DeepInfra", "input": 0.06, "output": 0.24 }
+      ],
+      "throughputs": [
+        { "tps": 80, "label": "80 t/s", "note": "1 user" },
+        { "tps": 400, "label": "400 t/s", "note": "~5 users" },
+        { "tps": 900, "label": "900 t/s", "note": "~12 users" },
+        { "tps": 1250, "label": "1,250 t/s", "note": "⚡ CROSSOVER", "crossover": true },
+        { "tps": 2000, "label": "2,000 t/s", "note": "heavy batch" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Fits on consumer GPU. Excellent for edge deployment and low-latency apps."
+    },
+    {
+      "id": "qwen35-35b",
+      "name": "Qwen3.5 35B-A3B",
+      "family": "Qwen",
+      "type": "MoE",
+      "totalParams": "35B",
+      "activeParams": "3B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "70GB (FP16)",
+      "minGpu": "a100",
+      "architecture": "Sparse MoE, hybrid attention",
+      "context": "262K",
+      "benchmarks": {
+        "mmlu": 85.8,
+        "mmluPro": 82.4,
+        "swebench": 71.5,
+        "gpqa": 83.8,
+        "livecodebench": 74.6,
+        "arena": 1225
+      },
+      "closestApi": "Claude Sonnet 4.5",
+      "apiProviders": [
+        { "name": "Alibaba Cloud", "input": 0.14, "output": 0.56 },
+        { "name": "OpenRouter", "input": 0.18, "output": 0.72 },
+        { "name": "Fireworks", "input": 0.16, "output": 0.64 }
+      ],
+      "throughputs": [
+        { "tps": 45, "label": "45 t/s", "note": "1 user" },
+        { "tps": 220, "label": "220 t/s", "note": "~5 users" },
+        { "tps": 550, "label": "550 t/s", "note": "~12 users" },
+        { "tps": 780, "label": "780 t/s", "note": "⚡ CROSSOVER", "crossover": true },
+        { "tps": 1300, "label": "1,300 t/s", "note": "heavy batch" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Best efficiency in Qwen family. Low active params make it fast and cheap."
+    },
+    {
+      "id": "qwen35-122b",
+      "name": "Qwen3.5 122B-A10B",
+      "family": "Qwen",
+      "type": "MoE",
+      "totalParams": "122B",
+      "activeParams": "10B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "73GB (Q4) / 244GB (FP16)",
+      "minGpu": "h100",
+      "architecture": "Hybrid Gated DeltaNet + MoE, 256 experts",
+      "context": "262K",
+      "benchmarks": {
+        "mmlu": 87.2,
+        "mmluPro": 84.5,
+        "swebench": 74.8,
+        "gpqa": 85.8,
+        "livecodebench": 76.4,
+        "arena": 1252
+      },
+      "closestApi": "Claude Sonnet 4.6",
+      "apiProviders": [
+        { "name": "Alibaba Cloud", "input": 0.195, "output": 1.56 },
+        { "name": "OpenRouter", "input": 0.26, "output": 2.08 },
+        { "name": "Together AI", "input": 0.24, "output": 1.92 },
+        { "name": "Fireworks", "input": 0.25, "output": 2.0 }
+      ],
+      "throughputs": [
+        { "tps": 50, "label": "50 t/s", "note": "1 user (Q4)" },
+        { "tps": 200, "label": "200 t/s", "note": "light batch" },
+        { "tps": 850, "label": "850 t/s", "note": "~10 users" },
+        { "tps": 2800, "label": "2,800 t/s", "note": "heavy batch" },
+        { "tps": 5200, "label": "5,200 t/s", "note": "⚡ CROSSOVER (H100)", "crossover": true },
+        { "tps": 7000, "label": "7,000 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "HARD",
+      "verdictNote": "Sweet spot in Qwen lineup. Single H100 viable for moderate workloads."
+    },
+    {
+      "id": "qwen35-235b",
+      "name": "Qwen3.5 235B-A22B",
+      "family": "Qwen",
+      "type": "MoE",
+      "totalParams": "235B",
+      "activeParams": "22B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "120GB (Q4) / 470GB (FP16)",
+      "minGpu": "h100x4",
+      "architecture": "MoE, 256 experts, hybrid attention, native agent",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 88.5,
+        "mmluPro": 87.8,
+        "swebench": 76.4,
+        "gpqa": 88.4,
+        "livecodebench": 83.6,
+        "arena": 1275
+      },
+      "closestApi": "Claude Opus 4.6",
+      "apiProviders": [
+        { "name": "Alibaba Cloud", "input": 0.28, "output": 2.24 },
+        { "name": "OpenRouter", "input": 0.35, "output": 2.8 },
+        { "name": "Fireworks", "input": 0.32, "output": 2.56 }
+      ],
+      "throughputs": [
+        { "tps": 30, "label": "30 t/s", "note": "1 user (Q4)" },
+        { "tps": 150, "label": "150 t/s", "note": "light batch" },
+        { "tps": 700, "label": "700 t/s", "note": "~8 users" },
+        { "tps": 2200, "label": "2,200 t/s", "note": "heavy batch" },
+        { "tps": 4500, "label": "4,500 t/s", "note": "⚡ CROSSOVER (4×H100)", "crossover": true },
+        { "tps": 6000, "label": "6,000 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "HARD",
+      "verdictNote": "Flagship Qwen. Requires 4×H100 but matches Claude Opus at fraction of cost."
+    },
+    {
+      "id": "qwen35-397b",
+      "name": "Qwen3.5 397B-A17B",
+      "family": "Qwen",
+      "type": "MoE",
+      "totalParams": "397B",
+      "activeParams": "17B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "200GB (Q4) / 794GB (FP16)",
+      "minGpu": "h100x8",
+      "architecture": "MoE, multimodal native, RLHF-agentic",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 89.2,
+        "mmluPro": 88.5,
+        "swebench": 78.2,
+        "gpqa": 89.1,
+        "livecodebench": 85.2,
+        "arena": 1288
+      },
+      "closestApi": "Claude Opus 4.7",
+      "apiProviders": [
+        { "name": "Alibaba Cloud", "input": 0.35, "output": 2.8 },
+        { "name": "OpenRouter", "input": 0.42, "output": 3.36 }
+      ],
+      "throughputs": [
+        { "tps": 20, "label": "20 t/s", "note": "1 user (Q4)" },
+        { "tps": 100, "label": "100 t/s", "note": "light batch" },
+        { "tps": 500, "label": "500 t/s", "note": "~6 users" },
+        { "tps": 1600, "label": "1,600 t/s", "note": "heavy batch" },
+        { "tps": 3500, "label": "3,500 t/s", "note": "⚡ CROSSOVER (8×H100)", "crossover": true },
+        { "tps": 5000, "label": "5,000 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "IMPRACTICAL",
+      "verdictNote": "Largest Qwen. Only for massive scale. API is more practical for most use cases."
+    },
+    {
+      "id": "deepseek-v3.2",
+      "name": "DeepSeek V3.2",
+      "family": "DeepSeek",
+      "type": "MoE",
+      "totalParams": "685B",
+      "activeParams": "42B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "145GB (Q4) / 1.37TB (FP16)",
+      "minGpu": "h100x8",
+      "architecture": "MoE, Multi-token prediction, MLA attention, hybrid heads",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 88.5,
+        "mmluPro": 85.0,
+        "swebench": 67.8,
+        "gpqa": 79.9,
+        "livecodebench": 74.1,
+        "aime": 89.3,
+        "arena": 1421
+      },
+      "closestApi": "Claude Opus 4.7",
+      "apiProviders": [
+        { "name": "DeepSeek Official", "input": 0.14, "output": 0.56 },
+        { "name": "OpenRouter", "input": 0.18, "output": 0.72 },
+        { "name": "Together AI", "input": 0.2, "output": 0.8 },
+        { "name": "Fireworks", "input": 0.19, "output": 0.76 }
+      ],
+      "throughputs": [
+        { "tps": 18, "label": "18 t/s", "note": "1 user (Q4)" },
+        { "tps": 90, "label": "90 t/s", "note": "light batch" },
+        { "tps": 450, "label": "450 t/s", "note": "~5 users" },
+        { "tps": 1400, "label": "1,400 t/s", "note": "heavy batch" },
+        { "tps": 3000, "label": "3,000 t/s", "note": "⚡ CROSSOVER (8×H100)", "crossover": true },
+        { "tps": 4200, "label": "4,200 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Best open-weight model. Extremely cheap API. ⚠️ Mac Studio not viable — needs 8×H100 for production self-host."
+    },
+    {
+      "id": "deepseek-r1",
+      "name": "DeepSeek R1",
+      "family": "DeepSeek",
+      "type": "MoE",
+      "totalParams": "671B",
+      "activeParams": "37B",
+      "releaseDate": "Jan 2025",
+      "vramRequired": "140GB (Q4) / 1.34TB (FP16)",
+      "minGpu": "h100x8",
+      "architecture": "MoE, Chain-of-thought RL, MLA attention",
+      "context": "128K",
+      "benchmarks": {
+        "mmlu": 90.8,
+        "mmluPro": 84.0,
+        "swebench": 65.2,
+        "gpqa": 71.5,
+        "livecodebench": 65.9,
+        "aime": 87.5,
+        "arena": 1398
+      },
+      "closestApi": "o3 Pro",
+      "apiProviders": [
+        { "name": "DeepSeek Official", "input": 0.16, "output": 0.64 },
+        { "name": "OpenRouter", "input": 0.2, "output": 0.8 }
+      ],
+      "throughputs": [
+        { "tps": 15, "label": "15 t/s", "note": "1 user (Q4)" },
+        { "tps": 75, "label": "75 t/s", "note": "light batch" },
+        { "tps": 380, "label": "380 t/s", "note": "~5 users" },
+        { "tps": 1200, "label": "1,200 t/s", "note": "heavy batch" },
+        { "tps": 2600, "label": "2,600 t/s", "note": "⚡ CROSSOVER (8×H100)", "crossover": true },
+        { "tps": 3800, "label": "3,800 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "HARD",
+      "verdictNote": "Reasoning specialist. ⚠️ Mac Studio not viable — requires 8×H100. API is very affordable for most use cases."
+    },
+    {
+      "id": "deepseek-v2.5",
+      "name": "DeepSeek V2.5",
+      "family": "DeepSeek",
+      "type": "MoE",
+      "totalParams": "236B",
+      "activeParams": "21B",
+      "releaseDate": "Sep 2024",
+      "vramRequired": "120GB (Q4) / 472GB (FP16)",
+      "minGpu": "h100x4",
+      "architecture": "MoE, Multi-head latent attention",
+      "context": "128K",
+      "benchmarks": {
+        "mmlu": 85.8,
+        "mmluPro": 80.2,
+        "swebench": 62.5,
+        "gpqa": 76.8,
+        "livecodebench": 68.4,
+        "arena": 1285
+      },
+      "closestApi": "Claude Sonnet 4.5",
+      "apiProviders": [
+        { "name": "DeepSeek Official", "input": 0.1, "output": 0.4 },
+        { "name": "OpenRouter", "input": 0.14, "output": 0.56 }
+      ],
+      "throughputs": [
+        { "tps": 35, "label": "35 t/s", "note": "1 user (Q4)" },
+        { "tps": 180, "label": "180 t/s", "note": "light batch" },
+        { "tps": 750, "label": "750 t/s", "note": "~8 users" },
+        { "tps": 2400, "label": "2,400 t/s", "note": "heavy batch" },
+        { "tps": 4800, "label": "4,800 t/s", "note": "⚡ CROSSOVER (4×H100)", "crossover": true },
+        { "tps": 6200, "label": "6,200 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Older but still competitive. Best price/performance ratio in DeepSeek lineup."
+    },
+    {
+      "id": "kimi-k2",
+      "name": "Kimi K2",
+      "family": "Moonshot AI",
+      "type": "MoE",
+      "totalParams": "32B",
+      "activeParams": "32B",
+      "releaseDate": "Jul 2025",
+      "vramRequired": "64GB (FP16)",
+      "minGpu": "a100",
+      "architecture": "Dense with hybrid attention, 256K context",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 84.2,
+        "mmluPro": 79.5,
+        "swebench": 68.5,
+        "gpqa": 81.3,
+        "livecodebench": 65.2,
+        "arena": 1165
+      },
+      "closestApi": "Claude Haiku 4.5",
+      "apiProviders": [
+        { "name": "Moonshot Official", "input": 0.12, "output": 0.48 },
+        { "name": "OpenRouter", "input": 0.16, "output": 0.64 }
+      ],
+      "throughputs": [
+        { "tps": 30, "label": "30 t/s", "note": "1 user" },
+        { "tps": 150, "label": "150 t/s", "note": "~4 users" },
+        { "tps": 400, "label": "400 t/s", "note": "~10 users" },
+        { "tps": 620, "label": "620 t/s", "note": "⚡ CROSSOVER", "crossover": true },
+        { "tps": 1000, "label": "1,000 t/s", "note": "heavy batch" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Long context specialist. Fits on single A100, good crossover point."
+    },
+    {
+      "id": "kimi-k2-thinking",
+      "name": "Kimi K2 Thinking",
+      "family": "Moonshot AI",
+      "type": "MoE",
+      "totalParams": "32B",
+      "activeParams": "32B",
+      "releaseDate": "Nov 2025",
+      "vramRequired": "64GB (FP16)",
+      "minGpu": "a100",
+      "architecture": "Dense with enhanced reasoning, MoE-like routing",
+      "context": "131K",
+      "benchmarks": {
+        "mmlu": 86.5,
+        "mmluPro": 82.8,
+        "swebench": 72.4,
+        "gpqa": 84.2,
+        "livecodebench": 70.5,
+        "aime": 88.2,
+        "arena": 1205
+      },
+      "closestApi": "Claude Sonnet 4.5",
+      "apiProviders": [
+        { "name": "Moonshot Official", "input": 0.47, "output": 2.0 },
+        { "name": "OpenRouter", "input": 0.55, "output": 2.34 }
+      ],
+      "throughputs": [
+        { "tps": 25, "label": "25 t/s", "note": "1 user" },
+        { "tps": 120, "label": "120 t/s", "note": "~3 users" },
+        { "tps": 320, "label": "320 t/s", "note": "~8 users" },
+        { "tps": 510, "label": "510 t/s", "note": "⚡ CROSSOVER", "crossover": true },
+        { "tps": 850, "label": "850 t/s", "note": "heavy batch" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Enhanced reasoning variant. Single A100 viable for moderate workloads."
+    },
+    {
+      "id": "kimi-k2.5",
+      "name": "Kimi K2.5",
+      "family": "Moonshot AI",
+      "type": "MoE",
+      "totalParams": "1T",
+      "activeParams": "32B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "200GB (Q4) / 2TB (FP16)",
+      "minGpu": "h100x8",
+      "architecture": "MoE, Agent Swarm, 256K vision-language",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 92.0,
+        "mmluPro": 87.1,
+        "swebench": 76.8,
+        "gpqa": 87.6,
+        "livecodebench": 85.0,
+        "aime": 96.1,
+        "ifeval": 94.0,
+        "arena": 1447
+      },
+      "closestApi": "GPT-5.2",
+      "apiProviders": [
+        { "name": "Moonshot Official", "input": 0.35, "output": 1.4 },
+        { "name": "OpenRouter", "input": 0.42, "output": 1.68 },
+        { "name": "Fireworks", "input": 0.4, "output": 1.6 }
+      ],
+      "throughputs": [
+        { "tps": 15, "label": "15 t/s", "note": "1 user (Q4)" },
+        { "tps": 75, "label": "75 t/s", "note": "light batch" },
+        { "tps": 380, "label": "380 t/s", "note": "~5 users" },
+        { "tps": 1200, "label": "1,200 t/s", "note": "heavy batch" },
+        { "tps": 2800, "label": "2,800 t/s", "note": "⚡ CROSSOVER (8×H100)", "crossover": true },
+        { "tps": 4000, "label": "4,000 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "HARD",
+      "verdictNote": "Top-tier open model. Beats GPT-5.2 in agentic benchmarks. ⚠️ Mac Studio can load at Q1-Q2 (~20 t/s) but only viable for experimentation. Production needs 8×H100."
+    },
+    {
+      "id": "stepfun-step3.5-flash",
+      "name": "StepFun Step-3.5-Flash",
+      "family": "StepFun",
+      "type": "MoE",
+      "totalParams": "196B",
+      "activeParams": "11B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "100GB (Q4) / 392GB (FP16)",
+      "minGpu": "h100x4",
+      "architecture": "Sparse MoE, MTP-3 multi-token prediction",
+      "context": "262K",
+      "benchmarks": {
+        "mmlu": 86.2,
+        "mmluPro": 82.5,
+        "swebench": 74.4,
+        "gpqa": 84.5,
+        "livecodebench": 86.4,
+        "aime": 97.3,
+        "terminalBench": 51.0,
+        "arena": 1245
+      },
+      "closestApi": "Claude Sonnet 4.6",
+      "apiProviders": [
+        { "name": "StepFun Official", "input": 0.18, "output": 0.72 },
+        { "name": "OpenRouter", "input": 0.22, "output": 0.88 },
+        { "name": "SiliconFlow", "input": 0.2, "output": 0.8 }
+      ],
+      "throughputs": [
+        { "tps": 40, "label": "40 t/s", "note": "1 user (Q4)" },
+        { "tps": 200, "label": "200 t/s", "note": "light batch" },
+        { "tps": 800, "label": "800 t/s", "note": "~8 users" },
+        { "tps": 2500, "label": "2,500 t/s", "note": "heavy batch" },
+        { "tps": 5000, "label": "5,000 t/s", "note": "⚡ CROSSOVER (4×H100)", "crossover": true },
+        { "tps": 6800, "label": "6,800 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Exceptional coding/reasoning. 11B active params make it efficient. 4×H100 viable."
+    },
+    {
+      "id": "glm-4.7",
+      "name": "GLM-4.7",
+      "family": "Zhipu AI",
+      "type": "MoE",
+      "totalParams": "355B",
+      "activeParams": "32B",
+      "releaseDate": "Dec 2025",
+      "vramRequired": "180GB (Q4) / 710GB (FP16)",
+      "minGpu": "h100x4",
+      "architecture": "MoE with hybrid attention, agent mode",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 90.1,
+        "mmluPro": 84.3,
+        "swebench": 73.8,
+        "gpqa": 85.7,
+        "livecodebench": 84.9,
+        "aime": 95.7,
+        "ifeval": 88.0,
+        "arena": 1445
+      },
+      "closestApi": "Claude Opus 4.6",
+      "apiProviders": [
+        { "name": "Zhipu Official", "input": 0.2, "output": 0.8 },
+        { "name": "OpenRouter", "input": 0.26, "output": 1.04 },
+        { "name": "Fireworks", "input": 0.24, "output": 0.96 }
+      ],
+      "throughputs": [
+        { "tps": 35, "label": "35 t/s", "note": "1 user (Q4)" },
+        { "tps": 175, "label": "175 t/s", "note": "light batch" },
+        { "tps": 700, "label": "700 t/s", "note": "~8 users" },
+        { "tps": 2200, "label": "2,200 t/s", "note": "heavy batch" },
+        { "tps": 4600, "label": "4,600 t/s", "note": "⚡ CROSSOVER (4×H100)", "crossover": true },
+        { "tps": 6200, "label": "6,200 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "HARD",
+      "verdictNote": "Top-tier Chinese model. Excellent coding/reasoning. Needs 4×H100."
+    },
+    {
+      "id": "glm-5",
+      "name": "GLM-5",
+      "family": "Zhipu AI",
+      "type": "MoE",
+      "totalParams": "744B",
+      "activeParams": "40B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "380GB (Q4) / 1.5TB (FP16)",
+      "minGpu": "h100x8",
+      "architecture": "Large-scale MoE, native agent, multimodal",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 85.0,
+        "mmluPro": 70.4,
+        "swebench": 77.8,
+        "gpqa": 86.0,
+        "livecodebench": 52.0,
+        "aime": 84.0,
+        "ifeval": 88.0,
+        "arena": 1451
+      },
+      "closestApi": "Claude Opus 4.6",
+      "apiProviders": [
+        { "name": "Zhipu Official", "input": 0.28, "output": 1.12 },
+        { "name": "OpenRouter", "input": 0.35, "output": 1.4 }
+      ],
+      "throughputs": [
+        { "tps": 20, "label": "20 t/s", "note": "1 user (Q4)" },
+        { "tps": 100, "label": "100 t/s", "note": "light batch" },
+        { "tps": 500, "label": "500 t/s", "note": "~6 users" },
+        { "tps": 1600, "label": "1,600 t/s", "note": "heavy batch" },
+        { "tps": 3400, "label": "3,400 t/s", "note": "⚡ CROSSOVER (8×H100)", "crossover": true },
+        { "tps": 4800, "label": "4,800 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "IMPRACTICAL",
+      "verdictNote": "Largest GLM. Matches Claude Opus but needs 8×H100. ⚠️ Mac Studio can load at Q1-Q2 (~20 t/s) but only viable for experimentation. API more practical."
+    },
+    {
+      "id": "glm-4.5-air",
+      "name": "GLM-4.5 Air",
+      "family": "Zhipu AI",
+      "type": "Dense",
+      "totalParams": "14B",
+      "activeParams": "14B",
+      "releaseDate": "Jul 2025",
+      "vramRequired": "28GB (FP16)",
+      "minGpu": "rtx4090",
+      "architecture": "Dense transformer, optimized for speed",
+      "context": "128K",
+      "benchmarks": {
+        "mmlu": 80.5,
+        "mmluPro": 75.2,
+        "swebench": 60.8,
+        "gpqa": 76.5,
+        "livecodebench": 62.4,
+        "arena": 1095
+      },
+      "closestApi": "GPT-4o Mini",
+      "apiProviders": [
+        { "name": "Zhipu Official", "input": 0.04, "output": 0.16 },
+        { "name": "OpenRouter", "input": 0.06, "output": 0.24 }
+      ],
+      "throughputs": [
+        { "tps": 65, "label": "65 t/s", "note": "1 user" },
+        { "tps": 320, "label": "320 t/s", "note": "~5 users" },
+        { "tps": 750, "label": "750 t/s", "note": "~12 users" },
+        { "tps": 1050, "label": "1,050 t/s", "note": "⚡ CROSSOVER", "crossover": true },
+        { "tps": 1700, "label": "1,700 t/s", "note": "heavy batch" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Budget option. Fits on consumer GPU. Great for lightweight apps."
+    },
+    {
+      "id": "nemotron-ultra-253b",
+      "name": "Nemotron Ultra 253B",
+      "family": "NVIDIA",
+      "type": "MoE",
+      "totalParams": "253B",
+      "activeParams": "22B",
+      "releaseDate": "Jan 2026",
+      "vramRequired": "130GB (Q4) / 506GB (FP16)",
+      "minGpu": "h100x4",
+      "architecture": "MoE with group query attention, NVIDIA optimized",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 84.5,
+        "mmluPro": 78.2,
+        "swebench": 72.5,
+        "gpqa": 76.0,
+        "livecodebench": 68.5,
+        "ifeval": 89.5,
+        "arena": 1210
+      },
+      "closestApi": "Claude Sonnet 4.6",
+      "apiProviders": [
+        { "name": "NVIDIA NIM", "input": 0.25, "output": 1.0 },
+        { "name": "Fireworks", "input": 0.28, "output": 1.12 },
+        { "name": "OpenRouter", "input": 0.3, "output": 1.2 }
+      ],
+      "throughputs": [
+        { "tps": 30, "label": "30 t/s", "note": "1 user (Q4)" },
+        { "tps": 150, "label": "150 t/s", "note": "light batch" },
+        { "tps": 600, "label": "600 t/s", "note": "~6 users" },
+        { "tps": 1900, "label": "1,900 t/s", "note": "heavy batch" },
+        { "tps": 4000, "label": "4,000 t/s", "note": "⚡ CROSSOVER (4×H100)", "crossover": true },
+        { "tps": 5500, "label": "5,500 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "HARD",
+      "verdictNote": "NVIDIA-optimized with excellent tooling. Best deployed on NVIDIA hardware."
+    },
+    {
+      "id": "nemotron-super-49b",
+      "name": "Nemotron Super 49B",
+      "family": "NVIDIA",
+      "type": "Dense",
+      "totalParams": "49B",
+      "activeParams": "49B",
+      "releaseDate": "Nov 2025",
+      "vramRequired": "98GB (FP16)",
+      "minGpu": "a100",
+      "architecture": "Dense with group query attention",
+      "context": "128K",
+      "benchmarks": {
+        "mmlu": 83.2,
+        "mmluPro": 77.5,
+        "swebench": 68.4,
+        "gpqa": 80.2,
+        "livecodebench": 65.8,
+        "math500": 97.4,
+        "arena": 1175
+      },
+      "closestApi": "Claude Sonnet 4.5",
+      "apiProviders": [
+        { "name": "NVIDIA NIM", "input": 0.18, "output": 0.72 },
+        { "name": "Fireworks", "input": 0.2, "output": 0.8 }
+      ],
+      "throughputs": [
+        { "tps": 25, "label": "25 t/s", "note": "1 user" },
+        { "tps": 120, "label": "120 t/s", "note": "~3 users" },
+        { "tps": 350, "label": "350 t/s", "note": "~8 users" },
+        { "tps": 560, "label": "560 t/s", "note": "⚡ CROSSOVER", "crossover": true },
+        { "tps": 950, "label": "950 t/s", "note": "heavy batch" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Sweet spot for single-GPU. Excellent math performance. Good NVIDIA ecosystem."
+    },
+    {
+      "id": "nemotron-nano-30b",
+      "name": "Nemotron Nano 30B",
+      "family": "NVIDIA",
+      "type": "Dense",
+      "totalParams": "30B",
+      "activeParams": "30B",
+      "releaseDate": "Oct 2025",
+      "vramRequired": "60GB (FP16)",
+      "minGpu": "a10",
+      "architecture": "Dense transformer, edge optimized",
+      "context": "64K",
+      "benchmarks": {
+        "mmlu": 79.5,
+        "mmluPro": 73.2,
+        "swebench": 58.5,
+        "gpqa": 74.8,
+        "livecodebench": 59.2,
+        "arena": 1095
+      },
+      "closestApi": "GPT-4o Mini",
+      "apiProviders": [
+        { "name": "NVIDIA NIM", "input": 0.08, "output": 0.32 },
+        { "name": "Fireworks", "input": 0.1, "output": 0.4 }
+      ],
+      "throughputs": [
+        { "tps": 50, "label": "50 t/s", "note": "1 user" },
+        { "tps": 250, "label": "250 t/s", "note": "~5 users" },
+        { "tps": 600, "label": "600 t/s", "note": "~12 users" },
+        { "tps": 880, "label": "880 t/s", "note": "⚡ CROSSOVER", "crossover": true },
+        { "tps": 1400, "label": "1,400 t/s", "note": "heavy batch" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Edge deployment. Fits on A10/4090. Good for latency-sensitive apps."
+    },
+    {
+      "id": "gpt-oss-120b",
+      "name": "GPT-OSS 120B",
+      "family": "OpenAI",
+      "type": "MoE",
+      "totalParams": "117B",
+      "activeParams": "15B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "80GB (Q4) / 234GB (FP16)",
+      "minGpu": "h100",
+      "architecture": "MoE with sparse attention, OpenAI open-weight",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 90.0,
+        "mmluPro": 90.0,
+        "swebench": 62.4,
+        "gpqa": 80.9,
+        "livecodebench": 60.0,
+        "arena": 1285
+      },
+      "closestApi": "GPT-5 Mini",
+      "apiProviders": [
+        { "name": "OpenRouter", "input": 0.22, "output": 0.88 },
+        { "name": "Together AI", "input": 0.25, "output": 1.0 },
+        { "name": "Fireworks", "input": 0.24, "output": 0.96 }
+      ],
+      "throughputs": [
+        { "tps": 35, "label": "35 t/s", "note": "1 user (Q4)" },
+        { "tps": 175, "label": "175 t/s", "note": "light batch" },
+        { "tps": 700, "label": "700 t/s", "note": "~8 users" },
+        { "tps": 2200, "label": "2,200 t/s", "note": "heavy batch" },
+        { "tps": 4600, "label": "4,600 t/s", "note": "⚡ CROSSOVER (H100)", "crossover": true },
+        { "tps": 6200, "label": "6,200 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "HARD",
+      "verdictNote": "OpenAI's open-weight model. Strong reasoning. Single H100 viable for moderate workloads."
+    },
+    {
+      "id": "gpt-oss-20b",
+      "name": "GPT-OSS 20B",
+      "family": "OpenAI",
+      "type": "Dense",
+      "totalParams": "20B",
+      "activeParams": "20B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "40GB (FP16)",
+      "minGpu": "a10",
+      "architecture": "Dense transformer, OpenAI open-weight",
+      "context": "128K",
+      "benchmarks": {
+        "mmlu": 81.5,
+        "mmluPro": 75.8,
+        "swebench": 58.2,
+        "gpqa": 76.5,
+        "livecodebench": 58.4,
+        "arena": 1105
+      },
+      "closestApi": "GPT-4o Mini",
+      "apiProviders": [
+        { "name": "OpenRouter", "input": 0.1, "output": 0.4 },
+        { "name": "Together AI", "input": 0.12, "output": 0.48 }
+      ],
+      "throughputs": [
+        { "tps": 45, "label": "45 t/s", "note": "1 user" },
+        { "tps": 220, "label": "220 t/s", "note": "~5 users" },
+        { "tps": 550, "label": "550 t/s", "note": "~12 users" },
+        { "tps": 800, "label": "800 t/s", "note": "⚡ CROSSOVER", "crossover": true },
+        { "tps": 1350, "label": "1,350 t/s", "note": "heavy batch" }
+      ],
+      "verdict": "VIABLE",
+      "verdictNote": "Smallest GPT-OSS. Good balance of performance and size. Consumer GPU friendly."
+    },
+    {
+      "id": "minimax-m2.5",
+      "name": "MiniMax M2.5",
+      "family": "MiniMax",
+      "type": "MoE",
+      "totalParams": "230B",
+      "activeParams": "10B",
+      "releaseDate": "Feb 2026",
+      "vramRequired": "120GB (Q4) / 460GB (FP16)",
+      "minGpu": "h100x4",
+      "architecture": "MoE, 256 experts, 8 activated per token, code-specialized",
+      "context": "256K",
+      "benchmarks": {
+        "mmlu": 85.0,
+        "mmluPro": 76.5,
+        "swebench": 80.2,
+        "gpqa": 85.2,
+        "livecodebench": 65.0,
+        "aime": 86.3,
+        "ifeval": 87.5,
+        "arena": 1235
+      },
+      "closestApi": "Claude Opus 4.6",
+      "apiProviders": [
+        { "name": "SiliconFlow (FP8)", "input": 0.2, "output": 1.0 },
+        { "name": "FriendliAI", "input": 0.3, "output": 1.2 },
+        { "name": "MiniMax Official", "input": 0.28, "output": 1.12 },
+        { "name": "OpenRouter", "input": 0.25, "output": 1.2 },
+        { "name": "Together AI", "input": 0.26, "output": 1.04 }
+      ],
+      "throughputs": [
+        { "tps": 45, "label": "45 t/s", "note": "1 user (Q4)" },
+        { "tps": 220, "label": "220 t/s", "note": "light batch" },
+        { "tps": 900, "label": "900 t/s", "note": "~10 users" },
+        { "tps": 2800, "label": "2,800 t/s", "note": "heavy batch" },
+        { "tps": 5800, "label": "5,800 t/s", "note": "⚡ CROSSOVER (4×H100)", "crossover": true },
+        { "tps": 7500, "label": "7,500 t/s", "note": "GPU wins" }
+      ],
+      "verdict": "HARD",
+      "verdictNote": "Best coding model in class. 10B active params make it efficient. 4×H100 needed."
+    }
+  ],
+  "THESIS_POINTS": [
+    {
+      "id": "commodity",
+      "title": "Models are becoming commodities",
+      "body": "Qwen3.5 122B matches Claude Sonnet 4.6 on most benchmarks at $0.20/M input tokens — 15x cheaper. The gap between \"frontier\" and \"open\" is closing every 3 months."
+    },
+    {
+      "id": "tax",
+      "title": "Token APIs are a tax on intelligence",
+      "body": "Every token you send to Anthropic, OpenAI, or Google is a rent payment on weights you could be running yourself. At scale, this is a 90%+ margin business disguised as infrastructure."
+    },
+    {
+      "id": "local",
+      "title": "Local is the endgame",
+      "body": "Qwen3.5 27B fits on a single A100. The crossover with cloud APIs hits at ~506 t/s — achievable with 10 concurrent users. For high-traffic workloads, local wins."
+    },
+    {
+      "id": "race",
+      "title": "The race to zero is real",
+      "body": "LLM API prices dropped ~80% from 2025 to 2026. The gap between \"cheap\" and \"premium\" is now 1,000x. Commodity inference is here. The incumbents are fighting a losing battle."
+    }
+  ]
+}

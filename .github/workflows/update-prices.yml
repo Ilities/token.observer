@@ -1,0 +1,87 @@
+name: Daily Price Update
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    # Allow manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run price update script
+        run: node scripts/update-prices.js
+        env:
+          NODE_ENV: production
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --quiet src/data/prices.json || echo "prices_changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet scripts/price-changelog.json || echo "changelog_changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.git-check.outputs.prices_changed == 'true' || steps.git-check.outputs.changelog_changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add src/data/prices.json scripts/price-changelog.json
+          git commit -m "chore: update prices $(date +%Y-%m-%d)
+
+          Automated price update from:
+          - Artificial Analysis
+          - OpenRouter
+          - RunPod/Vast.ai
+
+          [skip ci]" || echo "No changes to commit"
+          git push
+
+      - name: Create summary comment
+        if: always()
+        run: |
+          echo "## Price Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Run time:** $(date -u +%Y-%m-%d\ %H:%M:%S\ UTC)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f "scripts/price-changelog.json" ]; then
+            echo "**Latest changes:**" >> $GITHUB_STEP_SUMMARY
+            node -e "
+              const changelog = require('./scripts/price-changelog.json');
+              if (changelog.length > 0) {
+                const latest = changelog[0];
+                console.log('- Date:', new Date(latest.date).toISOString().split('T')[0]);
+                console.log('- Changes:', latest.changes.length);
+                latest.changes.slice(0, 5).forEach(c => {
+                  if (c.type === 'new') {
+                    console.log('  - +', c.model, '(NEW)');
+                  } else {
+                    console.log('  - ~', c.model, 'Input:', c.inputChange, 'Output:', c.outputChange);
+                  }
+                });
+              } else {
+                console.log('No price changes detected');
+              }
+            " >> $GITHUB_STEP_SUMMARY
+          fi
