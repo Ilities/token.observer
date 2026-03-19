@@ -201,7 +201,8 @@ export const MODELS = [
     architecture: "Dense transformer with optimized attention",
     closestApi: "GPT-4o Mini",
     verdict: "VIABLE",
-    verdictNote: "Fits on a single RTX 4090 or Mac with 18GB+ unified memory. Best entry point for self-hosting.",
+    verdictNote:
+      "Fits on a single RTX 4090 or Mac with 18GB+ unified memory. Best entry point for self-hosting.",
     benchmarks: {
       "MMLU-Pro": 85.3,
       "GPQA Diamond": 84.2,
@@ -366,7 +367,8 @@ export const MODELS = [
     architecture: "MoE with 256 experts and hybrid gated DeltaNet attention",
     closestApi: "Claude Sonnet 4.6",
     verdict: "HARD",
-    verdictNote: "Requires 73-80GB VRAM at Q4 — fits on single H100/A100 80GB. Excellent Sonnet-level quality.",
+    verdictNote:
+      "Requires 73-80GB VRAM at Q4 — fits on single H100/A100 80GB. Excellent Sonnet-level quality.",
     benchmarks: {
       "MMLU-Pro": 86.1,
       "GPQA Diamond": 85.5,
@@ -426,7 +428,8 @@ export const MODELS = [
     architecture: "MoE with hybrid attention, agent mode",
     closestApi: "Claude Opus 4.6",
     verdict: "HARD",
-    verdictNote: "Requires 4× H100 or equivalent. Top-tier Chinese model with excellent coding/reasoning.",
+    verdictNote:
+      "Requires 4× H100 or equivalent. Top-tier Chinese model with excellent coding/reasoning.",
     benchmarks: {
       mmlu: 90.1,
       mmluPro: 84.3,
@@ -454,7 +457,12 @@ export const MODELS = [
       },
     ],
     rentalOptions: [
-      { name: "RunPod 4× H100 Community", costPerHr: 8.68, costPerDay24: 208.32, provider: "RunPod" },
+      {
+        name: "RunPod 4× H100 Community",
+        costPerHr: 8.68,
+        costPerDay24: 208.32,
+        provider: "RunPod",
+      },
     ],
   },
   {
@@ -524,7 +532,8 @@ export const MODELS = [
     architecture: "MoE with hybrid attention and multi-token prediction",
     closestApi: "Claude Opus 4.6",
     verdict: "HARD",
-    verdictNote: "Requires 101GB VRAM at Q3 or 243GB at Q8. Best on 4× H100 or Mac with 128GB+ unified memory.",
+    verdictNote:
+      "Requires 101GB VRAM at Q3 or 243GB at Q8. Best on 4× H100 or Mac with 128GB+ unified memory.",
     benchmarks: {
       "SWE-Bench": 80.2,
       "Multi-SWE-Bench": 51.3,
@@ -535,7 +544,12 @@ export const MODELS = [
       { name: "FriendliAI", input: 0.3, output: 1.2 },
       { name: "MiniMax Official", input: 0.3, output: 1.2 },
       { name: "OpenRouter", input: 0.25, output: 1.2 },
-      { name: "SambaNova", input: null, output: null, note: "Fastest — 396 t/s, contact for pricing" },
+      {
+        name: "SambaNova",
+        input: null,
+        output: null,
+        note: "Fastest — 396 t/s, contact for pricing",
+      },
     ],
     purchaseOptions: [
       {
@@ -567,9 +581,41 @@ export const MODELS = [
       },
     ],
     rentalOptions: [
-      { name: "RunPod 4× H100 Community", costPerHr: 8.68, costPerDay24: 208.32, provider: "RunPod" },
+      {
+        name: "RunPod 4× H100 Community",
+        costPerHr: 8.68,
+        costPerDay24: 208.32,
+        provider: "RunPod",
+      },
       { name: "Lambda 4× H100", costPerHr: 12.0, costPerDay24: 288.0, provider: "Lambda" },
     ],
+  },
+  {
+    id: "minimax-m27",
+    tier: "top",
+    name: "MiniMax M2.7",
+    family: "MiniMax",
+    type: "MoE",
+    totalParams: "Undisclosed",
+    activeParams: "Undisclosed",
+    releaseDate: "Mar 2026",
+    license: "Proprietary",
+    context: "204K",
+    architecture: "Agentic multi-agent collaboration architecture with continuous improvement",
+    closestApi: "Claude Opus 4.6",
+    verdict: "HARD",
+    verdictNote: "API-only model. Designed for autonomous workflows and production tasks.",
+    benchmarks: {
+      "SWE-Pro": 56.2,
+      "Terminal Bench 2": 57.0,
+      "GDPval-AA (ELO)": 1495,
+    },
+    apiProviders: [
+      { name: "OpenRouter", input: 0.3, output: 1.2 },
+      { name: "MiniMax Official", input: 0.3, output: 1.2 },
+    ],
+    purchaseOptions: [],
+    rentalOptions: [],
   },
   {
     id: "deepseek-v3.2",
@@ -585,7 +631,8 @@ export const MODELS = [
     architecture: "MoE, Multi-token prediction, MLA attention",
     closestApi: "Claude Opus 4.7",
     verdict: "HARD",
-    verdictNote: "671B total params but only 37B active. Requires 8× H100 for Q4. Best open-weight model.",
+    verdictNote:
+      "671B total params but only 37B active. Requires 8× H100 for Q4. Best open-weight model.",
     benchmarks: {
       mmlu: 88.5,
       mmluPro: 85.0,
@@ -673,7 +720,8 @@ export const MODELS = [
     architecture: "MoE with hybrid attention",
     closestApi: "Claude Opus 4.6",
     verdict: "IMPRACTICAL",
-    verdictNote: "1T parameter MoE. Requires 247GB+ for Q2. ⚠️ Mac Studio can load at Q2 but runs at ~20 t/s — experimentation only. Production needs 8× H100.",
+    verdictNote:
+      "1T parameter MoE. Requires 247GB+ for Q2. ⚠️ Mac Studio can load at Q2 but runs at ~20 t/s — experimentation only. Production needs 8× H100.",
     benchmarks: {
       mmlu: 84.2,
       mmluPro: 79.5,
@@ -715,7 +763,8 @@ export const MODELS = [
     architecture: "MoE, Agent Swarm, vision-language",
     closestApi: "GPT-5.2",
     verdict: "IMPRACTICAL",
-    verdictNote: "1T parameter MoE. Requires 240GB+ for Q2 quant. ⚠️ Mac Studio can load at Q1-Q2 but runs at ~20 t/s — experimentation only. Production needs 8× H100/H200.",
+    verdictNote:
+      "1T parameter MoE. Requires 240GB+ for Q2 quant. ⚠️ Mac Studio can load at Q1-Q2 but runs at ~20 t/s — experimentation only. Production needs 8× H100/H200.",
     benchmarks: {
       mmlu: 92.0,
       mmluPro: 87.1,
@@ -770,7 +819,8 @@ export const MODELS = [
     architecture: "Large-scale MoE, native agent, multimodal",
     closestApi: "Claude Opus 4.6",
     verdict: "IMPRACTICAL",
-    verdictNote: "744B params, 40B active. Requires 176GB at Q2 or 805GB at Q8. ⚠️ Mac Studio can load at Q1-Q2 but runs at ~20 t/s — experimentation only. Production needs 8× H100/H200.",
+    verdictNote:
+      "744B params, 40B active. Requires 176GB at Q2 or 805GB at Q8. ⚠️ Mac Studio can load at Q1-Q2 but runs at ~20 t/s — experimentation only. Production needs 8× H100/H200.",
     benchmarks: {
       mmlu: 85.0,
       mmluPro: 70.4,
@@ -1030,7 +1080,7 @@ export const THESIS_POINTS = [
   {
     id: "commodity",
     title: "Models are becoming commodities",
-    body: "Qwen3.5 122B matches Claude Sonnet 4.6 on most benchmarks at $0.20/M input tokens — 15x cheaper. The gap between \"frontier\" and \"open\" is closing every 3 months.",
+    body: 'Qwen3.5 122B matches Claude Sonnet 4.6 on most benchmarks at $0.20/M input tokens — 15x cheaper. The gap between "frontier" and "open" is closing every 3 months.',
   },
   {
     id: "tax",
@@ -1045,6 +1095,6 @@ export const THESIS_POINTS = [
   {
     id: "race",
     title: "The race to zero is real",
-    body: "LLM API prices dropped ~80% from 2025 to 2026. The gap between \"cheap\" and \"premium\" is now 1,000x. Commodity inference is here.",
+    body: 'LLM API prices dropped ~80% from 2025 to 2026. The gap between "cheap" and "premium" is now 1,000x. Commodity inference is here.',
   },
 ];

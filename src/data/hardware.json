@@ -200,7 +200,8 @@
         "gpt-oss-120b",
         "deepseek-v3.2",
         "stepfun-step3.5-flash",
-        "minimax-m2.5"
+        "minimax-m2.5",
+        "minimax-m2.7"
       ],
       "bestModel": "qwen35-235b",
       "notes": "H200 141GB is the inference king. L40S 48GB best price/performance for 70B class models."
@@ -239,6 +240,7 @@
         "deepseek-r1",
         "stepfun-step3.5-flash",
         "minimax-m2.5",
+        "minimax-m2.7",
         "nemotron-ultra-253b"
       ],
       "bestModel": "qwen35-397b",
@@ -275,7 +277,8 @@
         "glm-5",
         "deepseek-v3.2",
         "deepseek-r1",
-        "minimax-m2.5"
+        "minimax-m2.5",
+        "minimax-m2.7"
       ],
       "bestModel": "deepseek-v3.2",
       "notes": "HGX H200 runs 700B+ at Q6_K. NVL36 is overkill for most - target hyperscalers. ⚠️ Mac Ultra excluded — FP8 compute and HBM bandwidth essential for 700B+ MoE."
@@ -338,6 +341,7 @@
     "nemotron-nano-30b": { "params": 30, "family": "Nemotron" },
     "gpt-oss-120b": { "params": 117, "family": "GPT-OSS", "active": 15 },
     "gpt-oss-20b": { "params": 20, "family": "GPT-OSS" },
-    "minimax-m2.5": { "params": 230, "family": "MiniMax", "active": 10 }
+    "minimax-m2.5": { "params": 230, "family": "MiniMax", "active": 10 },
+    "minimax-m2.7": { "params": "Undisclosed", "family": "MiniMax", "active": "Undisclosed" }
   }
 }

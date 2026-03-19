@@ -9,7 +9,7 @@ An open investigation into the real cost of LLM inference:
 
 - **Crossover analysis** — at what throughput does self-hosting beat the API?
 - **Per-minute/per-second GPU costs** vs per-token API pricing
-- **Model viability tracker** — Qwen3.5 27B, Qwen3.5 122B, MiniMax M2.5
+- **Model viability tracker** — Qwen3.5 27B, Qwen3.5 122B, MiniMax M2.5, MiniMax M2.7
 - **The commodity thesis** — open models are closing the gap fast
 
 ## Stack

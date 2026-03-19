@@ -1219,6 +1219,19 @@
       }
     },
     {
+      "id": "minimax-m2.7",
+      "name": "MiniMax M2.7",
+      "family": "MiniMax",
+      "organization": "MiniMax",
+      "type": "proprietary",
+      "releaseDate": "2026-03-18",
+      "benchmarks": {
+        "swePro": 56.2,
+        "terminalBench2": 57.0,
+        "gdpvalAA": 1495
+      }
+    },
+    {
       "id": "nemotron-nano-30b",
       "name": "Nemotron Nano 30B",
       "family": "Nemotron",

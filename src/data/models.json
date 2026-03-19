@@ -921,6 +921,32 @@
       ],
       "verdict": "HARD",
       "verdictNote": "Best coding model in class. 10B active params make it efficient. 4×H100 needed."
+    },
+    {
+      "id": "minimax-m2.7",
+      "name": "MiniMax M2.7",
+      "family": "MiniMax",
+      "type": "MoE",
+      "totalParams": "Undisclosed",
+      "activeParams": "Undisclosed",
+      "releaseDate": "Mar 2026",
+      "vramRequired": "N/A (API-only)",
+      "minGpu": "N/A",
+      "architecture": "Agentic multi-agent collaboration with continuous self-improvement",
+      "context": "204K",
+      "benchmarks": {
+        "swePro": 56.2,
+        "terminalBench2": 57.0,
+        "gdpvalAA": 1495
+      },
+      "closestApi": "Claude Opus 4.6",
+      "apiProviders": [
+        { "name": "OpenRouter", "input": 0.3, "output": 1.2 },
+        { "name": "MiniMax Official", "input": 0.3, "output": 1.2 }
+      ],
+      "throughputs": [],
+      "verdict": "HARD",
+      "verdictNote": "API-only model. Designed for autonomous workflows and production tasks."
     }
   ],
   "THESIS_POINTS": [

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/model.observer.iml" filepath="$PROJECT_DIR$/.idea/model.observer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/token.observer.iml" filepath="$PROJECT_DIR$/.idea/token.observer.iml" />
     </modules>
   </component>
 </project>

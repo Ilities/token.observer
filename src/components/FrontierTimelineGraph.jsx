@@ -273,9 +273,7 @@ export default function FrontierTimelineGraph() {
       {/* Chart */}
       <div style={{ height: 550 }}>
         <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart
-            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-          >
+          <ScatterChart margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
             <CartesianGrid stroke="var(--academia-border)" strokeDasharray="3 3" />
             <XAxis
               type="number"
@@ -309,8 +307,11 @@ export default function FrontierTimelineGraph() {
               }}
             />
             <ZAxis type="number" range={[60, 120]} />
-            <Tooltip content={<CustomTooltip />} cursor={{ stroke: "var(--academia-accent)", strokeWidth: 1 }} />
-            
+            <Tooltip
+              content={<CustomTooltip />}
+              cursor={{ stroke: "var(--academia-accent)", strokeWidth: 1 }}
+            />
+
             {/* Frontier models line */}
             <Scatter
               name="Frontier Models"
@@ -318,7 +319,7 @@ export default function FrontierTimelineGraph() {
               shape={<FrontierShape />}
               fill="var(--academia-accent)"
             />
-            
+
             {/* Crossover models - grouped by hardware category */}
             {HARDWARE_CATEGORIES.map((category) => (
               <Scatter
@@ -333,34 +334,32 @@ export default function FrontierTimelineGraph() {
             ))}
 
             {/* Reference lines for hardware categories */}
-            {HARDWARE_CATEGORIES.map(
-              (category) => {
-                const categoryCrossovers = crossoverData.filter(
-                  (c) => c.hardwareCategory === category.id,
-                );
-                if (categoryCrossovers.length === 0) return null;
+            {HARDWARE_CATEGORIES.map((category) => {
+              const categoryCrossovers = crossoverData.filter(
+                (c) => c.hardwareCategory === category.id,
+              );
+              if (categoryCrossovers.length === 0) return null;
 
-                const avgY =
-                  categoryCrossovers.reduce((sum, c) => sum + c.y, 0) / categoryCrossovers.length;
+              const avgY =
+                categoryCrossovers.reduce((sum, c) => sum + c.y, 0) / categoryCrossovers.length;
 
-                return (
-                  <ReferenceLine
-                    key={category.id}
-                    y={avgY}
-                    stroke={category.color}
-                    strokeDasharray="3 3"
-                    opacity={hoveredCategory === category.id ? 1 : 0.3}
-                    label={{
-                      value: `${category.icon} ${category.name}`,
-                      position: "right",
-                      fill: category.color,
-                      fontSize: 10,
-                      fontFamily: "var(--font-display)",
-                    }}
-                  />
-                );
-              },
-            )}
+              return (
+                <ReferenceLine
+                  key={category.id}
+                  y={avgY}
+                  stroke={category.color}
+                  strokeDasharray="3 3"
+                  opacity={hoveredCategory === category.id ? 1 : 0.3}
+                  label={{
+                    value: `${category.icon} ${category.name}`,
+                    position: "right",
+                    fill: category.color,
+                    fontSize: 10,
+                    fontFamily: "var(--font-display)",
+                  }}
+                />
+              );
+            })}
           </ScatterChart>
         </ResponsiveContainer>
       </div>
@@ -418,8 +417,7 @@ export default function FrontierTimelineGraph() {
                 alignItems: "center",
                 gap: 8,
                 padding: "6px 12px",
-                background:
-                  hoveredCategory === category.id ? category.color : "transparent",
+                background: hoveredCategory === category.id ? category.color : "transparent",
                 borderRadius: 2,
                 cursor: "pointer",
                 transition: "background 0.2s ease-out",

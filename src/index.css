@@ -52,10 +52,12 @@
 
   /* Shadows */
   --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-engraved: inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-wax-seal: inset 0 2px 4px rgba(255, 255, 255, 0.2),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-engraved:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-wax-seal:
+    inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.4);
 
   /* Transitions */
   --transition-fast: 150ms ease-out;
@@ -176,7 +178,9 @@ h6 {
 a {
   color: var(--academia-accent);
   text-decoration: none;
-  transition: color var(--transition-fast), letter-spacing var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    letter-spacing var(--transition-fast);
 }
 
 a:hover {
@@ -227,7 +231,9 @@ a:hover {
   color: var(--academia-background);
   border: none;
   padding: 0.75rem 2rem;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4), -1px -1px 1px rgba(255, 255, 255, 0.1);
+  text-shadow:
+    1px 1px 1px rgba(0, 0, 0, 0.4),
+    -1px -1px 1px rgba(255, 255, 255, 0.1);
   box-shadow: var(--shadow-engraved);
 }
 
@@ -285,7 +291,9 @@ a:hover {
   border-radius: var(--radius-default);
   padding: 2rem;
   position: relative;
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .card:hover {
@@ -376,7 +384,9 @@ a:hover {
 
 .arch-top img {
   filter: sepia(0.6) contrast(0.95) brightness(0.9);
-  transition: filter var(--transition-dramatic), transform var(--transition-slow);
+  transition:
+    filter var(--transition-dramatic),
+    transform var(--transition-slow);
 }
 
 .arch-top:hover img {
@@ -542,7 +552,9 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  box-shadow: 0 0 0 2px var(--academia-background), 0 0 0 4px var(--academia-accent);
+  box-shadow:
+    0 0 0 2px var(--academia-background),
+    0 0 0 4px var(--academia-accent);
 }
 
 /* --------------------------------------------------------------------------

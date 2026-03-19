@@ -227,9 +227,7 @@ export function ModelDetail() {
             transition: "color 0.3s ease-out",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = "var(--academia-accent)")}
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.color = "var(--academia-muted-foreground)")
-          }
+          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--academia-muted-foreground)")}
         >
           ← All Models
         </Link>
@@ -429,10 +427,7 @@ export function ModelDetail() {
                       >
                         {p.name}{" "}
                         {i === 0 && (
-                          <span
-                            className="tag tag-viable"
-                            style={{ marginLeft: 8, fontSize: 9 }}
-                          >
+                          <span className="tag tag-viable" style={{ marginLeft: 8, fontSize: 9 }}>
                             CHEAPEST
                           </span>
                         )}

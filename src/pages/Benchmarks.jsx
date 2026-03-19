@@ -189,7 +189,10 @@ export default function Benchmarks() {
             }}
           >
             {BENCHMARKS.slice(0, 4).map((bench) => (
-              <div key={bench.key} style={{ background: "var(--academia-background-alt)", padding: 24 }}>
+              <div
+                key={bench.key}
+                style={{ background: "var(--academia-background-alt)", padding: 24 }}
+              >
                 <div
                   style={{
                     fontSize: 10,
@@ -211,10 +214,16 @@ export default function Benchmarks() {
                       fontSize: 13,
                       padding: "6px 0",
                       borderBottom:
-                        i < topModels[bench.key].length - 1 ? "1px solid var(--academia-border)" : "none",
+                        i < topModels[bench.key].length - 1
+                          ? "1px solid var(--academia-border)"
+                          : "none",
                     }}
                   >
-                    <span style={{ color: i === 0 ? "var(--academia-accent)" : "var(--academia-foreground)" }}>
+                    <span
+                      style={{
+                        color: i === 0 ? "var(--academia-accent)" : "var(--academia-foreground)",
+                      }}
+                    >
                       {i === 0 ? "Ⅰ " : i === 1 ? "Ⅱ " : "Ⅲ "}
                       {m.name}
                     </span>
@@ -488,8 +497,12 @@ export default function Benchmarks() {
                         >
                           {model.name}
                         </td>
-                        <td style={{ color: "var(--academia-muted-foreground)" }}>{model.family}</td>
-                        <td style={{ color: "var(--academia-muted-foreground)" }}>{model.totalParams}</td>
+                        <td style={{ color: "var(--academia-muted-foreground)" }}>
+                          {model.family}
+                        </td>
+                        <td style={{ color: "var(--academia-muted-foreground)" }}>
+                          {model.totalParams}
+                        </td>
                         <td>
                           <span
                             className={`tag tag-${model.type === "MoE" ? "viable" : "hard"}`}
@@ -500,7 +513,9 @@ export default function Benchmarks() {
                         </td>
                         {BENCHMARKS.map((bench) => {
                           const score = model.benchmarks[bench.key];
-                          const maxInCol = Math.max(...MODELS.map((m) => m.benchmarks[bench.key] || 0));
+                          const maxInCol = Math.max(
+                            ...MODELS.map((m) => m.benchmarks[bench.key] || 0),
+                          );
                           const isTop = score && score >= maxInCol * 0.95;
                           return (
                             <td
@@ -509,7 +524,9 @@ export default function Benchmarks() {
                                 textAlign: "right",
                                 fontFamily: "var(--font-heading)",
                                 fontWeight: isTop ? 600 : 400,
-                                color: isTop ? "var(--academia-accent)" : "var(--academia-foreground)",
+                                color: isTop
+                                  ? "var(--academia-accent)"
+                                  : "var(--academia-foreground)",
                               }}
                             >
                               {score ? formatScore(score, bench) : "—"}

@@ -78,9 +78,11 @@ export default function Compare() {
                   fontWeight: 500,
                   letterSpacing: "0.1em",
                   cursor: "pointer",
-                  background:
-                    selectedModel === m.id ? "var(--academia-accent)" : "transparent",
-                  color: selectedModel === m.id ? "var(--academia-background)" : "var(--academia-muted-foreground)",
+                  background: selectedModel === m.id ? "var(--academia-accent)" : "transparent",
+                  color:
+                    selectedModel === m.id
+                      ? "var(--academia-background)"
+                      : "var(--academia-muted-foreground)",
                   border:
                     selectedModel === m.id
                       ? "1px solid var(--academia-accent)"
@@ -280,7 +282,9 @@ export default function Compare() {
                       <td
                         style={{
                           fontWeight: isCheapest ? 600 : 400,
-                          color: isCheapest ? "var(--academia-accent)" : "var(--academia-foreground)",
+                          color: isCheapest
+                            ? "var(--academia-accent)"
+                            : "var(--academia-foreground)",
                           fontFamily: "var(--font-heading)",
                         }}
                       >
@@ -438,7 +442,9 @@ export default function Compare() {
                           fontFamily: "var(--font-heading)",
                           fontSize: 18,
                           fontWeight: 600,
-                          color: opt.usedCost ? "var(--academia-accent)" : "var(--academia-muted-foreground)",
+                          color: opt.usedCost
+                            ? "var(--academia-accent)"
+                            : "var(--academia-muted-foreground)",
                         }}
                       >
                         {opt.usedCost ? `$${opt.usedCost.toLocaleString()}` : "—"}
@@ -454,9 +460,7 @@ export default function Compare() {
                   >
                     <div>{opt.canRunModel}</div>
                     <div style={{ marginTop: 4 }}>{opt.quality}</div>
-                    <div style={{ marginTop: 4 }}>
-                      Electricity: ~${opt.monthlyElectricity}/mo
-                    </div>
+                    <div style={{ marginTop: 4 }}>Electricity: ~${opt.monthlyElectricity}/mo</div>
                   </div>
                 </div>
               ))}

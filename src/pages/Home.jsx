@@ -7,6 +7,7 @@ function Ticker() {
   const items = [
     "Qwen3.5 122B = Claude Sonnet 4.6 quality at $0.20/M input",
     "MiniMax M2.5 = Claude Opus 4.6 speed at 1/10th the cost",
+    "MiniMax M2.7 = Self-improving agentic model at $0.30/M input",
     "RunPod A100 @ $1.33/hr · H100 @ $2.17/hr · billed per second",
     "Qwen3.5 27B fits on a single RTX 4090",
     "LLM API prices dropped 80% in 2025→2026",
@@ -162,18 +163,10 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <Link
-              to="/compare"
-              className="btn btn-primary"
-              style={{ textDecoration: "none" }}
-            >
+            <Link to="/compare" className="btn btn-primary" style={{ textDecoration: "none" }}>
               Run The Numbers →
             </Link>
-            <Link
-              to="/models"
-              className="btn btn-secondary"
-              style={{ textDecoration: "none" }}
-            >
+            <Link to="/models" className="btn btn-secondary" style={{ textDecoration: "none" }}>
               Browse Models
             </Link>
           </div>
@@ -232,9 +225,7 @@ export default function Home() {
                   padding: "32px 28px",
                   transition: "background 0.3s ease-out",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "var(--academia-muted)")
-                }
+                onMouseEnter={(e) => (e.currentTarget.style.background = "var(--academia-muted)")}
                 onMouseLeave={(e) =>
                   (e.currentTarget.style.background = "var(--academia-background-alt)")
                 }
@@ -539,8 +530,7 @@ export default function Home() {
               color: "var(--academia-foreground)",
             }}
           >
-            Stop paying the{" "}
-            <span style={{ color: "var(--academia-crimson)" }}>token tax</span>
+            Stop paying the <span style={{ color: "var(--academia-crimson)" }}>token tax</span>
           </h2>
           <p
             style={{

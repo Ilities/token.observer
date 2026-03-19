@@ -70,9 +70,7 @@ export default function Nav() {
                   pathname === l.to ? "var(--academia-accent)" : "var(--academia-muted-foreground)",
                 textDecoration: "none",
                 borderBottom:
-                  pathname === l.to
-                    ? "1px solid var(--academia-accent)"
-                    : "1px solid transparent",
+                  pathname === l.to ? "1px solid var(--academia-accent)" : "1px solid transparent",
                 transition: "color 0.3s ease-out, border-color 0.3s ease-out",
               }}
             >
