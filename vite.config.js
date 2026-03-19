@@ -12,5 +12,5 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: "assets",
   },
-  base: process.env.GITHUB_ACTIONS ? "/token.observer/" : "/",
+  base: "/",
 });
