@@ -1,6 +1,29 @@
 import { useState } from "react";
 import { MODELS, TIERS } from "../data/models";
 
+// Provider URLs for linking
+const PROVIDER_URLS = {
+  "Alibaba Cloud": "https://www.aliyun.com/product/bailian",
+  OpenRouter: "https://openrouter.ai",
+  DeepInfra: "https://deepinfra.com",
+  Groq: "https://groq.com",
+  Hyperbolic: "https://hyperbolic.xyz",
+  Fireworks: "https://fireworks.ai",
+  "Together AI": "https://together.ai",
+  "Lepton AI": "https://lepton.ai",
+  SambaNova: "https://sambanova.ai",
+  Novita: "https://novita.ai",
+  Replicate: "https://replicate.com",
+  FriendliAI: "https://friendli.ai",
+  SiliconFlow: "https://siliconflow.cn",
+  Anyscale: "https://anyscale.com",
+  Cerebras: "https://cerebras.ai",
+  "Zhipu Official": "https://open.bigmodel.cn",
+  "MiniMax Official": "https://www.minimaxi.com",
+  "DeepSeek Official": "https://www.deepseek.com",
+  "Moonshot Official": "https://www.moonshot.cn",
+};
+
 export default function Compare() {
   const [selectedModel, setSelectedModel] = useState(MODELS[0].id);
 
@@ -274,74 +297,101 @@ export default function Compare() {
                 </tr>
               </thead>
               <tbody>
-                {model.apiProviders.map((p, i) => {
-                  const bl = p.input && p.output ? (p.input + p.output) / 2 : null;
-                  const isCheapest = i === 0;
-                  return (
-                    <tr key={i}>
-                      <td
-                        style={{
-                          fontWeight: isCheapest ? 600 : 400,
-                          color: isCheapest
-                            ? "var(--academia-accent)"
-                            : "var(--academia-foreground)",
-                          fontFamily: "var(--font-heading)",
-                        }}
-                      >
-                        {p.name}{" "}
-                        {isCheapest && (
-                          <span
-                            style={{
-                              fontSize: 9,
-                              color: "var(--academia-accent)",
-                              marginLeft: 8,
-                              fontFamily: "var(--font-display)",
-                              letterSpacing: "0.1em",
-                            }}
-                          >
-                            CHEAPEST
-                          </span>
-                        )}
-                      </td>
-                      <td
-                        style={{
-                          color: "var(--academia-muted-foreground)",
-                          fontFamily: "var(--font-body)",
-                        }}
-                      >
-                        {p.input ? `$${p.input}` : "—"}
-                      </td>
-                      <td
-                        style={{
-                          color: "var(--academia-muted-foreground)",
-                          fontFamily: "var(--font-body)",
-                        }}
-                      >
-                        {p.output ? `$${p.output}` : "—"}
-                      </td>
-                      <td
-                        style={{
-                          color: isCheapest
-                            ? "var(--academia-accent)"
-                            : "var(--academia-foreground)",
-                          fontFamily: "var(--font-heading)",
-                          fontWeight: isCheapest ? 600 : 400,
-                        }}
-                      >
-                        {bl ? `$${bl.toFixed(2)}` : "—"}
-                      </td>
-                      <td
-                        style={{
-                          color: "var(--academia-muted-foreground)",
-                          fontSize: 13,
-                          fontFamily: "var(--font-body)",
-                        }}
-                      >
-                        {p.note || "—"}
-                      </td>
-                    </tr>
-                  );
-                })}
+                {(() => {
+                  // Sort providers by blended price (cheapest first)
+                  const sortedProviders = [...model.apiProviders].sort((a, b) => {
+                    const aBlended = a.input && a.output ? (a.input + a.output) / 2 : Infinity;
+                    const bBlended = b.input && b.output ? (b.input + b.output) / 2 : Infinity;
+                    return aBlended - bBlended;
+                  });
+
+                  return sortedProviders.map((p, i) => {
+                    const bl = p.input && p.output ? (p.input + p.output) / 2 : null;
+                    const isCheapest = i === 0 && bl !== null;
+                    const providerUrl = PROVIDER_URLS[p.name];
+                    return (
+                      <tr key={i}>
+                        <td
+                          style={{
+                            fontWeight: isCheapest ? 600 : 400,
+                            color: isCheapest
+                              ? "var(--academia-accent)"
+                              : "var(--academia-foreground)",
+                            fontFamily: "var(--font-heading)",
+                          }}
+                        >
+                          {providerUrl ? (
+                            <a
+                              href={providerUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                color: isCheapest
+                                  ? "var(--academia-accent)"
+                                  : "var(--academia-foreground)",
+                                textDecoration: "none",
+                                borderBottom: `1px solid ${isCheapest ? "var(--academia-accent)" : "var(--academia-muted-foreground)"}`,
+                              }}
+                            >
+                              {p.name}
+                            </a>
+                          ) : (
+                            p.name
+                          )}{" "}
+                          {isCheapest && (
+                            <span
+                              style={{
+                                fontSize: 9,
+                                color: "var(--academia-accent)",
+                                marginLeft: 8,
+                                fontFamily: "var(--font-display)",
+                                letterSpacing: "0.1em",
+                              }}
+                            >
+                              CHEAPEST
+                            </span>
+                          )}
+                        </td>
+                        <td
+                          style={{
+                            color: "var(--academia-muted-foreground)",
+                            fontFamily: "var(--font-body)",
+                          }}
+                        >
+                          {p.input ? `$${p.input}` : "—"}
+                        </td>
+                        <td
+                          style={{
+                            color: "var(--academia-muted-foreground)",
+                            fontFamily: "var(--font-body)",
+                          }}
+                        >
+                          {p.output ? `$${p.output}` : "—"}
+                        </td>
+                        <td
+                          style={{
+                            color: isCheapest
+                              ? "var(--academia-accent)"
+                              : "var(--academia-foreground)",
+                            fontFamily: "var(--font-heading)",
+                            fontWeight: isCheapest ? 600 : 400,
+                          }}
+                        >
+                          {bl ? `$${bl.toFixed(2)}` : "—"}
+                        </td>
+                        <td
+                          style={{
+                            color: "var(--academia-muted-foreground)",
+                            fontSize: 13,
+                            fontFamily: "var(--font-body)",
+                          }}
+                        >
+                          {p.note || "—"}
+                        </td>
+                      </tr>
+                    );
+                  });
+                })()}
               </tbody>
             </table>
           </div>

@@ -6,10 +6,7 @@ export default function Nav() {
   const links = [
     { to: "/", label: "Expose" },
     { to: "/compare", label: "Compare" },
-    { to: "/benchmarks", label: "Benchmarks" },
-    { to: "/hardware", label: "Hardware" },
     { to: "/history", label: "History" },
-    { to: "/timemachine", label: "Time Machine" },
     { to: "/models", label: "Models" },
     { to: "/about", label: "About" },
   ];

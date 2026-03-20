@@ -4,10 +4,18 @@
  *
  * Fetches latest prices from various sources and updates the dataset.
  * Sources:
- * - Artificial Analysis (models, GPU pricing)
- * - RunPod API (GPU instances)
- * - Vast.ai API (GPU marketplace)
- * - OpenRouter API (model pricing)
+ * - OpenRouter API (300+ models, open-weight focus)
+ * - DeepInfra API (100+ open-source models)
+ * - SambaNova API (open-weight models)
+ * - Together AI API (200+ models)
+ * - Fireworks AI API (open-weight models)
+ * - Hyperbolic API (open-source LLMs)
+ * - Novita AI API (open-weight models)
+ * - Groq API (fast inference)
+ * - Lepton AI API (open-weight models)
+ * - Replicate API (open-source models)
+ * - FriendliAI API (enterprise inference)
+ * - SiliconFlow API (Chinese models)
  *
  * Run manually: node scripts/update-prices.js
  * Run via GitHub Actions: Daily at 00:00 UTC
@@ -23,14 +31,96 @@ const DATA_FILE = join(ROOT_DIR, "src", "data", "models.js");
 const PRICES_FILE = join(ROOT_DIR, "src", "data", "prices.json");
 const CHANGELOG_FILE = join(ROOT_DIR, "scripts", "price-changelog.json");
 
-// API Endpoints
+// API Endpoints for all providers
+// Most follow OpenAI-compatible format with pricing.prompt and pricing.completion
 const APIS = {
-  artificialAnalysis: {
-    models: "https://artificialanalysis.ai/api/models",
-    gpu: "https://artificialanalysis.ai/api/gpu-pricing",
+  // Primary aggregators (no auth required, most comprehensive)
+  openRouter: {
+    base: "https://openrouter.ai/api/v1",
+    models: "https://openrouter.ai/api/v1/models",
+    priceFormat: { input: "pricing.prompt", output: "pricing.completion" },
+    scaleToPerM: true, // Prices are per token, need to multiply by 1M
   },
-  openRouter: "https://openrouter.ai/api/v1/models",
-  runpod: "https://api.runpod.io/graphql",
+  deepInfra: {
+    base: "https://api.deepinfra.com/v1",
+    models: "https://api.deepinfra.com/v1/models",
+    priceFormat: {
+      input: "metadata.pricing.input_tokens",
+      output: "metadata.pricing.output_tokens",
+    },
+    scaleToPerM: false, // Already per million
+  },
+  sambanova: {
+    base: "https://api.sambanova.ai/v1",
+    models: "https://api.sambanova.ai/v1/models",
+    priceFormat: { input: "pricing.prompt", output: "pricing.completion" },
+    scaleToPerM: true,
+  },
+
+  // Auth required (will use cached data or skip if no key)
+  togetherAI: {
+    base: "https://api.together.ai/v1",
+    models: "https://api.together.ai/v1/models",
+    priceFormat: { input: "pricing.prompt", output: "pricing.completion" },
+    scaleToPerM: true,
+    requiresAuth: true,
+  },
+  fireworks: {
+    base: "https://api.fireworks.ai/inference/v1",
+    models: "https://api.fireworks.ai/inference/v1/models",
+    priceFormat: { input: "pricing.prompt", output: "pricing.completion" },
+    scaleToPerM: true,
+    requiresAuth: true,
+  },
+  hyperbolic: {
+    base: "https://api.hyperbolic.xyz/v1",
+    models: "https://api.hyperbolic.xyz/v1/models",
+    priceFormat: { input: "pricing.prompt", output: "pricing.completion" },
+    scaleToPerM: true,
+    requiresAuth: true,
+  },
+  novita: {
+    base: "https://api.novita.ai/v3",
+    models: "https://api.novita.ai/v3/model_instances",
+    priceFormat: { input: "pricing.input_price", output: "pricing.output_price" },
+    scaleToPerM: false,
+    requiresAuth: true,
+  },
+  groq: {
+    base: "https://api.groq.com/openai/v1",
+    models: "https://api.groq.com/openai/v1/models",
+    priceFormat: { input: "pricing.prompt", output: "pricing.completion" },
+    scaleToPerM: true,
+    requiresAuth: true,
+  },
+  lepton: {
+    base: "https://api.lepton.ai/api/v1",
+    models: "https://api.lepton.ai/api/v1/locations",
+    priceFormat: { input: "pricing.prompt", output: "pricing.completion" },
+    scaleToPerM: true,
+    requiresAuth: true,
+  },
+  replicate: {
+    base: "https://api.replicate.com/v1",
+    models: "https://api.replicate.com/v1/models",
+    priceFormat: { input: "pricing.input", output: "pricing.output" },
+    scaleToPerM: false,
+    requiresAuth: true,
+  },
+  friendli: {
+    base: "https://api.friendli.ai",
+    models: "https://api.friendli.ai/models",
+    priceFormat: { input: "pricing.input", output: "pricing.output" },
+    scaleToPerM: false,
+    requiresAuth: true,
+  },
+  siliconflow: {
+    base: "https://api.siliconflow.cn/v1",
+    models: "https://api.siliconflow.cn/v1/models",
+    priceFormat: { input: "pricing.input", output: "pricing.output" },
+    scaleToPerM: false,
+    requiresAuth: true,
+  },
 };
 
 /**
@@ -61,91 +151,172 @@ function sleep(ms) {
 }
 
 /**
- * Fetch Artificial Analysis model pricing
+ * Get nested value from object using dot notation path
  */
-async function fetchArtificialAnalysis() {
+function getNestedValue(obj, path) {
+  if (!path || !obj) return undefined;
+  return path.split(".").reduce((current, key) => current?.[key], obj);
+}
+
+/**
+ * Normalize model ID for matching across providers
+ */
+function normalizeModelId(id) {
+  return id
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "")
+    .replace(/\s+/g, "");
+}
+
+/**
+ * Extract prices from model data based on provider format
+ */
+function extractPrices(model, providerConfig) {
+  const { priceFormat, scaleToPerM } = providerConfig;
+
+  let inputPrice = getNestedValue(model, priceFormat.input);
+  let outputPrice = getNestedValue(model, priceFormat.output);
+
+  // Convert string prices to numbers
+  if (typeof inputPrice === "string") inputPrice = parseFloat(inputPrice);
+  if (typeof outputPrice === "string") outputPrice = parseFloat(outputPrice);
+
+  // Scale to per-million if needed
+  const scale = scaleToPerM ? 1_000_000 : 1;
+
+  return {
+    input: inputPrice ? inputPrice * scale : null,
+    output: outputPrice ? outputPrice * scale : null,
+  };
+}
+
+/**
+ * Fetch from a generic OpenAI-compatible API endpoint
+ */
+async function fetchProvider(providerKey, providerConfig) {
   try {
-    console.log("Fetching from Artificial Analysis...");
-    const data = await fetchWithRetry(APIS.artificialAnalysis.models);
+    console.log(`Fetching from ${providerKey}...`);
+
+    // Check if auth is required but not provided
+    if (providerConfig.requiresAuth && !process.env[`${providerKey.toUpperCase()}_API_KEY`]) {
+      console.log(`  Skipping ${providerKey}: No API key provided`);
+      return null;
+    }
+
+    const headers = {};
+    if (providerConfig.requiresAuth) {
+      headers["Authorization"] = `Bearer ${process.env[`${providerKey.toUpperCase()}_API_KEY`]}`;
+    }
+
+    const data = await fetchWithRetry(providerConfig.models, { headers });
 
     const prices = {};
-    if (Array.isArray(data)) {
-      for (const model of data) {
-        if (model.pricing?.input && model.pricing?.output) {
-          prices[model.id || model.name] = {
-            input: model.pricing.input,
-            output: model.pricing.output,
-            context: model.context_window,
-            source: "artificial-analysis",
-            fetchedAt: new Date().toISOString(),
-          };
-        }
+    const models = data?.data || data?.models || [];
+
+    for (const model of models) {
+      const { input, output } = extractPrices(model, providerConfig);
+      if (input !== null && output !== null) {
+        const modelId = model.id || model.name;
+        prices[modelId] = {
+          input: parseFloat(input.toFixed(4)),
+          output: parseFloat(output.toFixed(4)),
+          context: model.context_length || model.context_window,
+          source: providerKey,
+          fetchedAt: new Date().toISOString(),
+        };
       }
     }
+
+    console.log(`  Found ${Object.keys(prices).length} models with pricing`);
     return prices;
   } catch (error) {
-    console.error("Failed to fetch from Artificial Analysis:", error.message);
+    console.error(`Failed to fetch from ${providerKey}:`, error.message);
     return null;
   }
 }
 
 /**
- * Fetch Artificial Analysis GPU pricing
- */
-async function fetchArtificialAnalysisGPU() {
-  try {
-    console.log("Fetching GPU pricing from Artificial Analysis...");
-    const data = await fetchWithRetry(APIS.artificialAnalysis.gpu);
-
-    const gpuPrices = {};
-    if (Array.isArray(data)) {
-      for (const gpu of data) {
-        const key =
-          gpu.gpu?.toLowerCase()?.replace(/\s+/g, "") ||
-          gpu.name?.toLowerCase()?.replace(/\s+/g, "");
-        if (key && gpu.price_per_hour) {
-          gpuPrices[key] = {
-            pricePerHour: gpu.price_per_hour,
-            provider: gpu.provider || "Multiple",
-            source: "artificial-analysis",
-            fetchedAt: new Date().toISOString(),
-          };
-        }
-      }
-    }
-    return gpuPrices;
-  } catch (error) {
-    console.error("Failed to fetch GPU pricing:", error.message);
-    return null;
-  }
-}
-
-/**
- * Fetch OpenRouter model pricing
+ * Fetch OpenRouter model pricing (no auth required)
  */
 async function fetchOpenRouter() {
-  try {
-    console.log("Fetching from OpenRouter...");
-    const data = await fetchWithRetry(APIS.openRouter);
+  return fetchProvider("openRouter", APIS.openRouter);
+}
 
-    const prices = {};
-    if (data?.data) {
-      for (const model of data.data) {
-        if (model.pricing?.prompt || model.pricing?.completion) {
-          prices[model.id] = {
-            input: model.pricing.prompt * 1_000_000, // Convert to per-M
-            output: model.pricing.completion * 1_000_000,
-            source: "openrouter",
-            fetchedAt: new Date().toISOString(),
-          };
-        }
-      }
-    }
-    return prices;
-  } catch (error) {
-    console.error("Failed to fetch from OpenRouter:", error.message);
-    return null;
-  }
+/**
+ * Fetch DeepInfra model pricing (no auth required)
+ */
+async function fetchDeepInfra() {
+  return fetchProvider("deepInfra", APIS.deepInfra);
+}
+
+/**
+ * Fetch SambaNova model pricing (no auth required)
+ */
+async function fetchSambaNova() {
+  return fetchProvider("sambanova", APIS.sambanova);
+}
+
+/**
+ * Fetch Together AI model pricing (auth required)
+ */
+async function fetchTogetherAI() {
+  return fetchProvider("togetherAI", APIS.togetherAI);
+}
+
+/**
+ * Fetch Fireworks AI model pricing (auth required)
+ */
+async function fetchFireworks() {
+  return fetchProvider("fireworks", APIS.fireworks);
+}
+
+/**
+ * Fetch Hyperbolic model pricing (auth required)
+ */
+async function fetchHyperbolic() {
+  return fetchProvider("hyperbolic", APIS.hyperbolic);
+}
+
+/**
+ * Fetch Novita AI model pricing (auth required)
+ */
+async function fetchNovita() {
+  return fetchProvider("novita", APIS.novita);
+}
+
+/**
+ * Fetch Groq model pricing (auth required)
+ */
+async function fetchGroq() {
+  return fetchProvider("groq", APIS.groq);
+}
+
+/**
+ * Fetch Lepton AI model pricing (auth required)
+ */
+async function fetchLepton() {
+  return fetchProvider("lepton", APIS.lepton);
+}
+
+/**
+ * Fetch Replicate model pricing (auth required)
+ */
+async function fetchReplicate() {
+  return fetchProvider("replicate", APIS.replicate);
+}
+
+/**
+ * Fetch FriendliAI model pricing (auth required)
+ */
+async function fetchFriendli() {
+  return fetchProvider("friendli", APIS.friendli);
+}
+
+/**
+ * Fetch SiliconFlow model pricing (auth required)
+ */
+async function fetchSiliconFlow() {
+  return fetchProvider("siliconflow", APIS.siliconflow);
 }
 
 /**
@@ -202,10 +373,10 @@ function updateModelsFile(newPrices) {
 
   // Update the "verified" date comment
   const today = new Date();
-  const dateStr = today.toLocaleString("en-US", { month: "YYYY", day: "numeric", year: "numeric" });
+  const dateStr = today.toLocaleString("en-US", { month: "long", year: "numeric" });
   content = content.replace(
     /\/\/ All pricing data verified [A-Za-z]+ \d{4}/,
-    `// All pricing data verified ${today.toLocaleString("en-US", { month: "long", year: "numeric" })}`,
+    `// All pricing data verified ${dateStr}`,
   );
 
   // Note: For production, you'd want more sophisticated parsing
@@ -234,23 +405,79 @@ async function main() {
     }
   }
 
-  // Fetch from all sources
-  const [aaModels, aaGPU, openRouter] = await Promise.all([
-    fetchArtificialAnalysis(),
-    fetchArtificialAnalysisGPU(),
+  // Fetch from all sources (parallel for non-auth, sequential for auth to avoid rate limits)
+  console.log("📡 Fetching from public endpoints (no auth required)...\n");
+  const [openRouter, deepInfra, sambanova] = await Promise.all([
     fetchOpenRouter(),
+    fetchDeepInfra(),
+    fetchSambaNova(),
   ]);
 
-  // Combine results
-  const newPrices = {
-    models: { ...aaModels, ...openRouter },
-    gpu: aaGPU,
-    fetchedAt: new Date().toISOString(),
+  console.log("\n📡 Fetching from authenticated endpoints...\n");
+  const [
+    togetherAI,
+    fireworks,
+    hyperbolic,
+    novita,
+    groq,
+    lepton,
+    replicate,
+    friendli,
+    siliconflow,
+  ] = await Promise.all([
+    fetchTogetherAI(),
+    fetchFireworks(),
+    fetchHyperbolic(),
+    fetchNovita(),
+    fetchGroq(),
+    fetchLepton(),
+    fetchReplicate(),
+    fetchFriendli(),
+    fetchSiliconFlow(),
+  ]);
+
+  // Combine results from all providers
+  const allPrices = {
+    ...openRouter,
+    ...deepInfra,
+    ...sambanova,
+    ...togetherAI,
+    ...fireworks,
+    ...hyperbolic,
+    ...novita,
+    ...groq,
+    ...lepton,
+    ...replicate,
+    ...friendli,
+    ...siliconflow,
   };
+
+  // Filter out null results
+  const newPrices = {
+    models: Object.fromEntries(Object.entries(allPrices).filter(([_, v]) => v !== null)),
+    fetchedAt: new Date().toISOString(),
+    sources: {
+      openRouter: openRouter ? Object.keys(openRouter).length : 0,
+      deepInfra: deepInfra ? Object.keys(deepInfra).length : 0,
+      sambanova: sambanova ? Object.keys(sambanova).length : 0,
+      togetherAI: togetherAI ? Object.keys(togetherAI).length : 0,
+      fireworks: fireworks ? Object.keys(fireworks).length : 0,
+      hyperbolic: hyperbolic ? Object.keys(hyperbolic).length : 0,
+      novita: novita ? Object.keys(novita).length : 0,
+      groq: groq ? Object.keys(groq).length : 0,
+      lepton: lepton ? Object.keys(lepton).length : 0,
+      replicate: replicate ? Object.keys(replicate).length : 0,
+      friendli: friendli ? Object.keys(friendli).length : 0,
+      siliconflow: siliconflow ? Object.keys(siliconflow).length : 0,
+    },
+  };
+
+  const totalModels = Object.keys(newPrices.models).length;
+  console.log(`\n💾 Fetched prices for ${totalModels} unique models`);
 
   // Save new prices
   writeFileSync(PRICES_FILE, JSON.stringify(newPrices, null, 2));
-  console.log("\n💾 Saved new prices to prices.json");
+  console.log("💾 Saved new prices to prices.json");
 
   // Generate changelog
   const changes = comparePrices(oldPrices.models, newPrices.models);
@@ -295,8 +522,16 @@ async function main() {
 
   console.log("\n✨ Price update complete!");
 
+  // Print source summary
+  console.log("\n📊 Sources summary:");
+  for (const [source, count] of Object.entries(newPrices.sources)) {
+    if (count > 0) {
+      console.log(`  ${source}: ${count} models`);
+    }
+  }
+
   // Exit with error if no data fetched (for CI)
-  if (!aaModels && !openRouter) {
+  if (totalModels === 0) {
     console.error("⚠️ Warning: No pricing data fetched from any source");
     process.exit(1);
   }

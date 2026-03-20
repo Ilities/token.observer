@@ -4,10 +4,7 @@ import Home from "./pages/Home";
 import Compare from "./pages/Compare";
 import { ModelsList, ModelDetail } from "./pages/Models";
 import About from "./pages/About";
-import Benchmarks from "./pages/Benchmarks";
-import Hardware from "./pages/Hardware";
 import History from "./pages/History";
-import TimeMachine from "./pages/TimeMachine";
 
 function Footer() {
   return (
@@ -77,10 +74,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/compare" element={<Compare />} />
-          <Route path="/benchmarks" element={<Benchmarks />} />
-          <Route path="/hardware" element={<Hardware />} />
           <Route path="/history" element={<History />} />
-          <Route path="/timemachine" element={<TimeMachine />} />
           <Route path="/models" element={<ModelsList />} />
           <Route path="/models/:id" element={<ModelDetail />} />
           <Route path="/about" element={<About />} />
