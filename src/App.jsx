@@ -1,10 +1,30 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Compare from "./pages/Compare";
 import { ModelsList, ModelDetail } from "./pages/Models";
 import About from "./pages/About";
 import History from "./pages/History";
+
+// Component to handle redirect from 404.html
+function RedirectHandler() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if there's a redirect URI stored from 404.html
+    const redirectUri = sessionStorage.getItem('gh_redirect_uri');
+    if (redirectUri && redirectUri !== location.pathname + location.search + location.hash) {
+      // Clear the stored redirect URI to prevent infinite loops
+      sessionStorage.removeItem('gh_redirect_uri');
+      // Navigate to the original path
+      navigate(redirectUri, { replace: true });
+    }
+  }, [location, navigate]);
+
+  return null;
+}
 
 function Footer() {
   return (
@@ -66,9 +86,10 @@ function Footer() {
   );
 }
 
-export default function App() {
+function AppContent() {
   return (
-    <BrowserRouter>
+    <>
+      <RedirectHandler />
       <Nav />
       <main>
         <Routes>
@@ -81,6 +102,14 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
