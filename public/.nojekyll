@@ -1,0 +1,2 @@
+# Disable Jekyll processing for GitHub Pages
+# This allows us to use underscore-prefixed files like _redirects
