@@ -1,27 +1,27 @@
 import { useState } from "react";
 import { MODELS, TIERS } from "../data/models";
 
-// Provider URLs for linking
+// Provider URLs for linking (direct to pricing pages)
 const PROVIDER_URLS = {
-  "Alibaba Cloud": "https://www.aliyun.com/product/bailian",
-  OpenRouter: "https://openrouter.ai",
-  DeepInfra: "https://deepinfra.com",
-  Groq: "https://groq.com",
-  Hyperbolic: "https://hyperbolic.xyz",
-  Fireworks: "https://fireworks.ai",
-  "Together AI": "https://together.ai",
-  "Lepton AI": "https://lepton.ai",
-  SambaNova: "https://sambanova.ai",
-  Novita: "https://novita.ai",
-  Replicate: "https://replicate.com",
-  FriendliAI: "https://friendli.ai",
-  SiliconFlow: "https://siliconflow.cn",
-  Anyscale: "https://anyscale.com",
-  Cerebras: "https://cerebras.ai",
-  "Zhipu Official": "https://open.bigmodel.cn",
-  "MiniMax Official": "https://www.minimaxi.com",
-  "DeepSeek Official": "https://www.deepseek.com",
-  "Moonshot Official": "https://www.moonshot.cn",
+  "Alibaba Cloud": "https://www.aliyun.com/product/bailian/pricing",
+  OpenRouter: "https://openrouter.ai/models",
+  DeepInfra: "https://deepinfra.com/pricing",
+  Groq: "https://groq.com/pricing",
+  Hyperbolic: "https://app.hyperbolic.xyz/pricing",
+  Fireworks: "https://fireworks.ai/pricing",
+  "Together AI": "https://www.together.ai/pricing",
+  "Lepton AI": "https://www.lepton.ai/playground",
+  SambaNova: "https://cloud.sambanova.ai/plans/pricing",
+  Novita: "https://novita.ai/pricing",
+  Replicate: "https://replicate.com/pricing",
+  FriendliAI: "https://friendli.ai/pricing",
+  SiliconFlow: "https://siliconflow.cn/pricing",
+  Anyscale: "https://anyscale.com/pricing",
+  Cerebras: "https://www.cerebras.ai/pricing",
+  "Zhipu Official": "https://open.bigmodel.cn/pricing",
+  "MiniMax Official": "https://www.minimaxi.com/price",
+  "DeepSeek Official": "https://www.deepseek.com/pricing",
+  "Moonshot Official": "https://platform.moonshot.cn/pricing",
 };
 
 export default function Compare() {
