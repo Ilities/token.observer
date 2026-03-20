@@ -7,7 +7,6 @@ const PROVIDER_URLS = {
   OpenRouter: "https://openrouter.ai/models",
   DeepInfra: "https://deepinfra.com/pricing",
   Groq: "https://groq.com/pricing",
-  Hyperbolic: "https://app.hyperbolic.xyz/pricing",
   Fireworks: "https://fireworks.ai/pricing",
   "Together AI": "https://www.together.ai/pricing",
   "Lepton AI": "https://www.lepton.ai/playground",

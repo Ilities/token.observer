@@ -9,7 +9,6 @@
  * - SambaNova API (open-weight models)
  * - Together AI API (200+ models)
  * - Fireworks AI API (open-weight models)
- * - Hyperbolic API (open-source LLMs)
  * - Novita AI API (open-weight models)
  * - Groq API (fast inference)
  * - Lepton AI API (open-weight models)
@@ -68,13 +67,6 @@ const APIS = {
   fireworks: {
     base: "https://api.fireworks.ai/inference/v1",
     models: "https://api.fireworks.ai/inference/v1/models",
-    priceFormat: { input: "pricing.prompt", output: "pricing.completion" },
-    scaleToPerM: true,
-    requiresAuth: true,
-  },
-  hyperbolic: {
-    base: "https://api.hyperbolic.xyz/v1",
-    models: "https://api.hyperbolic.xyz/v1/models",
     priceFormat: { input: "pricing.prompt", output: "pricing.completion" },
     scaleToPerM: true,
     requiresAuth: true,
@@ -271,13 +263,6 @@ async function fetchFireworks() {
 }
 
 /**
- * Fetch Hyperbolic model pricing (auth required)
- */
-async function fetchHyperbolic() {
-  return fetchProvider("hyperbolic", APIS.hyperbolic);
-}
-
-/**
  * Fetch Novita AI model pricing (auth required)
  */
 async function fetchNovita() {
@@ -414,27 +399,17 @@ async function main() {
   ]);
 
   console.log("\n📡 Fetching from authenticated endpoints...\n");
-  const [
-    togetherAI,
-    fireworks,
-    hyperbolic,
-    novita,
-    groq,
-    lepton,
-    replicate,
-    friendli,
-    siliconflow,
-  ] = await Promise.all([
-    fetchTogetherAI(),
-    fetchFireworks(),
-    fetchHyperbolic(),
-    fetchNovita(),
-    fetchGroq(),
-    fetchLepton(),
-    fetchReplicate(),
-    fetchFriendli(),
-    fetchSiliconFlow(),
-  ]);
+  const [togetherAI, fireworks, novita, groq, lepton, replicate, friendli, siliconflow] =
+    await Promise.all([
+      fetchTogetherAI(),
+      fetchFireworks(),
+      fetchNovita(),
+      fetchGroq(),
+      fetchLepton(),
+      fetchReplicate(),
+      fetchFriendli(),
+      fetchSiliconFlow(),
+    ]);
 
   // Combine results from all providers
   const allPrices = {
@@ -443,7 +418,6 @@ async function main() {
     ...sambanova,
     ...togetherAI,
     ...fireworks,
-    ...hyperbolic,
     ...novita,
     ...groq,
     ...lepton,
@@ -462,7 +436,6 @@ async function main() {
       sambanova: sambanova ? Object.keys(sambanova).length : 0,
       togetherAI: togetherAI ? Object.keys(togetherAI).length : 0,
       fireworks: fireworks ? Object.keys(fireworks).length : 0,
-      hyperbolic: hyperbolic ? Object.keys(hyperbolic).length : 0,
       novita: novita ? Object.keys(novita).length : 0,
       groq: groq ? Object.keys(groq).length : 0,
       lepton: lepton ? Object.keys(lepton).length : 0,
