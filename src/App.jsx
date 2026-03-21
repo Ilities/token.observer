@@ -15,11 +15,16 @@ function RedirectHandler() {
   useEffect(() => {
     // Check if there's a redirect URI stored from 404.html
     const redirectUri = sessionStorage.getItem('gh_redirect_uri');
-    if (redirectUri && redirectUri !== location.pathname + location.search + location.hash) {
+    if (redirectUri) {
       // Clear the stored redirect URI to prevent infinite loops
       sessionStorage.removeItem('gh_redirect_uri');
-      // Navigate to the original path
-      navigate(redirectUri, { replace: true });
+      
+      // Only navigate if we're not already at the target location
+      const currentPath = location.pathname + location.search + location.hash;
+      if (redirectUri !== currentPath) {
+        // Navigate to the original path
+        navigate(redirectUri, { replace: true });
+      }
     }
   }, [location, navigate]);
 

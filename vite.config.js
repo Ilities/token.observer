@@ -34,7 +34,7 @@ const generate404Page = () => ({
     // Redirect all routes to index.html to enable client-side routing
     // Store the original URL in sessionStorage so the app can handle it
     sessionStorage.setItem('gh_redirect_uri', window.location.pathname + window.location.search + window.location.hash);
-    window.location.href = window.location.origin + '/token.observer/';
+    window.location.href = '/';
   </script>
 </head>
 <body>
