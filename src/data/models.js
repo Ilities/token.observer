@@ -6,6 +6,7 @@ import data from "./models.json";
 export const TIERS = data.TIERS;
 export const GPU_CONFIGS = data.GPU_CONFIGS;
 export const MODELS = data.MODELS;
+export const SORTED_MODELS = [...data.MODELS].sort((a, b) => a.name.localeCompare(b.name));
 export const USAGE_PROFILES = data.USAGE_PROFILES;
 export const THESIS_POINTS = data.THESIS_POINTS;
 

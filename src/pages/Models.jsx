@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
-import { MODELS, TIERS } from "../data/models";
+import { SORTED_MODELS, TIERS } from "../data/models";
 import ModelCard from "../components/ModelCard";
 import {
   Radar,
@@ -171,7 +171,7 @@ function ModelsListView() {
             </tr>
           </thead>
           <tbody>
-            {MODELS.map((m) => {
+            {SORTED_MODELS.map((m) => {
               const tier = TIERS[m.tier];
               const cheapest = m.apiProviders.find((p) => p.input && p.output);
               const hardware = m.purchaseOptions[0];
@@ -248,7 +248,7 @@ function ModelsListView() {
           gap: 20,
         }}
       >
-        {MODELS.map((m) => (
+        {SORTED_MODELS.map((m) => (
           <ModelCard key={m.id} model={m} />
         ))}
       </div>
@@ -264,7 +264,7 @@ function BenchmarksTab() {
   const [viewMode, setViewMode] = useState("both");
 
   const chartData = useMemo(() => {
-    return MODELS.map((model) => {
+    return SORTED_MODELS.map((model) => {
       const data = { name: model.name, family: model.family };
       BENCHMARKS.forEach((bench) => {
         if (model.benchmarks[bench.key]) {
@@ -277,7 +277,7 @@ function BenchmarksTab() {
   }, []);
 
   const sortedModels = useMemo(() => {
-    let models = [...MODELS];
+    let models = [...SORTED_MODELS];
     if (selectedModels.length > 0) {
       models = models.filter((m) => selectedModels.includes(m.id));
     }
@@ -322,7 +322,7 @@ function BenchmarksTab() {
   const topModels = useMemo(() => {
     const ranked = {};
     BENCHMARKS.forEach((bench) => {
-      const sorted = [...MODELS].sort((a, b) => {
+      const sorted = [...SORTED_MODELS].sort((a, b) => {
         const aVal = a.benchmarks[bench.key] || 0;
         const bVal = b.benchmarks[bench.key] || 0;
         return bVal - aVal;
@@ -480,7 +480,7 @@ function BenchmarksTab() {
             </div>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 20 }}>
-              {MODELS.slice(0, 8).map((m) => (
+              {SORTED_MODELS.slice(0, 8).map((m) => (
                 <button
                   key={m.id}
                   onClick={() => toggleModel(m.id)}
@@ -502,7 +502,7 @@ function BenchmarksTab() {
                     selectedModels.length > 0
                       ? chartData.filter((d) =>
                           selectedModels.some(
-                            (id) => MODELS.find((m) => m.id === id)?.name === d.name,
+                            (id) => SORTED_MODELS.find((m) => m.id === id)?.name === d.name,
                           ),
                         )
                       : chartData.slice(0, 5)
@@ -680,7 +680,7 @@ function BenchmarksTab() {
                       {BENCHMARKS.map((bench) => {
                         const score = model.benchmarks[bench.key];
                         const maxInCol = Math.max(
-                          ...MODELS.map((m) => m.benchmarks[bench.key] || 0),
+                          ...SORTED_MODELS.map((m) => m.benchmarks[bench.key] || 0),
                         );
                         const isTop = score && score >= maxInCol * 0.95;
                         return (
@@ -777,7 +777,7 @@ function BenchmarksTab() {
 
 export function ModelDetail() {
   const { id } = useParams();
-  const model = MODELS.find((m) => m.id === id);
+  const model = SORTED_MODELS.find((m) => m.id === id);
   const tier = TIERS[model?.tier];
 
   if (!model)
