@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MODELS, TIERS } from "../data/models";
+import { SORTED_MODELS, TIERS } from "../data/models";
 
 // Provider URLs for linking (direct to pricing pages)
 const PROVIDER_URLS = {
@@ -24,9 +24,9 @@ const PROVIDER_URLS = {
 };
 
 export default function Compare() {
-  const [selectedModel, setSelectedModel] = useState(MODELS[0].id);
+  const [selectedModel, setSelectedModel] = useState(SORTED_MODELS[0].id);
 
-  const model = MODELS.find((m) => m.id === selectedModel);
+  const model = SORTED_MODELS.find((m) => m.id === selectedModel);
   const tier = TIERS[model.tier];
 
   return (
@@ -89,7 +89,7 @@ export default function Compare() {
             Select Model
           </span>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            {MODELS.map((m) => (
+            {SORTED_MODELS.map((m) => (
               <button
                 key={m.id}
                 onClick={() => setSelectedModel(m.id)}

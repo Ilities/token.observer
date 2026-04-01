@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MODELS, TIERS } from "../data/models";
+import { MODELS, SORTED_MODELS, TIERS } from "../data/models";
 import ModelCard from "../components/ModelCard";
 import FrontierTimelineGraph from "../components/FrontierTimelineGraph";
 import { HARDWARE_CATEGORIES, MODEL_VRAM_MAP, GGUF_SIZES, estimateVram } from "../data/hardware";
@@ -499,7 +499,7 @@ export default function Home() {
               gap: 20,
             }}
           >
-            {MODELS.map((m) => (
+            {SORTED_MODELS.map((m) => (
               <ModelCard key={m.id} model={m} />
             ))}
           </div>
