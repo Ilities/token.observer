@@ -1872,6 +1872,123 @@
           "provider": "RunPod"
         }
       ]
+    },
+    {
+      "id": "glm-5.1",
+      "tier": "top",
+      "name": "GLM-5.1",
+      "family": "Zhipu AI",
+      "type": "MoE",
+      "totalParams": "744B",
+      "activeParams": "40B",
+      "releaseDate": "Mar 2026",
+      "license": "MIT",
+      "context": "256K",
+      "architecture": "Large-scale MoE, native agent, multimodal, improved coding",
+      "closestApi": "Claude Opus 4.6",
+      "verdict": "IMPRACTICAL",
+      "verdictNote": "744B params, 40B active. Improved coding performance over GLM-5. Requires 176GB at Q2 or 805GB at Q8. ⚠️ Mac Studio can load at Q1-Q2 but runs at ~20 t/s — experimentation only. Production needs 8× H100/H200.",
+      "benchmarks": {
+        "mmlu": 86.2,
+        "mmluPro": 72.1,
+        "swebench": 79.5,
+        "gpqa": 87.2,
+        "livecodebench": 58,
+        "aime": 86,
+        "ifeval": 89,
+        "arena": 1468
+      },
+      "apiProviders": [
+        {
+          "name": "Zhipu Official",
+          "input": 0.3,
+          "output": 1.2
+        },
+        {
+          "name": "OpenRouter",
+          "input": 0.38,
+          "output": 1.52
+        },
+        {
+          "name": "DeepInfra",
+          "input": 0.35,
+          "output": 1.4
+        },
+        {
+          "name": "Groq",
+          "input": 0.33,
+          "output": 1.32
+        },
+        {
+          "name": "Fireworks",
+          "input": 0.36,
+          "output": 1.44
+        },
+        {
+          "name": "Together AI",
+          "input": 0.39,
+          "output": 1.56
+        },
+        {
+          "name": "Lepton AI",
+          "input": 0.35,
+          "output": 1.4
+        },
+        {
+          "name": "SambaNova",
+          "input": 0.32,
+          "output": 1.28
+        },
+        {
+          "name": "Novita",
+          "input": 0.34,
+          "output": 1.36
+        },
+        {
+          "name": "Replicate",
+          "input": 0.4,
+          "output": 1.6
+        },
+        {
+          "name": "FriendliAI",
+          "input": 0.37,
+          "output": 1.48
+        },
+        {
+          "name": "SiliconFlow",
+          "input": 0.29,
+          "output": 1.16
+        },
+        {
+          "name": "Anyscale",
+          "input": 0.42,
+          "output": 1.68
+        },
+        {
+          "name": "Cerebras",
+          "input": 0.44,
+          "output": 1.76
+        }
+      ],
+      "purchaseOptions": [
+        {
+          "name": "8× H100 80GB",
+          "totalVram": "640GB",
+          "purchaseCost": 200000,
+          "usedCost": 120000,
+          "monthlyElectricity": 150,
+          "canRunModel": "Q2-Q3 at ~15-30 t/s — 241GB minimum",
+          "quality": "Acceptable at Q2-Q3"
+        }
+      ],
+      "rentalOptions": [
+        {
+          "name": "RunPod 8× H100",
+          "costPerHr": 17.36,
+          "costPerDay24": 416.64,
+          "provider": "RunPod"
+        }
+      ]
     }
   ],
   "USAGE_PROFILES": [

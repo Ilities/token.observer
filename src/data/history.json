@@ -1183,6 +1183,24 @@
       }
     },
     {
+      "id": "glm-5.1",
+      "name": "GLM-5.1",
+      "family": "GLM",
+      "organization": "Zhipu AI",
+      "type": "open",
+      "releaseDate": "2026-03-27",
+      "benchmarks": {
+        "mmlu": 86.2,
+        "mmluPro": 72.1,
+        "swebench": 79.5,
+        "gpqa": 87.2,
+        "humanEval": 89.5,
+        "aime": 86.0,
+        "ifeval": 89.0,
+        "arena": 1468
+      }
+    },
+    {
       "id": "stepfun-step3.5-flash",
       "name": "StepFun Step-3.5-Flash",
       "family": "StepFun",
