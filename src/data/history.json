@@ -1064,6 +1064,63 @@
       }
     },
     {
+      "id": "gemma-4-31b",
+      "name": "Gemma 4 31B",
+      "family": "Gemma",
+      "organization": "Google",
+      "type": "open",
+      "releaseDate": "2026-04-02",
+      "benchmarks": {
+        "mmlu": 85.2,
+        "mmluPro": 76.9,
+        "gpqaDiamond": 84.3,
+        "aime": 89.2,
+        "livecodebench": 80.0,
+        "arena": 1452
+      }
+    },
+    {
+      "id": "gemma-4-26b",
+      "name": "Gemma 4 26B-A3.8B",
+      "family": "Gemma",
+      "organization": "Google",
+      "type": "open",
+      "releaseDate": "2026-04-02",
+      "benchmarks": {
+        "mmlu": 82.6,
+        "mmluPro": 73.8,
+        "aime": 88.3,
+        "livecodebench": 77.1,
+        "arena": 1441
+      }
+    },
+    {
+      "id": "gemma-4-e4b",
+      "name": "Gemma 4 E4B",
+      "family": "Gemma",
+      "organization": "Google",
+      "type": "open",
+      "releaseDate": "2026-04-02",
+      "benchmarks": {
+        "mmlu": 69.4,
+        "mmluPro": 52.6,
+        "aime": 42.5
+      }
+    },
+    {
+      "id": "gemma-4-e2b",
+      "name": "Gemma 4 E2B",
+      "family": "Gemma",
+      "organization": "Google",
+      "type": "open",
+      "releaseDate": "2026-04-02",
+      "benchmarks": {
+        "mmlu": 60.0,
+        "mmluPro": 44.2,
+        "aime": 37.5
+      }
+    },
+    {
       "id": "gemma-3-27b",
       "name": "Gemma 3 27B",
       "family": "Gemma",
