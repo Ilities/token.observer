@@ -1874,6 +1874,247 @@
       ]
     },
     {
+      "id": "gemma-4-31b",
+      "tier": "mid",
+      "name": "Gemma 4 31B",
+      "family": "Gemma / Google",
+      "type": "Dense",
+      "totalParams": "31B",
+      "activeParams": "31B",
+      "releaseDate": "Apr 2026",
+      "license": "Apache 2.0",
+      "context": "256K",
+      "architecture": "Dense transformer, multimodal, native function calling",
+      "closestApi": "Claude Sonnet 4.6",
+      "verdict": "VIABLE",
+      "verdictNote": "Single H100/A100 80GB viable. Q4 on RTX 4090 possible with offload. Excellent Apache 2.0 license.",
+      "benchmarks": {
+        "mmlu": 85.2,
+        "mmluPro": 76.9,
+        "gpqaDiamond": 84.3,
+        "aime": 89.2,
+        "livecodebench": 80.0,
+        "arena": 1452
+      },
+      "apiProviders": [],
+      "purchaseOptions": [
+        {
+          "name": "1× H100 80GB PCIe",
+          "totalVram": "80GB",
+          "purchaseCost": 25000,
+          "usedCost": 16000,
+          "monthlyElectricity": 20,
+          "canRunModel": "FP16 at ~60-90 t/s — 62GB VRAM",
+          "quality": "Full quality"
+        },
+        {
+          "name": "1× A100 80GB PCIe",
+          "totalVram": "80GB",
+          "purchaseCost": 10000,
+          "usedCost": 6000,
+          "monthlyElectricity": 18,
+          "canRunModel": "FP16 at ~50-70 t/s",
+          "quality": "Full quality"
+        },
+        {
+          "name": "1× RTX 4090 (24GB) + RAM",
+          "totalVram": "24GB + 64GB RAM",
+          "purchaseCost": 2200,
+          "usedCost": 1500,
+          "monthlyElectricity": 18,
+          "canRunModel": "Q4 with offload at ~10-20 t/s",
+          "quality": "Good for experimentation"
+        }
+      ],
+      "rentalOptions": [
+        {
+          "name": "RunPod H100 Community",
+          "costPerHr": 2.17,
+          "costPerDay24": 52.08,
+          "provider": "RunPod"
+        },
+        {
+          "name": "RunPod A100 Community",
+          "costPerHr": 1.33,
+          "costPerDay24": 31.92,
+          "provider": "RunPod"
+        }
+      ]
+    },
+    {
+      "id": "gemma-4-26b",
+      "tier": "mid",
+      "name": "Gemma 4 26B-A3.8B",
+      "family": "Gemma / Google",
+      "type": "MoE",
+      "totalParams": "26B",
+      "activeParams": "3.8B",
+      "releaseDate": "Apr 2026",
+      "license": "Apache 2.0",
+      "context": "256K",
+      "architecture": "MoE with 3.8B active params, highly efficient for consumer GPUs",
+      "closestApi": "Claude Sonnet 4.6",
+      "verdict": "VIABLE",
+      "verdictNote": "Only 3.8B active params makes it extremely fast. Consumer GPU friendly. Excellent efficiency.",
+      "benchmarks": {
+        "mmlu": 82.6,
+        "mmluPro": 73.8,
+        "aime": 88.3,
+        "livecodebench": 77.1,
+        "arena": 1441
+      },
+      "apiProviders": [],
+      "purchaseOptions": [
+        {
+          "name": "1× RTX 4090 (24GB)",
+          "totalVram": "24GB",
+          "purchaseCost": 1800,
+          "usedCost": 1100,
+          "monthlyElectricity": 15,
+          "canRunModel": "Q4 at ~80-120 t/s — 16GB VRAM",
+          "quality": "Full quality"
+        },
+        {
+          "name": "1× RTX 5090 (32GB)",
+          "totalVram": "32GB",
+          "purchaseCost": 2200,
+          "usedCost": 1500,
+          "monthlyElectricity": 16,
+          "canRunModel": "Q4 at ~100-140 t/s",
+          "quality": "Full quality"
+        },
+        {
+          "name": "1× A100 80GB",
+          "totalVram": "80GB",
+          "purchaseCost": 10000,
+          "usedCost": 6000,
+          "monthlyElectricity": 20,
+          "canRunModel": "FP16 at ~150-200 t/s",
+          "quality": "Full quality"
+        }
+      ],
+      "rentalOptions": [
+        {
+          "name": "RunPod RTX 4090",
+          "costPerHr": 0.48,
+          "costPerDay24": 11.52,
+          "provider": "RunPod"
+        },
+        {
+          "name": "Vast.ai RTX 4090",
+          "costPerHr": 0.35,
+          "costPerDay24": 8.4,
+          "provider": "Vast.ai"
+        },
+        {
+          "name": "RunPod A100 Community",
+          "costPerHr": 1.33,
+          "costPerDay24": 31.92,
+          "provider": "RunPod"
+        }
+      ]
+    },
+    {
+      "id": "gemma-4-e4b",
+      "tier": "fast",
+      "name": "Gemma 4 E4B",
+      "family": "Gemma / Google",
+      "type": "Dense",
+      "totalParams": "~4B",
+      "activeParams": "~4B",
+      "releaseDate": "Apr 2026",
+      "license": "Apache 2.0",
+      "context": "128K",
+      "architecture": "Dense transformer, optimized for edge/mobile, multimodal",
+      "closestApi": "GPT-4o Mini",
+      "verdict": "VIABLE",
+      "verdictNote": "Mobile/edge optimized. Fits on any modern phone. Excellent for on-device inference.",
+      "benchmarks": {
+        "mmlu": 69.4,
+        "mmluPro": 52.6,
+        "aime": 42.5
+      },
+      "apiProviders": [],
+      "purchaseOptions": [
+        {
+          "name": "1× RTX 4070 Ti (16GB)",
+          "totalVram": "16GB",
+          "purchaseCost": 800,
+          "usedCost": 500,
+          "monthlyElectricity": 12,
+          "canRunModel": "Q4 at ~150-200 t/s",
+          "quality": "Full quality"
+        },
+        {
+          "name": "1× RTX 4060 Ti (16GB)",
+          "totalVram": "16GB",
+          "purchaseCost": 400,
+          "usedCost": 300,
+          "monthlyElectricity": 10,
+          "canRunModel": "Q4 at ~100-150 t/s",
+          "quality": "Full quality"
+        }
+      ],
+      "rentalOptions": [
+        {
+          "name": "Vast.ai RTX 4070",
+          "costPerHr": 0.25,
+          "costPerDay24": 6,
+          "provider": "Vast.ai"
+        }
+      ]
+    },
+    {
+      "id": "gemma-4-e2b",
+      "tier": "fast",
+      "name": "Gemma 4 E2B",
+      "family": "Gemma / Google",
+      "type": "Dense",
+      "totalParams": "~2B",
+      "activeParams": "~2B",
+      "releaseDate": "Apr 2026",
+      "license": "Apache 2.0",
+      "context": "128K",
+      "architecture": "Dense transformer, IoT/Raspberry Pi capable, multimodal",
+      "closestApi": "GPT-4o Mini",
+      "verdict": "VIABLE",
+      "verdictNote": "Lowest tier, IoT/Raspberry Pi capable. Excellent for embedded applications.",
+      "benchmarks": {
+        "mmlu": 60.0,
+        "mmluPro": 44.2,
+        "aime": 37.5
+      },
+      "apiProviders": [],
+      "purchaseOptions": [
+        {
+          "name": "1× RTX 3060 (12GB)",
+          "totalVram": "12GB",
+          "purchaseCost": 350,
+          "usedCost": 200,
+          "monthlyElectricity": 8,
+          "canRunModel": "Q4 at ~100-150 t/s",
+          "quality": "Full quality"
+        },
+        {
+          "name": "1× RTX 4060 (8GB)",
+          "totalVram": "8GB",
+          "purchaseCost": 300,
+          "usedCost": 180,
+          "monthlyElectricity": 7,
+          "canRunModel": "Q4 at ~80-120 t/s",
+          "quality": "Good"
+        }
+      ],
+      "rentalOptions": [
+        {
+          "name": "Vast.ai RTX 3060",
+          "costPerHr": 0.15,
+          "costPerDay24": 3.6,
+          "provider": "Vast.ai"
+        }
+      ]
+    },
+    {
       "id": "glm-5.1",
       "tier": "top",
       "name": "GLM-5.1",
