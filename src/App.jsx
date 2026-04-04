@@ -1,35 +1,10 @@
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Compare from "./pages/Compare";
 import { ModelsList, ModelDetail } from "./pages/Models";
 import About from "./pages/About";
 import History from "./pages/History";
-
-// Component to handle redirect from 404.html
-function RedirectHandler() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // Check if there's a redirect URI stored from 404.html
-    const redirectUri = sessionStorage.getItem('gh_redirect_uri');
-    if (redirectUri) {
-      // Clear the stored redirect URI to prevent infinite loops
-      sessionStorage.removeItem('gh_redirect_uri');
-      
-      // Only navigate if we're not already at the target location
-      const currentPath = location.pathname + location.search + location.hash;
-      if (redirectUri !== currentPath) {
-        // Navigate to the original path
-        navigate(redirectUri, { replace: true });
-      }
-    }
-  }, [location, navigate]);
-
-  return null;
-}
 
 function Footer() {
   return (
@@ -94,7 +69,6 @@ function Footer() {
 function AppContent() {
   return (
     <>
-      <RedirectHandler />
       <Nav />
       <main>
         <Routes>
