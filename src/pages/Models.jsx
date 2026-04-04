@@ -164,7 +164,7 @@ function ModelsListView() {
             <tr>
               <th>Model</th>
               <th>Tier</th>
-              <th>Closes Competitor</th>
+              <th>Closest Competitor</th>
               <th>Cheapest API</th>
               <th>Hardware</th>
               <th>Self-host?</th>

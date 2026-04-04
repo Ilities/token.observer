@@ -1289,7 +1289,7 @@
       "license": "MIT",
       "context": "256K",
       "architecture": "MoE, Multi-token prediction, MLA attention",
-      "closestApi": "Claude Opus 4.7",
+      "closestApi": "Claude Opus 4.6",
       "verdict": "HARD",
       "verdictNote": "671B total params but only 37B active. Requires 8× H100 for Q4. Best open-weight model.",
       "benchmarks": {
