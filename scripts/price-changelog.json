@@ -1,5 +1,57 @@
 [
   {
+    "date": "2026-04-08T01:20:08.058Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "anthropic/claude-opus-4.6-fast",
+        "newPrice": {
+          "input": 30,
+          "output": 150,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-08T01:20:08.007Z"
+        },
+        "timestamp": "2026-04-08T01:20:08.057Z"
+      },
+      {
+        "type": "new",
+        "model": "z-ai/glm-5.1",
+        "newPrice": {
+          "input": 1.26,
+          "output": 3.96,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-08T01:20:08.007Z"
+        },
+        "timestamp": "2026-04-08T01:20:08.057Z"
+      },
+      {
+        "type": "new",
+        "model": "qwen/qwen3.6-plus",
+        "newPrice": {
+          "input": 0.5,
+          "output": 3,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-08T01:20:08.007Z"
+        },
+        "timestamp": "2026-04-08T01:20:08.057Z"
+      },
+      {
+        "type": "new",
+        "model": "zai-org/GLM-5.1",
+        "newPrice": {
+          "input": 1.4,
+          "output": 4.4,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-08T01:20:08.053Z"
+        },
+        "timestamp": "2026-04-08T01:20:08.057Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-05T01:21:08.524Z",
     "changes": [
       {
