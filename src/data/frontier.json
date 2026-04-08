@@ -38,7 +38,7 @@
     },
     {
       "id": "inference-cards",
-      "name": "Inference Cards",
+      "name": "Homelab",
       "icon": "🃏",
       "description": "Single datacenter inference GPUs for professional deployment",
       "maxVram": 141,
