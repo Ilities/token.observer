@@ -1,5 +1,43 @@
 [
   {
+    "date": "2026-04-10T01:21:21.772Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.1",
+        "oldPrice": {
+          "input": 1.395,
+          "output": 4.4,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-09T01:10:24.252Z"
+        },
+        "newPrice": {
+          "input": 1.26,
+          "output": 3.96,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-10T01:21:21.395Z"
+        },
+        "inputChange": "-9.68%",
+        "outputChange": "-10.00%",
+        "timestamp": "2026-04-10T01:21:21.771Z"
+      },
+      {
+        "type": "new",
+        "model": "gemma-3-27b-it",
+        "newPrice": {
+          "input": 0.22,
+          "output": 0.59,
+          "context": 131072,
+          "source": "sambanova",
+          "fetchedAt": "2026-04-10T01:21:21.461Z"
+        },
+        "timestamp": "2026-04-10T01:21:21.771Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-09T01:10:24.649Z",
     "changes": [
       {
