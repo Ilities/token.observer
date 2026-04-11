@@ -927,7 +927,7 @@
       "license": "MIT",
       "context": "256K",
       "architecture": "MoE with reasoning mode, 3.6B active params",
-      "closestApi": "Claude Sonnet 4.6",
+      "closestApi": "Claude Haiku 4.5",
       "verdict": "VIABLE",
       "verdictNote": "Only 3.6B active params. Fits on single A100 80GB or 24GB GPU + RAM offload.",
       "benchmarks": {
