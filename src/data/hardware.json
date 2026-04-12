@@ -346,6 +346,6 @@
     "gpt-oss-120b": { "params": 117, "family": "GPT-OSS", "active": 15 },
     "gpt-oss-20b": { "params": 20, "family": "GPT-OSS" },
     "minimax-m2.5": { "params": 230, "family": "MiniMax", "active": 10 },
-    "minimax-m2.7": { "params": "Undisclosed", "family": "MiniMax", "active": "Undisclosed" }
+    "minimax-m2.7": { "params": 229, "family": "MiniMax", "active": 20 }
   }
 }
