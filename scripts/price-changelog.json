@@ -1,5 +1,31 @@
 [
   {
+    "date": "2026-04-12T01:25:03.932Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "mistralai/mistral-small-3.1-24b-instruct",
+        "oldPrice": {
+          "input": 0.03,
+          "output": 0.11,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-11T01:15:37.249Z"
+        },
+        "newPrice": {
+          "input": 0.35,
+          "output": 0.56,
+          "context": 128000,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-12T01:25:03.609Z"
+        },
+        "inputChange": "+1066.67%",
+        "outputChange": "+409.09%",
+        "timestamp": "2026-04-12T01:25:03.932Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-11T01:15:37.461Z",
     "changes": [
       {
