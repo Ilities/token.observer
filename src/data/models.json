@@ -1191,7 +1191,7 @@
       "totalParams": "Undisclosed",
       "activeParams": "Undisclosed",
       "releaseDate": "Mar 2026",
-      "license": "Proprietary",
+      "license": "Apache 2.0",
       "context": "204K",
       "architecture": "Agentic multi-agent collaboration architecture with continuous improvement",
       "closestApi": "Claude Opus 4.6",
