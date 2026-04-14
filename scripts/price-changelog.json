@@ -1,5 +1,52 @@
 [
   {
+    "date": "2026-04-14T01:25:00.252Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "google/gemma-4-26b-a4b-it",
+        "oldPrice": {
+          "input": 0.12,
+          "output": 0.4,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-13T01:27:19.931Z"
+        },
+        "newPrice": {
+          "input": 0.08,
+          "output": 0.35,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-14T01:25:00.246Z"
+        },
+        "inputChange": "-33.33%",
+        "outputChange": "-12.50%",
+        "timestamp": "2026-04-14T01:25:00.252Z"
+      },
+      {
+        "type": "updated",
+        "model": "google/gemma-4-31b-it",
+        "oldPrice": {
+          "input": 0.14,
+          "output": 0.4,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-13T01:27:19.931Z"
+        },
+        "newPrice": {
+          "input": 0.13,
+          "output": 0.38,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-14T01:25:00.246Z"
+        },
+        "inputChange": "-7.14%",
+        "outputChange": "-5.00%",
+        "timestamp": "2026-04-14T01:25:00.252Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-13T01:27:20.201Z",
     "changes": [
       {
