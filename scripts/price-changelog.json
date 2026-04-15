@@ -1,5 +1,31 @@
 [
   {
+    "date": "2026-04-15T01:21:50.927Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "meta-llama/llama-guard-3-8b",
+        "oldPrice": {
+          "input": 0.02,
+          "output": 0.06,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-14T01:25:00.246Z"
+        },
+        "newPrice": {
+          "input": 0.48,
+          "output": 0.03,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-15T01:21:50.621Z"
+        },
+        "inputChange": "+2300.00%",
+        "outputChange": "-50.00%",
+        "timestamp": "2026-04-15T01:21:50.927Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-14T01:25:00.252Z",
     "changes": [
       {
