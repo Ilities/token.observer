@@ -1,5 +1,31 @@
 [
   {
+    "date": "2026-04-16T01:27:33.803Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "google/gemma-3n-e4b-it",
+        "oldPrice": {
+          "input": 0.02,
+          "output": 0.04,
+          "context": 32768,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-15T01:21:50.621Z"
+        },
+        "newPrice": {
+          "input": 0.06,
+          "output": 0.12,
+          "context": 32768,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-16T01:27:33.188Z"
+        },
+        "inputChange": "+200.00%",
+        "outputChange": "+200.00%",
+        "timestamp": "2026-04-16T01:27:33.803Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-15T01:21:50.927Z",
     "changes": [
       {
