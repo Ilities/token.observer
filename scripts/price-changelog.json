@@ -1,5 +1,113 @@
 [
   {
+    "date": "2026-04-18T01:18:36.397Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "google/gemma-4-26b-a4b-it",
+        "oldPrice": {
+          "input": 0.07,
+          "output": 0.4,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-17T01:24:53.681Z"
+        },
+        "newPrice": {
+          "input": 0.08,
+          "output": 0.35,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-18T01:18:36.232Z"
+        },
+        "inputChange": "+14.29%",
+        "outputChange": "-12.50%",
+        "timestamp": "2026-04-18T01:18:36.396Z"
+      },
+      {
+        "type": "updated",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "oldPrice": {
+          "input": 0.1,
+          "output": 0.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-17T01:24:53.681Z"
+        },
+        "newPrice": {
+          "input": 0.09,
+          "output": 0.45,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-18T01:18:36.232Z"
+        },
+        "inputChange": "-10.00%",
+        "outputChange": "-10.00%",
+        "timestamp": "2026-04-18T01:18:36.396Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3.5-9b",
+        "oldPrice": {
+          "input": 0.05,
+          "output": 0.15,
+          "context": 256000,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-17T01:24:53.681Z"
+        },
+        "newPrice": {
+          "input": 0.1,
+          "output": 0.15,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-18T01:18:36.232Z"
+        },
+        "inputChange": "+100.00%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-04-18T01:18:36.396Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v3.2",
+        "oldPrice": {
+          "input": 0.26,
+          "output": 0.38,
+          "context": 163840,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-17T01:24:53.681Z"
+        },
+        "newPrice": {
+          "input": 0.259,
+          "output": 0.42,
+          "context": 163840,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-18T01:18:36.232Z"
+        },
+        "inputChange": "-0.38%",
+        "outputChange": "+10.53%",
+        "timestamp": "2026-04-18T01:18:36.397Z"
+      },
+      {
+        "type": "updated",
+        "model": "Qwen/Qwen3.5-35B-A3B",
+        "oldPrice": {
+          "input": 0.22,
+          "output": 2.2,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-17T01:24:53.969Z"
+        },
+        "newPrice": {
+          "input": 0.2,
+          "output": 0.95,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-18T01:18:36.392Z"
+        },
+        "inputChange": "-9.09%",
+        "outputChange": "-56.82%",
+        "timestamp": "2026-04-18T01:18:36.397Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-17T01:24:53.974Z",
     "changes": [
       {
