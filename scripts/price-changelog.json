@@ -1,5 +1,172 @@
 [
   {
+    "date": "2026-04-24T01:27:32.576Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.6",
+        "oldPrice": {
+          "input": 0.75,
+          "output": 3.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-23T01:28:29.007Z"
+        },
+        "newPrice": {
+          "input": 0.7448,
+          "output": 4.655,
+          "context": 256000,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-24T01:27:31.962Z"
+        },
+        "inputChange": "-0.69%",
+        "outputChange": "+33.00%",
+        "timestamp": "2026-04-24T01:27:32.576Z"
+      },
+      {
+        "type": "updated",
+        "model": "google/gemma-4-26b-a4b-it",
+        "oldPrice": {
+          "input": 0.07,
+          "output": 0.34,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-23T01:28:29.007Z"
+        },
+        "newPrice": {
+          "input": 0.06,
+          "output": 0.33,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-24T01:27:31.962Z"
+        },
+        "inputChange": "-14.29%",
+        "outputChange": "-2.94%",
+        "timestamp": "2026-04-24T01:27:32.576Z"
+      },
+      {
+        "type": "updated",
+        "model": "minimax/minimax-m2.5",
+        "oldPrice": {
+          "input": 0.15,
+          "output": 1.2,
+          "context": 196608,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-23T01:28:29.007Z"
+        },
+        "newPrice": {
+          "input": 0.15,
+          "output": 1.15,
+          "context": 196608,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-24T01:27:31.963Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-4.17%",
+        "timestamp": "2026-04-24T01:27:32.576Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5",
+        "oldPrice": {
+          "input": 0.65,
+          "output": 2.08,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-23T01:28:29.007Z"
+        },
+        "newPrice": {
+          "input": 0.6,
+          "output": 2.08,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-24T01:27:31.963Z"
+        },
+        "inputChange": "-7.69%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-04-24T01:27:32.576Z"
+      },
+      {
+        "type": "updated",
+        "model": "mistralai/mistral-nemo",
+        "oldPrice": {
+          "input": 0.02,
+          "output": 0.04,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-23T01:28:29.010Z"
+        },
+        "newPrice": {
+          "input": 0.01,
+          "output": 0.03,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-24T01:27:31.964Z"
+        },
+        "inputChange": "-50.00%",
+        "outputChange": "-25.00%",
+        "timestamp": "2026-04-24T01:27:32.576Z"
+      },
+      {
+        "type": "updated",
+        "model": "zai-org/GLM-5.1",
+        "oldPrice": {
+          "input": 1.4,
+          "output": 4.4,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-23T01:28:29.340Z"
+        },
+        "newPrice": {
+          "input": 1.05,
+          "output": 3.5,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-24T01:27:32.572Z"
+        },
+        "inputChange": "-25.00%",
+        "outputChange": "-20.45%",
+        "timestamp": "2026-04-24T01:27:32.576Z"
+      },
+      {
+        "type": "updated",
+        "model": "MiniMaxAI/MiniMax-M2.5",
+        "oldPrice": {
+          "input": 0.27,
+          "output": 0.95,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-23T01:28:29.340Z"
+        },
+        "newPrice": {
+          "input": 0.15,
+          "output": 1.15,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-24T01:27:32.572Z"
+        },
+        "inputChange": "-44.44%",
+        "outputChange": "+21.05%",
+        "timestamp": "2026-04-24T01:27:32.576Z"
+      },
+      {
+        "type": "updated",
+        "model": "zai-org/GLM-5",
+        "oldPrice": {
+          "input": 0.8,
+          "output": 2.56,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-23T01:28:29.340Z"
+        },
+        "newPrice": {
+          "input": 0.6,
+          "output": 2.08,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-24T01:27:32.572Z"
+        },
+        "inputChange": "-25.00%",
+        "outputChange": "-18.75%",
+        "timestamp": "2026-04-24T01:27:32.576Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-23T01:28:29.345Z",
     "changes": [
       {
