@@ -1,5 +1,71 @@
 [
   {
+    "date": "2026-04-26T01:42:25.718Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-pro",
+        "oldPrice": {
+          "input": 1.74,
+          "output": 3.48,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-25T01:21:07.638Z"
+        },
+        "newPrice": {
+          "input": 0.435,
+          "output": 0.87,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-26T01:42:25.526Z"
+        },
+        "inputChange": "-75.00%",
+        "outputChange": "-75.00%",
+        "timestamp": "2026-04-26T01:42:25.718Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3-coder",
+        "oldPrice": {
+          "input": 0.22,
+          "output": 1,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-25T01:21:07.639Z"
+        },
+        "newPrice": {
+          "input": 0.22,
+          "output": 1.8,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-26T01:42:25.528Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "+80.00%",
+        "timestamp": "2026-04-26T01:42:25.718Z"
+      },
+      {
+        "type": "updated",
+        "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+        "oldPrice": {
+          "input": 0.22,
+          "output": 1,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-25T01:21:07.813Z"
+        },
+        "newPrice": {
+          "input": 0.3,
+          "output": 1,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-26T01:42:25.713Z"
+        },
+        "inputChange": "+36.36%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-04-26T01:42:25.718Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-25T01:21:07.818Z",
     "changes": [
       {
