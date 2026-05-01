@@ -1,5 +1,186 @@
 [
   {
+    "date": "2026-05-01T01:56:00.071Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "x-ai/grok-4.3",
+        "newPrice": {
+          "input": 1.25,
+          "output": 2.5,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-01T01:55:59.917Z"
+        },
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      },
+      {
+        "type": "new",
+        "model": "ibm-granite/granite-4.1-8b",
+        "newPrice": {
+          "input": 0.05,
+          "output": 0.1,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-01T01:55:59.917Z"
+        },
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      },
+      {
+        "type": "updated",
+        "model": "~moonshotai/kimi-latest",
+        "oldPrice": {
+          "input": 0.7448,
+          "output": 4.655,
+          "context": 256000,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-30T01:54:06.925Z"
+        },
+        "newPrice": {
+          "input": 0.74,
+          "output": 3.49,
+          "context": 262142,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-01T01:55:59.918Z"
+        },
+        "inputChange": "-0.64%",
+        "outputChange": "-25.03%",
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.6",
+        "oldPrice": {
+          "input": 0.7448,
+          "output": 4.655,
+          "context": 256000,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-30T01:54:06.925Z"
+        },
+        "newPrice": {
+          "input": 0.74,
+          "output": 3.49,
+          "context": 262142,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-01T01:55:59.918Z"
+        },
+        "inputChange": "-0.64%",
+        "outputChange": "-25.03%",
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      },
+      {
+        "type": "updated",
+        "model": "x-ai/grok-4.20",
+        "oldPrice": {
+          "input": 2,
+          "output": 6,
+          "context": 2000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-30T01:54:06.925Z"
+        },
+        "newPrice": {
+          "input": 1.25,
+          "output": 2.5,
+          "context": 2000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-01T01:55:59.918Z"
+        },
+        "inputChange": "-37.50%",
+        "outputChange": "-58.33%",
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3-coder-next",
+        "oldPrice": {
+          "input": 0.14,
+          "output": 0.8,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-04-30T01:54:06.925Z"
+        },
+        "newPrice": {
+          "input": 0.12,
+          "output": 0.8,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-01T01:55:59.920Z"
+        },
+        "inputChange": "-14.29%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      },
+      {
+        "type": "updated",
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "oldPrice": {
+          "input": 0.2,
+          "output": 1,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-30T01:54:06.984Z"
+        },
+        "newPrice": {
+          "input": 0.19,
+          "output": 1,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-01T01:56:00.065Z"
+        },
+        "inputChange": "-5.00%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      },
+      {
+        "type": "updated",
+        "model": "Qwen/Qwen3.5-35B-A3B",
+        "oldPrice": {
+          "input": 0.2,
+          "output": 0.95,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-30T01:54:06.984Z"
+        },
+        "newPrice": {
+          "input": 0.18,
+          "output": 1,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-01T01:56:00.065Z"
+        },
+        "inputChange": "-10.00%",
+        "outputChange": "+5.26%",
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      },
+      {
+        "type": "new",
+        "model": "Qwen/Qwen3.5-9B",
+        "newPrice": {
+          "input": 0.04,
+          "output": 0.15,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-01T01:56:00.065Z"
+        },
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      },
+      {
+        "type": "updated",
+        "model": "Qwen/Qwen3.5-122B-A10B",
+        "oldPrice": {
+          "input": 0.29,
+          "output": 2.9,
+          "source": "deepInfra",
+          "fetchedAt": "2026-04-30T01:54:06.984Z"
+        },
+        "newPrice": {
+          "input": 0.29,
+          "output": 2.4,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-01T01:56:00.066Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-17.24%",
+        "timestamp": "2026-05-01T01:56:00.070Z"
+      }
+    ]
+  },
+  {
     "date": "2026-04-30T01:54:06.990Z",
     "changes": [
       {
