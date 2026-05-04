@@ -1,5 +1,90 @@
 [
   {
+    "date": "2026-05-04T01:48:59.223Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v3.1-terminus",
+        "oldPrice": {
+          "input": 0.21,
+          "output": 0.79,
+          "context": 163840,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-03T01:49:01.433Z"
+        },
+        "newPrice": {
+          "input": 0.27,
+          "output": 0.95,
+          "context": 163840,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-04T01:48:59.060Z"
+        },
+        "inputChange": "+28.57%",
+        "outputChange": "+20.25%",
+        "timestamp": "2026-05-04T01:48:59.223Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3-30b-a3b",
+        "oldPrice": {
+          "input": 0.08,
+          "output": 0.28,
+          "context": 40960,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-03T01:49:01.434Z"
+        },
+        "newPrice": {
+          "input": 0.09,
+          "output": 0.45,
+          "context": 40960,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-04T01:48:59.060Z"
+        },
+        "inputChange": "+12.50%",
+        "outputChange": "+60.71%",
+        "timestamp": "2026-05-04T01:48:59.223Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek-ai/DeepSeek-V3.1-Terminus",
+        "oldPrice": {
+          "input": 0.21,
+          "output": 0.79,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-03T01:49:01.590Z"
+        },
+        "newPrice": {
+          "input": 0.27,
+          "output": 0.95,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-04T01:48:59.217Z"
+        },
+        "inputChange": "+28.57%",
+        "outputChange": "+20.25%",
+        "timestamp": "2026-05-04T01:48:59.223Z"
+      },
+      {
+        "type": "updated",
+        "model": "Qwen/Qwen3-30B-A3B",
+        "oldPrice": {
+          "input": 0.08,
+          "output": 0.28,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-03T01:49:01.591Z"
+        },
+        "newPrice": {
+          "input": 0.09,
+          "output": 0.45,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-04T01:48:59.217Z"
+        },
+        "inputChange": "+12.50%",
+        "outputChange": "+60.71%",
+        "timestamp": "2026-05-04T01:48:59.223Z"
+      }
+    ]
+  },
+  {
     "date": "2026-05-03T01:49:01.595Z",
     "changes": [
       {
