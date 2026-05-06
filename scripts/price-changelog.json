@@ -1,5 +1,55 @@
 [
   {
+    "date": "2026-05-06T01:48:56.783Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "openai/gpt-chat-latest",
+        "newPrice": {
+          "input": 5,
+          "output": 30,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-06T01:48:56.565Z"
+        },
+        "timestamp": "2026-05-06T01:48:56.782Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5",
+        "oldPrice": {
+          "input": 0.6,
+          "output": 2.08,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-05T01:50:10.200Z"
+        },
+        "newPrice": {
+          "input": 0.6,
+          "output": 1.92,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-06T01:48:56.566Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-7.69%",
+        "timestamp": "2026-05-06T01:48:56.782Z"
+      },
+      {
+        "type": "new",
+        "model": "microsoft/phi-4-mini-instruct",
+        "newPrice": {
+          "input": 0.08,
+          "output": 0.35,
+          "context": 128000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-06T01:48:56.566Z"
+        },
+        "timestamp": "2026-05-06T01:48:56.782Z"
+      }
+    ]
+  },
+  {
     "date": "2026-05-05T01:50:10.686Z",
     "changes": [
       {
