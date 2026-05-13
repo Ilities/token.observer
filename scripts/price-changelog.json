@@ -1,5 +1,97 @@
 [
   {
+    "date": "2026-05-13T02:02:20.583Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "anthropic/claude-opus-4.7-fast",
+        "newPrice": {
+          "input": 30,
+          "output": 150,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-13T02:02:20.418Z"
+        },
+        "timestamp": "2026-05-13T02:02:20.582Z"
+      },
+      {
+        "type": "new",
+        "model": "perceptron/perceptron-mk1",
+        "newPrice": {
+          "input": 0.15,
+          "output": 1.5,
+          "context": 32768,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-13T02:02:20.418Z"
+        },
+        "timestamp": "2026-05-13T02:02:20.582Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.1",
+        "oldPrice": {
+          "input": 0.98,
+          "output": 3.08,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-12T01:57:45.800Z"
+        },
+        "newPrice": {
+          "input": 1.05,
+          "output": 3.5,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-13T02:02:20.418Z"
+        },
+        "inputChange": "+7.14%",
+        "outputChange": "+13.64%",
+        "timestamp": "2026-05-13T02:02:20.583Z"
+      },
+      {
+        "type": "updated",
+        "model": "minimax/minimax-m2.7",
+        "oldPrice": {
+          "input": 0.299,
+          "output": 1.2,
+          "context": 196608,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-12T01:57:45.800Z"
+        },
+        "newPrice": {
+          "input": 0.28,
+          "output": 1.2,
+          "context": 196608,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-13T02:02:20.418Z"
+        },
+        "inputChange": "-6.35%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-05-13T02:02:20.583Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.5",
+        "oldPrice": {
+          "input": 0.4,
+          "output": 1.98,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-12T01:57:45.800Z"
+        },
+        "newPrice": {
+          "input": 0.4,
+          "output": 1.9,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-13T02:02:20.418Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-4.04%",
+        "timestamp": "2026-05-13T02:02:20.583Z"
+      }
+    ]
+  },
+  {
     "date": "2026-05-12T01:57:46.421Z",
     "changes": [
       {
@@ -2355,53 +2447,6 @@
         "inputChange": "-7.14%",
         "outputChange": "-5.00%",
         "timestamp": "2026-04-14T01:25:00.252Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-04-13T01:27:20.201Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "qwen/qwen3-coder-next",
-        "oldPrice": {
-          "input": 0.12,
-          "output": 0.75,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-12T01:25:03.606Z"
-        },
-        "newPrice": {
-          "input": 0.15,
-          "output": 0.8,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-13T01:27:19.932Z"
-        },
-        "inputChange": "+25.00%",
-        "outputChange": "+6.67%",
-        "timestamp": "2026-04-13T01:27:20.201Z"
-      },
-      {
-        "type": "updated",
-        "model": "deepseek/deepseek-r1-0528",
-        "oldPrice": {
-          "input": 0.45,
-          "output": 2.15,
-          "context": 163840,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-12T01:25:03.608Z"
-        },
-        "newPrice": {
-          "input": 0.5,
-          "output": 2.15,
-          "context": 163840,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-13T01:27:19.933Z"
-        },
-        "inputChange": "+11.11%",
-        "outputChange": "0.00%",
-        "timestamp": "2026-04-13T01:27:20.201Z"
       }
     ]
   }
