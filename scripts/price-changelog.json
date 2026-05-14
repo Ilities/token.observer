@@ -1,5 +1,117 @@
 [
   {
+    "date": "2026-05-14T02:04:58.438Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-flash",
+        "oldPrice": {
+          "input": 0.14,
+          "output": 0.28,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-13T02:02:20.418Z"
+        },
+        "newPrice": {
+          "input": 0.126,
+          "output": 0.252,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-14T02:04:48.864Z"
+        },
+        "inputChange": "-10.00%",
+        "outputChange": "-10.00%",
+        "timestamp": "2026-05-14T02:04:58.437Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-4.6",
+        "oldPrice": {
+          "input": 0.39,
+          "output": 1.9,
+          "context": 204800,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-13T02:02:20.419Z"
+        },
+        "newPrice": {
+          "input": 0.43,
+          "output": 1.74,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-14T02:04:48.865Z"
+        },
+        "inputChange": "+10.26%",
+        "outputChange": "-8.42%",
+        "timestamp": "2026-05-14T02:04:58.437Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2-0905",
+        "oldPrice": {
+          "input": 0.4,
+          "output": 2,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-13T02:02:20.419Z"
+        },
+        "newPrice": {
+          "input": 0.6,
+          "output": 2.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-14T02:04:48.866Z"
+        },
+        "inputChange": "+50.00%",
+        "outputChange": "+25.00%",
+        "timestamp": "2026-05-14T02:04:58.437Z"
+      },
+      {
+        "type": "new",
+        "model": "google/gemini-3.1-pro",
+        "newPrice": {
+          "input": 2,
+          "output": 12,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-14T02:04:49.648Z"
+        },
+        "timestamp": "2026-05-14T02:04:58.437Z"
+      },
+      {
+        "type": "new",
+        "model": "anthropic/claude-sonnet-4-6",
+        "newPrice": {
+          "input": 3,
+          "output": 15,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-14T02:04:49.648Z"
+        },
+        "timestamp": "2026-05-14T02:04:58.437Z"
+      },
+      {
+        "type": "new",
+        "model": "anthropic/claude-haiku-4-5",
+        "newPrice": {
+          "input": 1,
+          "output": 5,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-14T02:04:49.648Z"
+        },
+        "timestamp": "2026-05-14T02:04:58.437Z"
+      },
+      {
+        "type": "new",
+        "model": "anthropic/claude-opus-4-7",
+        "newPrice": {
+          "input": 5,
+          "output": 25,
+          "source": "deepInfra",
+          "fetchedAt": "2026-05-14T02:04:49.648Z"
+        },
+        "timestamp": "2026-05-14T02:04:58.437Z"
+      }
+    ]
+  },
+  {
     "date": "2026-05-13T02:02:20.583Z",
     "changes": [
       {
@@ -2400,53 +2512,6 @@
         "inputChange": "+2300.00%",
         "outputChange": "-50.00%",
         "timestamp": "2026-04-15T01:21:50.927Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-04-14T01:25:00.252Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "google/gemma-4-26b-a4b-it",
-        "oldPrice": {
-          "input": 0.12,
-          "output": 0.4,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-13T01:27:19.931Z"
-        },
-        "newPrice": {
-          "input": 0.08,
-          "output": 0.35,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-14T01:25:00.246Z"
-        },
-        "inputChange": "-33.33%",
-        "outputChange": "-12.50%",
-        "timestamp": "2026-04-14T01:25:00.252Z"
-      },
-      {
-        "type": "updated",
-        "model": "google/gemma-4-31b-it",
-        "oldPrice": {
-          "input": 0.14,
-          "output": 0.4,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-13T01:27:19.931Z"
-        },
-        "newPrice": {
-          "input": 0.13,
-          "output": 0.38,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-14T01:25:00.246Z"
-        },
-        "inputChange": "-7.14%",
-        "outputChange": "-5.00%",
-        "timestamp": "2026-04-14T01:25:00.252Z"
       }
     ]
   }
