@@ -1,5 +1,190 @@
 [
   {
+    "date": "2026-05-16T01:55:55.108Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "inclusionai/ring-2.6-1t",
+        "newPrice": {
+          "input": 0.075,
+          "output": 0.625,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-16T01:55:54.127Z"
+        },
+        "timestamp": "2026-05-16T01:55:55.108Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-flash",
+        "oldPrice": {
+          "input": 0.126,
+          "output": 0.252,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-15T02:03:30.265Z"
+        },
+        "newPrice": {
+          "input": 0.112,
+          "output": 0.224,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-16T01:55:54.127Z"
+        },
+        "inputChange": "-11.11%",
+        "outputChange": "-11.11%",
+        "timestamp": "2026-05-16T01:55:55.108Z"
+      },
+      {
+        "type": "updated",
+        "model": "inclusionai/ling-2.6-flash",
+        "oldPrice": {
+          "input": 0.08,
+          "output": 0.24,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-15T02:03:30.266Z"
+        },
+        "newPrice": {
+          "input": 0.01,
+          "output": 0.03,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-16T01:55:54.128Z"
+        },
+        "inputChange": "-87.50%",
+        "outputChange": "-87.50%",
+        "timestamp": "2026-05-16T01:55:55.108Z"
+      },
+      {
+        "type": "updated",
+        "model": "minimax/minimax-m2.7",
+        "oldPrice": {
+          "input": 0.26,
+          "output": 1.2,
+          "context": 196608,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-15T02:03:30.266Z"
+        },
+        "newPrice": {
+          "input": 0.279,
+          "output": 1.2,
+          "context": 204800,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-16T01:55:54.128Z"
+        },
+        "inputChange": "+7.31%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-05-16T01:55:55.108Z"
+      },
+      {
+        "type": "updated",
+        "model": "ibm-granite/granite-4.0-h-micro",
+        "oldPrice": {
+          "input": 0.017,
+          "output": 0.11,
+          "context": 131000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-15T02:03:30.266Z"
+        },
+        "newPrice": {
+          "input": 0.017,
+          "output": 0.112,
+          "context": 131000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-16T01:55:54.128Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "+1.82%",
+        "timestamp": "2026-05-16T01:55:55.108Z"
+      },
+      {
+        "type": "updated",
+        "model": "mistralai/mistral-small-3.1-24b-instruct",
+        "oldPrice": {
+          "input": 0.35,
+          "output": 0.56,
+          "context": 128000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-15T02:03:30.267Z"
+        },
+        "newPrice": {
+          "input": 0.351,
+          "output": 0.555,
+          "context": 128000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-16T01:55:54.129Z"
+        },
+        "inputChange": "+0.29%",
+        "outputChange": "-0.89%",
+        "timestamp": "2026-05-16T01:55:55.108Z"
+      },
+      {
+        "type": "updated",
+        "model": "meta-llama/llama-guard-3-8b",
+        "oldPrice": {
+          "input": 0.48,
+          "output": 0.03,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-15T02:03:30.267Z"
+        },
+        "newPrice": {
+          "input": 0.484,
+          "output": 0.03,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-16T01:55:54.129Z"
+        },
+        "inputChange": "+0.83%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-05-16T01:55:55.108Z"
+      },
+      {
+        "type": "updated",
+        "model": "meta-llama/llama-3.2-1b-instruct",
+        "oldPrice": {
+          "input": 0.027,
+          "output": 0.2,
+          "context": 60000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-15T02:03:30.267Z"
+        },
+        "newPrice": {
+          "input": 0.027,
+          "output": 0.201,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-16T01:55:54.129Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "+0.50%",
+        "timestamp": "2026-05-16T01:55:55.108Z"
+      },
+      {
+        "type": "updated",
+        "model": "meta-llama/llama-3.2-3b-instruct",
+        "oldPrice": {
+          "input": 0.051,
+          "output": 0.34,
+          "context": 80000,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-15T02:03:30.267Z"
+        },
+        "newPrice": {
+          "input": 0.0509,
+          "output": 0.335,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-16T01:55:54.129Z"
+        },
+        "inputChange": "-0.20%",
+        "outputChange": "-1.47%",
+        "timestamp": "2026-05-16T01:55:55.108Z"
+      }
+    ]
+  },
+  {
     "date": "2026-05-15T02:03:30.684Z",
     "changes": [
       {
@@ -2624,32 +2809,6 @@
         "inputChange": "+50.00%",
         "outputChange": "+11.43%",
         "timestamp": "2026-04-17T01:24:53.974Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-04-16T01:27:33.803Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "google/gemma-3n-e4b-it",
-        "oldPrice": {
-          "input": 0.02,
-          "output": 0.04,
-          "context": 32768,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-15T01:21:50.621Z"
-        },
-        "newPrice": {
-          "input": 0.06,
-          "output": 0.12,
-          "context": 32768,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-16T01:27:33.188Z"
-        },
-        "inputChange": "+200.00%",
-        "outputChange": "+200.00%",
-        "timestamp": "2026-04-16T01:27:33.803Z"
       }
     ]
   }
