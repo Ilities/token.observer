@@ -1,5 +1,64 @@
 [
   {
+    "date": "2026-05-20T02:08:04.036Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "google/gemini-3.5-flash",
+        "newPrice": {
+          "input": 1.5,
+          "output": 9,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-20T02:08:03.541Z"
+        },
+        "timestamp": "2026-05-20T02:08:04.036Z"
+      },
+      {
+        "type": "updated",
+        "model": "~google/gemini-flash-latest",
+        "oldPrice": {
+          "input": 0.5,
+          "output": 3,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-19T02:09:05.246Z"
+        },
+        "newPrice": {
+          "input": 1.5,
+          "output": 9,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-20T02:08:03.542Z"
+        },
+        "inputChange": "+200.00%",
+        "outputChange": "+200.00%",
+        "timestamp": "2026-05-20T02:08:04.036Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3.5-35b-a3b",
+        "oldPrice": {
+          "input": 0.14,
+          "output": 1,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-19T02:09:05.247Z"
+        },
+        "newPrice": {
+          "input": 0.139,
+          "output": 1,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-20T02:08:03.542Z"
+        },
+        "inputChange": "-0.71%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-05-20T02:08:04.036Z"
+      }
+    ]
+  },
+  {
     "date": "2026-05-18T02:10:02.578Z",
     "changes": [
       {
@@ -2689,55 +2748,6 @@
         "inputChange": "-2.70%",
         "outputChange": "-10.00%",
         "timestamp": "2026-04-21T01:24:48.729Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-04-19T01:28:08.882Z",
-    "changes": [
-      {
-        "type": "new",
-        "model": "moonshotai/kimi-k2.5",
-        "newPrice": {
-          "input": 0.3827,
-          "output": 1.72,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-19T01:28:08.510Z"
-        },
-        "timestamp": "2026-04-19T01:28:08.880Z"
-      },
-      {
-        "type": "updated",
-        "model": "meta-llama/llama-3.3-70b-instruct",
-        "oldPrice": {
-          "input": 0.1,
-          "output": 0.32,
-          "context": 131072,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-18T01:18:36.234Z"
-        },
-        "newPrice": {
-          "input": 0.12,
-          "output": 0.38,
-          "context": 131072,
-          "source": "openRouter",
-          "fetchedAt": "2026-04-19T01:28:08.511Z"
-        },
-        "inputChange": "+20.00%",
-        "outputChange": "+18.75%",
-        "timestamp": "2026-04-19T01:28:08.881Z"
-      },
-      {
-        "type": "new",
-        "model": "Qwen/Qwen3.6-35B-A3B",
-        "newPrice": {
-          "input": 0.2,
-          "output": 1,
-          "source": "deepInfra",
-          "fetchedAt": "2026-04-19T01:28:08.876Z"
-        },
-        "timestamp": "2026-04-19T01:28:08.881Z"
       }
     ]
   }
