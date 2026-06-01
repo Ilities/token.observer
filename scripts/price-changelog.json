@@ -1,5 +1,55 @@
 [
   {
+    "date": "2026-06-01T02:36:18.402Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "minimax/minimax-m3",
+        "newPrice": {
+          "input": 0.3,
+          "output": 1.2,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-01T02:36:18.299Z"
+        },
+        "timestamp": "2026-06-01T02:36:18.402Z"
+      },
+      {
+        "type": "updated",
+        "model": "inclusionai/ring-2.6-1t",
+        "oldPrice": {
+          "input": 0.075,
+          "output": 0.625,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-05-31T02:14:41.644Z"
+        },
+        "newPrice": {
+          "input": 0.3,
+          "output": 2.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-01T02:36:18.299Z"
+        },
+        "inputChange": "+300.00%",
+        "outputChange": "+300.00%",
+        "timestamp": "2026-06-01T02:36:18.402Z"
+      },
+      {
+        "type": "new",
+        "model": "upstage/solar-pro-3",
+        "newPrice": {
+          "input": 0.15,
+          "output": 0.6,
+          "context": 128000,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-01T02:36:18.299Z"
+        },
+        "timestamp": "2026-06-01T02:36:18.402Z"
+      }
+    ]
+  },
+  {
     "date": "2026-05-31T02:14:42.025Z",
     "changes": [
       {
