@@ -1,5 +1,105 @@
 [
   {
+    "date": "2026-06-05T02:11:46.515Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "newPrice": {
+          "input": 0.5,
+          "output": 2.5,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-05T02:11:46.273Z"
+        },
+        "timestamp": "2026-06-05T02:11:46.515Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "oldPrice": {
+          "input": 0.0428,
+          "output": 0.1716,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-04T02:36:36.441Z"
+        },
+        "newPrice": {
+          "input": 0.0481,
+          "output": 0.193,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-05T02:11:46.276Z"
+        },
+        "inputChange": "+12.38%",
+        "outputChange": "+12.47%",
+        "timestamp": "2026-06-05T02:11:46.515Z"
+      },
+      {
+        "type": "updated",
+        "model": "meta-llama/llama-3.1-8b-instruct",
+        "oldPrice": {
+          "input": 0.02,
+          "output": 0.05,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-04T02:36:36.441Z"
+        },
+        "newPrice": {
+          "input": 0.02,
+          "output": 0.03,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-05T02:11:46.276Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-40.00%",
+        "timestamp": "2026-06-05T02:11:46.515Z"
+      },
+      {
+        "type": "new",
+        "model": "nvidia/Nemotron-Content-Safety-3.5",
+        "newPrice": {
+          "input": 0.2,
+          "output": 0.2,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-05T02:11:46.510Z"
+        },
+        "timestamp": "2026-06-05T02:11:46.515Z"
+      },
+      {
+        "type": "new",
+        "model": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
+        "newPrice": {
+          "input": 0.5,
+          "output": 2.5,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-05T02:11:46.510Z"
+        },
+        "timestamp": "2026-06-05T02:11:46.515Z"
+      },
+      {
+        "type": "updated",
+        "model": "Qwen/Qwen3.5-397B-A17B",
+        "oldPrice": {
+          "input": 0.49,
+          "output": 3.6,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-04T02:36:36.605Z"
+        },
+        "newPrice": {
+          "input": 0.45,
+          "output": 3,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-05T02:11:46.510Z"
+        },
+        "inputChange": "-8.16%",
+        "outputChange": "-16.67%",
+        "timestamp": "2026-06-05T02:11:46.515Z"
+      }
+    ]
+  },
+  {
     "date": "2026-06-04T02:36:36.610Z",
     "changes": [
       {
@@ -2170,56 +2270,6 @@
         "inputChange": "+33.33%",
         "outputChange": "0.00%",
         "timestamp": "2026-05-07T01:52:50.223Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-05-06T01:48:56.783Z",
-    "changes": [
-      {
-        "type": "new",
-        "model": "openai/gpt-chat-latest",
-        "newPrice": {
-          "input": 5,
-          "output": 30,
-          "context": 400000,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-06T01:48:56.565Z"
-        },
-        "timestamp": "2026-05-06T01:48:56.782Z"
-      },
-      {
-        "type": "updated",
-        "model": "z-ai/glm-5",
-        "oldPrice": {
-          "input": 0.6,
-          "output": 2.08,
-          "context": 202752,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-05T01:50:10.200Z"
-        },
-        "newPrice": {
-          "input": 0.6,
-          "output": 1.92,
-          "context": 202752,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-06T01:48:56.566Z"
-        },
-        "inputChange": "0.00%",
-        "outputChange": "-7.69%",
-        "timestamp": "2026-05-06T01:48:56.782Z"
-      },
-      {
-        "type": "new",
-        "model": "microsoft/phi-4-mini-instruct",
-        "newPrice": {
-          "input": 0.08,
-          "output": 0.35,
-          "context": 128000,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-06T01:48:56.566Z"
-        },
-        "timestamp": "2026-05-06T01:48:56.782Z"
       }
     ]
   }
