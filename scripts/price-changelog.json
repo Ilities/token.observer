@@ -1,5 +1,31 @@
 [
   {
+    "date": "2026-06-06T02:03:11.956Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "google/gemma-4-31b-it",
+        "oldPrice": {
+          "input": 0.12,
+          "output": 0.37,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-05T02:11:46.274Z"
+        },
+        "newPrice": {
+          "input": 0.12,
+          "output": 0.36,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-06T02:03:11.830Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-2.70%",
+        "timestamp": "2026-06-06T02:03:11.955Z"
+      }
+    ]
+  },
+  {
     "date": "2026-06-05T02:11:46.515Z",
     "changes": [
       {
@@ -2160,116 +2186,6 @@
         "inputChange": "-22.22%",
         "outputChange": "0.00%",
         "timestamp": "2026-05-08T01:58:40.878Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-05-07T01:52:50.223Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "~moonshotai/kimi-latest",
-        "oldPrice": {
-          "input": 0.74,
-          "output": 3.49,
-          "context": 262142,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-06T01:48:56.565Z"
-        },
-        "newPrice": {
-          "input": 0.75,
-          "output": 3.5,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-07T01:52:50.096Z"
-        },
-        "inputChange": "+1.35%",
-        "outputChange": "+0.29%",
-        "timestamp": "2026-05-07T01:52:50.222Z"
-      },
-      {
-        "type": "updated",
-        "model": "moonshotai/kimi-k2.6",
-        "oldPrice": {
-          "input": 0.74,
-          "output": 3.49,
-          "context": 262142,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-06T01:48:56.566Z"
-        },
-        "newPrice": {
-          "input": 0.75,
-          "output": 3.5,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-07T01:52:50.096Z"
-        },
-        "inputChange": "+1.35%",
-        "outputChange": "+0.29%",
-        "timestamp": "2026-05-07T01:52:50.223Z"
-      },
-      {
-        "type": "updated",
-        "model": "qwen/qwen3-coder-next",
-        "oldPrice": {
-          "input": 0.12,
-          "output": 0.8,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-06T01:48:56.566Z"
-        },
-        "newPrice": {
-          "input": 0.11,
-          "output": 0.8,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-07T01:52:50.097Z"
-        },
-        "inputChange": "-8.33%",
-        "outputChange": "0.00%",
-        "timestamp": "2026-05-07T01:52:50.223Z"
-      },
-      {
-        "type": "updated",
-        "model": "deepseek/deepseek-v3.2-speciale",
-        "oldPrice": {
-          "input": 0.4,
-          "output": 1.2,
-          "context": 163840,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-06T01:48:56.566Z"
-        },
-        "newPrice": {
-          "input": 0.287,
-          "output": 0.431,
-          "context": 163840,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-07T01:52:50.099Z"
-        },
-        "inputChange": "-28.25%",
-        "outputChange": "-64.08%",
-        "timestamp": "2026-05-07T01:52:50.223Z"
-      },
-      {
-        "type": "updated",
-        "model": "meta-llama/llama-3-8b-instruct",
-        "oldPrice": {
-          "input": 0.03,
-          "output": 0.04,
-          "context": 8192,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-06T01:48:56.567Z"
-        },
-        "newPrice": {
-          "input": 0.04,
-          "output": 0.04,
-          "context": 8192,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-07T01:52:50.100Z"
-        },
-        "inputChange": "+33.33%",
-        "outputChange": "0.00%",
-        "timestamp": "2026-05-07T01:52:50.223Z"
       }
     ]
   }
