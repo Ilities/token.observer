@@ -1,5 +1,52 @@
 [
   {
+    "date": "2026-06-09T01:59:19.911Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "~moonshotai/kimi-latest",
+        "oldPrice": {
+          "input": 0.684,
+          "output": 3.42,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-08T02:34:49.089Z"
+        },
+        "newPrice": {
+          "input": 0.68,
+          "output": 3.41,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-09T01:59:19.714Z"
+        },
+        "inputChange": "-0.58%",
+        "outputChange": "-0.29%",
+        "timestamp": "2026-06-09T01:59:19.910Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.6",
+        "oldPrice": {
+          "input": 0.684,
+          "output": 3.42,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-08T02:34:49.090Z"
+        },
+        "newPrice": {
+          "input": 0.68,
+          "output": 3.41,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-09T01:59:19.714Z"
+        },
+        "inputChange": "-0.58%",
+        "outputChange": "-0.29%",
+        "timestamp": "2026-06-09T01:59:19.910Z"
+      }
+    ]
+  },
+  {
     "date": "2026-06-08T02:34:49.503Z",
     "changes": [
       {
