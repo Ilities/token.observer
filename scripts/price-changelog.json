@@ -1,5 +1,106 @@
 [
   {
+    "date": "2026-06-13T02:10:27.439Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "moonshotai/kimi-k2.7-code",
+        "newPrice": {
+          "input": 0.95,
+          "output": 4,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-13T02:10:27.087Z"
+        },
+        "timestamp": "2026-06-13T02:10:27.438Z"
+      },
+      {
+        "type": "updated",
+        "model": "~moonshotai/kimi-latest",
+        "oldPrice": {
+          "input": 0.67,
+          "output": 3.39,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-12T02:29:47.161Z"
+        },
+        "newPrice": {
+          "input": 0.68,
+          "output": 3.41,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-13T02:10:27.088Z"
+        },
+        "inputChange": "+1.49%",
+        "outputChange": "+0.59%",
+        "timestamp": "2026-06-13T02:10:27.438Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3.6-27b",
+        "oldPrice": {
+          "input": 0.289,
+          "output": 2.4,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-12T02:29:47.161Z"
+        },
+        "newPrice": {
+          "input": 0.2885,
+          "output": 3.17,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-13T02:10:27.088Z"
+        },
+        "inputChange": "-0.17%",
+        "outputChange": "+32.08%",
+        "timestamp": "2026-06-13T02:10:27.438Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.6",
+        "oldPrice": {
+          "input": 0.67,
+          "output": 3.39,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-12T02:29:47.162Z"
+        },
+        "newPrice": {
+          "input": 0.68,
+          "output": 3.41,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-13T02:10:27.090Z"
+        },
+        "inputChange": "+1.49%",
+        "outputChange": "+0.59%",
+        "timestamp": "2026-06-13T02:10:27.438Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.5",
+        "oldPrice": {
+          "input": 0.4,
+          "output": 1.9,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-12T02:29:47.162Z"
+        },
+        "newPrice": {
+          "input": 0.375,
+          "output": 2.025,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-13T02:10:27.090Z"
+        },
+        "inputChange": "-6.25%",
+        "outputChange": "+6.58%",
+        "timestamp": "2026-06-13T02:10:27.438Z"
+      }
+    ]
+  },
+  {
     "date": "2026-06-12T02:29:47.522Z",
     "changes": [
       {
@@ -2327,118 +2428,6 @@
         "inputChange": "+66.67%",
         "outputChange": "0.00%",
         "timestamp": "2026-05-15T02:03:30.684Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-05-14T02:04:58.438Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "deepseek/deepseek-v4-flash",
-        "oldPrice": {
-          "input": 0.14,
-          "output": 0.28,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-13T02:02:20.418Z"
-        },
-        "newPrice": {
-          "input": 0.126,
-          "output": 0.252,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-14T02:04:48.864Z"
-        },
-        "inputChange": "-10.00%",
-        "outputChange": "-10.00%",
-        "timestamp": "2026-05-14T02:04:58.437Z"
-      },
-      {
-        "type": "updated",
-        "model": "z-ai/glm-4.6",
-        "oldPrice": {
-          "input": 0.39,
-          "output": 1.9,
-          "context": 204800,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-13T02:02:20.419Z"
-        },
-        "newPrice": {
-          "input": 0.43,
-          "output": 1.74,
-          "context": 202752,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-14T02:04:48.865Z"
-        },
-        "inputChange": "+10.26%",
-        "outputChange": "-8.42%",
-        "timestamp": "2026-05-14T02:04:58.437Z"
-      },
-      {
-        "type": "updated",
-        "model": "moonshotai/kimi-k2-0905",
-        "oldPrice": {
-          "input": 0.4,
-          "output": 2,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-13T02:02:20.419Z"
-        },
-        "newPrice": {
-          "input": 0.6,
-          "output": 2.5,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-14T02:04:48.866Z"
-        },
-        "inputChange": "+50.00%",
-        "outputChange": "+25.00%",
-        "timestamp": "2026-05-14T02:04:58.437Z"
-      },
-      {
-        "type": "new",
-        "model": "google/gemini-3.1-pro",
-        "newPrice": {
-          "input": 2,
-          "output": 12,
-          "source": "deepInfra",
-          "fetchedAt": "2026-05-14T02:04:49.648Z"
-        },
-        "timestamp": "2026-05-14T02:04:58.437Z"
-      },
-      {
-        "type": "new",
-        "model": "anthropic/claude-sonnet-4-6",
-        "newPrice": {
-          "input": 3,
-          "output": 15,
-          "source": "deepInfra",
-          "fetchedAt": "2026-05-14T02:04:49.648Z"
-        },
-        "timestamp": "2026-05-14T02:04:58.437Z"
-      },
-      {
-        "type": "new",
-        "model": "anthropic/claude-haiku-4-5",
-        "newPrice": {
-          "input": 1,
-          "output": 5,
-          "source": "deepInfra",
-          "fetchedAt": "2026-05-14T02:04:49.648Z"
-        },
-        "timestamp": "2026-05-14T02:04:58.437Z"
-      },
-      {
-        "type": "new",
-        "model": "anthropic/claude-opus-4-7",
-        "newPrice": {
-          "input": 5,
-          "output": 25,
-          "source": "deepInfra",
-          "fetchedAt": "2026-05-14T02:04:49.648Z"
-        },
-        "timestamp": "2026-05-14T02:04:58.437Z"
       }
     ]
   }
