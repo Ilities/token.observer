@@ -1,5 +1,187 @@
 [
   {
+    "date": "2026-06-17T02:38:13.297Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "z-ai/glm-5.2",
+        "newPrice": {
+          "input": 1.4,
+          "output": 4.4,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-17T02:38:12.973Z"
+        },
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.7-code",
+        "oldPrice": {
+          "input": 0.75,
+          "output": 3.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-16T02:41:07.166Z"
+        },
+        "newPrice": {
+          "input": 0.74,
+          "output": 3.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-17T02:38:12.973Z"
+        },
+        "inputChange": "-1.33%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      },
+      {
+        "type": "updated",
+        "model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "oldPrice": {
+          "input": 0.5,
+          "output": 2.5,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-16T02:41:07.167Z"
+        },
+        "newPrice": {
+          "input": 0.5,
+          "output": 2.2,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-17T02:38:12.973Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-12.00%",
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-flash",
+        "oldPrice": {
+          "input": 0.098,
+          "output": 0.196,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-16T02:41:07.167Z"
+        },
+        "newPrice": {
+          "input": 0.09,
+          "output": 0.18,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-17T02:38:12.973Z"
+        },
+        "inputChange": "-8.16%",
+        "outputChange": "-8.16%",
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      },
+      {
+        "type": "updated",
+        "model": "tencent/hy3-preview",
+        "oldPrice": {
+          "input": 0.063,
+          "output": 0.21,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-16T02:41:07.167Z"
+        },
+        "newPrice": {
+          "input": 0.066,
+          "output": 0.26,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-17T02:38:12.973Z"
+        },
+        "inputChange": "+4.76%",
+        "outputChange": "+23.81%",
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-4.5-air",
+        "oldPrice": {
+          "input": 0.125,
+          "output": 0.85,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-16T02:41:07.167Z"
+        },
+        "newPrice": {
+          "input": 0.13,
+          "output": 0.85,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-17T02:38:12.974Z"
+        },
+        "inputChange": "+4.00%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      },
+      {
+        "type": "new",
+        "model": "moonshotai/Kimi-K2.7-Code",
+        "newPrice": {
+          "input": 0.74,
+          "output": 3.5,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-17T02:38:13.292Z"
+        },
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      },
+      {
+        "type": "new",
+        "model": "zai-org/GLM-5.2",
+        "newPrice": {
+          "input": 1.4,
+          "output": 4.4,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-17T02:38:13.292Z"
+        },
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      },
+      {
+        "type": "updated",
+        "model": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B",
+        "oldPrice": {
+          "input": 0.5,
+          "output": 2.5,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-16T02:41:07.567Z"
+        },
+        "newPrice": {
+          "input": 0.5,
+          "output": 2.2,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-17T02:38:13.292Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-12.00%",
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      },
+      {
+        "type": "updated",
+        "model": "MiniMaxAI/MiniMax-M2.7-Turbo",
+        "oldPrice": {
+          "input": 0.4,
+          "output": 2,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-16T02:41:07.567Z"
+        },
+        "newPrice": {
+          "input": 0.5,
+          "output": 2.25,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-17T02:38:13.292Z"
+        },
+        "inputChange": "+25.00%",
+        "outputChange": "+12.50%",
+        "timestamp": "2026-06-17T02:38:13.297Z"
+      }
+    ]
+  },
+  {
     "date": "2026-06-16T02:41:07.573Z",
     "changes": [
       {
@@ -2069,74 +2251,6 @@
         "inputChange": "-0.71%",
         "outputChange": "0.00%",
         "timestamp": "2026-05-20T02:08:04.036Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-05-18T02:10:02.578Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "google/gemma-4-26b-a4b-it",
-        "oldPrice": {
-          "input": 0.07,
-          "output": 0.34,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-17T01:58:19.825Z"
-        },
-        "newPrice": {
-          "input": 0.06,
-          "output": 0.33,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-18T02:10:02.115Z"
-        },
-        "inputChange": "-14.29%",
-        "outputChange": "-2.94%",
-        "timestamp": "2026-05-18T02:10:02.577Z"
-      },
-      {
-        "type": "updated",
-        "model": "nvidia/nemotron-3-super-120b-a12b",
-        "oldPrice": {
-          "input": 0.1,
-          "output": 0.5,
-          "context": 1000000,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-17T01:58:19.825Z"
-        },
-        "newPrice": {
-          "input": 0.09,
-          "output": 0.45,
-          "context": 1000000,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-18T02:10:02.115Z"
-        },
-        "inputChange": "-10.00%",
-        "outputChange": "-10.00%",
-        "timestamp": "2026-05-18T02:10:02.577Z"
-      },
-      {
-        "type": "updated",
-        "model": "mistralai/mistral-nemo",
-        "oldPrice": {
-          "input": 0.02,
-          "output": 0.04,
-          "context": 131072,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-17T01:58:19.828Z"
-        },
-        "newPrice": {
-          "input": 0.02,
-          "output": 0.03,
-          "context": 131072,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-18T02:10:02.116Z"
-        },
-        "inputChange": "0.00%",
-        "outputChange": "-25.00%",
-        "timestamp": "2026-05-18T02:10:02.577Z"
       }
     ]
   }
