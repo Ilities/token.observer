@@ -1,5 +1,85 @@
 [
   {
+    "date": "2026-06-23T02:07:02.118Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.2",
+        "oldPrice": {
+          "input": 1,
+          "output": 4,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-22T02:40:43.273Z"
+        },
+        "newPrice": {
+          "input": 0.98,
+          "output": 3.08,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.962Z"
+        },
+        "inputChange": "-2.00%",
+        "outputChange": "-23.00%",
+        "timestamp": "2026-06-23T02:07:02.117Z"
+      },
+      {
+        "type": "updated",
+        "model": "~moonshotai/kimi-latest",
+        "oldPrice": {
+          "input": 0.66,
+          "output": 3.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-22T02:40:43.273Z"
+        },
+        "newPrice": {
+          "input": 0.66,
+          "output": 3.41,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.962Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-2.57%",
+        "timestamp": "2026-06-23T02:07:02.117Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.6",
+        "oldPrice": {
+          "input": 0.66,
+          "output": 3.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-22T02:40:43.273Z"
+        },
+        "newPrice": {
+          "input": 0.66,
+          "output": 3.41,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.962Z"
+        },
+        "inputChange": "0.00%",
+        "outputChange": "-2.57%",
+        "timestamp": "2026-06-23T02:07:02.117Z"
+      },
+      {
+        "type": "new",
+        "model": "z-ai/glm-5v-turbo",
+        "newPrice": {
+          "input": 1.2,
+          "output": 4,
+          "context": 202752,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.962Z"
+        },
+        "timestamp": "2026-06-23T02:07:02.117Z"
+      }
+    ]
+  },
+  {
     "date": "2026-06-22T02:40:43.487Z",
     "changes": [
       {
