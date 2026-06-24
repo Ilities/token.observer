@@ -1,5 +1,155 @@
 [
   {
+    "date": "2026-06-24T02:09:04.896Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.2",
+        "oldPrice": {
+          "input": 0.98,
+          "output": 3.08,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.962Z"
+        },
+        "newPrice": {
+          "input": 0.95,
+          "output": 3,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-24T02:09:04.890Z"
+        },
+        "inputChange": "-3.06%",
+        "outputChange": "-2.60%",
+        "timestamp": "2026-06-24T02:09:04.895Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.7-code",
+        "oldPrice": {
+          "input": 0.612,
+          "output": 3.069,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.962Z"
+        },
+        "newPrice": {
+          "input": 0.74,
+          "output": 3.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-24T02:09:04.890Z"
+        },
+        "inputChange": "+20.92%",
+        "outputChange": "+14.04%",
+        "timestamp": "2026-06-24T02:09:04.895Z"
+      },
+      {
+        "type": "updated",
+        "model": "nex-agi/nex-n2-pro",
+        "oldPrice": {
+          "input": 0.5,
+          "output": 2.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.962Z"
+        },
+        "newPrice": {
+          "input": 0.25,
+          "output": 1,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-24T02:09:04.890Z"
+        },
+        "inputChange": "-50.00%",
+        "outputChange": "-60.00%",
+        "timestamp": "2026-06-24T02:09:04.895Z"
+      },
+      {
+        "type": "updated",
+        "model": "xiaomi/mimo-v2.5",
+        "oldPrice": {
+          "input": 0.14,
+          "output": 0.28,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.962Z"
+        },
+        "newPrice": {
+          "input": 0.105,
+          "output": 0.28,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-24T02:09:04.890Z"
+        },
+        "inputChange": "-25.00%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-06-24T02:09:04.895Z"
+      },
+      {
+        "type": "updated",
+        "model": "minimax/minimax-m2.7",
+        "oldPrice": {
+          "input": 0.25,
+          "output": 1,
+          "context": 204800,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.962Z"
+        },
+        "newPrice": {
+          "input": 0.24,
+          "output": 0.96,
+          "context": 204800,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-24T02:09:04.890Z"
+        },
+        "inputChange": "-4.00%",
+        "outputChange": "-4.00%",
+        "timestamp": "2026-06-24T02:09:04.895Z"
+      },
+      {
+        "type": "updated",
+        "model": "thedrummer/rocinante-12b",
+        "oldPrice": {
+          "input": 0.17,
+          "output": 0.43,
+          "context": 32768,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-23T02:07:01.963Z"
+        },
+        "newPrice": {
+          "input": 0.25,
+          "output": 0.5,
+          "context": 32768,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-24T02:09:04.891Z"
+        },
+        "inputChange": "+47.06%",
+        "outputChange": "+16.28%",
+        "timestamp": "2026-06-24T02:09:04.895Z"
+      },
+      {
+        "type": "updated",
+        "model": "zai-org/GLM-5.2",
+        "oldPrice": {
+          "input": 1,
+          "output": 4,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-23T02:07:02.112Z"
+        },
+        "newPrice": {
+          "input": 0.95,
+          "output": 3,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-24T02:09:02.965Z"
+        },
+        "inputChange": "-5.00%",
+        "outputChange": "-25.00%",
+        "timestamp": "2026-06-24T02:09:04.895Z"
+      }
+    ]
+  },
+  {
     "date": "2026-06-23T02:07:02.118Z",
     "changes": [
       {
