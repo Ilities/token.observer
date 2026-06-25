@@ -1,5 +1,62 @@
 [
   {
+    "date": "2026-06-25T02:08:26.045Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "sakana/fugu-ultra",
+        "newPrice": {
+          "input": 5,
+          "output": 30,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-25T02:08:25.639Z"
+        },
+        "timestamp": "2026-06-25T02:08:26.045Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-flash",
+        "oldPrice": {
+          "input": 0.09,
+          "output": 0.18,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-24T02:09:04.890Z"
+        },
+        "newPrice": {
+          "input": 0.089,
+          "output": 0.224,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-06-25T02:08:25.640Z"
+        },
+        "inputChange": "-1.11%",
+        "outputChange": "+24.44%",
+        "timestamp": "2026-06-25T02:08:26.045Z"
+      },
+      {
+        "type": "updated",
+        "model": "MiniMaxAI/MiniMax-M2.7-Turbo",
+        "oldPrice": {
+          "input": 0.5,
+          "output": 2.25,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-24T02:09:02.965Z"
+        },
+        "newPrice": {
+          "input": 0.45,
+          "output": 2.1,
+          "source": "deepInfra",
+          "fetchedAt": "2026-06-25T02:08:26.041Z"
+        },
+        "inputChange": "-10.00%",
+        "outputChange": "-6.67%",
+        "timestamp": "2026-06-25T02:08:26.045Z"
+      }
+    ]
+  },
+  {
     "date": "2026-06-24T02:09:04.896Z",
     "changes": [
       {
@@ -2469,32 +2526,6 @@
         "inputChange": "-3.85%",
         "outputChange": "-1.18%",
         "timestamp": "2026-05-27T02:13:24.106Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-05-26T02:05:10.240Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "deepseek/deepseek-chat",
-        "oldPrice": {
-          "input": 0.32,
-          "output": 0.89,
-          "context": 163840,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-25T02:14:22.252Z"
-        },
-        "newPrice": {
-          "input": 0.2288,
-          "output": 0.9144,
-          "context": 131072,
-          "source": "openRouter",
-          "fetchedAt": "2026-05-26T02:05:10.066Z"
-        },
-        "inputChange": "-28.50%",
-        "outputChange": "+2.74%",
-        "timestamp": "2026-05-26T02:05:10.240Z"
       }
     ]
   }
