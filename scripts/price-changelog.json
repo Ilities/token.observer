@@ -1,5 +1,63 @@
 [
   {
+    "date": "2026-07-05T01:57:31.963Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.2",
+        "oldPrice": {
+          "input": 0.91,
+          "output": 2.86,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-04T01:51:04.027Z"
+        },
+        "newPrice": {
+          "input": 0.7546,
+          "output": 2.3716,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-05T01:57:31.540Z"
+        },
+        "inputChange": "-17.08%",
+        "outputChange": "-17.08%",
+        "timestamp": "2026-07-05T01:57:31.962Z"
+      },
+      {
+        "type": "updated",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "oldPrice": {
+          "input": 0.085,
+          "output": 0.4,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-04T01:51:04.028Z"
+        },
+        "newPrice": {
+          "input": 0.08,
+          "output": 0.45,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-05T01:57:31.541Z"
+        },
+        "inputChange": "-5.88%",
+        "outputChange": "+12.50%",
+        "timestamp": "2026-07-05T01:57:31.963Z"
+      },
+      {
+        "type": "new",
+        "model": "MiniMaxAI/MiniMax-M3",
+        "newPrice": {
+          "input": 0.3,
+          "output": 1.2,
+          "source": "deepInfra",
+          "fetchedAt": "2026-07-05T01:57:31.956Z"
+        },
+        "timestamp": "2026-07-05T01:57:31.963Z"
+      }
+    ]
+  },
+  {
     "date": "2026-07-04T01:51:04.469Z",
     "changes": [
       {
@@ -2711,44 +2769,6 @@
         "inputChange": "-8.16%",
         "outputChange": "-16.67%",
         "timestamp": "2026-06-05T02:11:46.515Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-06-04T02:36:36.610Z",
-    "changes": [
-      {
-        "type": "new",
-        "model": "qwen/qwen3.7-plus",
-        "newPrice": {
-          "input": 0.4,
-          "output": 1.6,
-          "context": 1000000,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-04T02:36:36.439Z"
-        },
-        "timestamp": "2026-06-04T02:36:36.609Z"
-      },
-      {
-        "type": "updated",
-        "model": "z-ai/glm-5",
-        "oldPrice": {
-          "input": 0.6,
-          "output": 2.08,
-          "context": 202752,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-03T02:41:34.999Z"
-        },
-        "newPrice": {
-          "input": 0.6,
-          "output": 1.92,
-          "context": 202752,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-04T02:36:36.440Z"
-        },
-        "inputChange": "0.00%",
-        "outputChange": "-7.69%",
-        "timestamp": "2026-06-04T02:36:36.610Z"
       }
     ]
   }
