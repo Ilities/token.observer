@@ -1,5 +1,76 @@
 [
   {
+    "date": "2026-07-07T01:59:26.296Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "tencent/hy3",
+        "newPrice": {
+          "input": 0.14,
+          "output": 0.58,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-07T01:59:26.007Z"
+        },
+        "timestamp": "2026-07-07T01:59:26.295Z"
+      },
+      {
+        "type": "new",
+        "model": "nex-agi/nex-n2-mini",
+        "newPrice": {
+          "input": 0.025,
+          "output": 0.1,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-07T01:59:26.007Z"
+        },
+        "timestamp": "2026-07-07T01:59:26.295Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.2",
+        "oldPrice": {
+          "input": 0.686,
+          "output": 2.156,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-06T02:04:02.819Z"
+        },
+        "newPrice": {
+          "input": 0.9086,
+          "output": 2.8556,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-07T01:59:26.007Z"
+        },
+        "inputChange": "+32.45%",
+        "outputChange": "+32.45%",
+        "timestamp": "2026-07-07T01:59:26.295Z"
+      },
+      {
+        "type": "updated",
+        "model": "meta-llama/llama-3.2-3b-instruct",
+        "oldPrice": {
+          "input": 0.0509,
+          "output": 0.335,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-06T02:04:02.821Z"
+        },
+        "newPrice": {
+          "input": 0.05,
+          "output": 0.33,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-07T01:59:26.008Z"
+        },
+        "inputChange": "-1.77%",
+        "outputChange": "-1.49%",
+        "timestamp": "2026-07-07T01:59:26.296Z"
+      }
+    ]
+  },
+  {
     "date": "2026-07-06T02:04:03.158Z",
     "changes": [
       {
