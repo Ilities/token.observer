@@ -1,5 +1,73 @@
 [
   {
+    "date": "2026-07-11T01:28:43.858Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.2",
+        "oldPrice": {
+          "input": 0.532,
+          "output": 1.672,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-10T01:49:51.343Z"
+        },
+        "newPrice": {
+          "input": 0.42,
+          "output": 1.32,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-11T01:28:43.507Z"
+        },
+        "inputChange": "-21.05%",
+        "outputChange": "-21.05%",
+        "timestamp": "2026-07-11T01:28:43.858Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-flash",
+        "oldPrice": {
+          "input": 0.09,
+          "output": 0.18,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-10T01:49:51.344Z"
+        },
+        "newPrice": {
+          "input": 0.084,
+          "output": 0.168,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-11T01:28:43.508Z"
+        },
+        "inputChange": "-6.67%",
+        "outputChange": "-6.67%",
+        "timestamp": "2026-07-11T01:28:43.858Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v3.2",
+        "oldPrice": {
+          "input": 0.2288,
+          "output": 0.3432,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-10T01:49:51.344Z"
+        },
+        "newPrice": {
+          "input": 0.2145,
+          "output": 0.3217,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-11T01:28:43.508Z"
+        },
+        "inputChange": "-6.25%",
+        "outputChange": "-6.26%",
+        "timestamp": "2026-07-11T01:28:43.858Z"
+      }
+    ]
+  },
+  {
     "date": "2026-07-10T01:49:51.629Z",
     "changes": [
       {
@@ -2692,77 +2760,6 @@
         "inputChange": "-16.67%",
         "outputChange": "-16.67%",
         "timestamp": "2026-06-12T02:29:47.521Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-06-10T02:12:00.236Z",
-    "changes": [
-      {
-        "type": "new",
-        "model": "~anthropic/claude-fable-latest",
-        "newPrice": {
-          "input": 10,
-          "output": 50,
-          "context": 1000000,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-10T02:12:00.000Z"
-        },
-        "timestamp": "2026-06-10T02:12:00.235Z"
-      },
-      {
-        "type": "new",
-        "model": "anthropic/claude-fable-5",
-        "newPrice": {
-          "input": 10,
-          "output": 50,
-          "context": 1000000,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-10T02:12:00.000Z"
-        },
-        "timestamp": "2026-06-10T02:12:00.235Z"
-      },
-      {
-        "type": "updated",
-        "model": "minimax/minimax-m2.7",
-        "oldPrice": {
-          "input": 0.279,
-          "output": 1.2,
-          "context": 204800,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-09T01:59:19.714Z"
-        },
-        "newPrice": {
-          "input": 0.27,
-          "output": 1.08,
-          "context": 204800,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-10T02:12:00.001Z"
-        },
-        "inputChange": "-3.23%",
-        "outputChange": "-10.00%",
-        "timestamp": "2026-06-10T02:12:00.236Z"
-      },
-      {
-        "type": "updated",
-        "model": "minimax/minimax-m2.5",
-        "oldPrice": {
-          "input": 0.15,
-          "output": 1.15,
-          "context": 204800,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-09T01:59:19.714Z"
-        },
-        "newPrice": {
-          "input": 0.15,
-          "output": 0.9,
-          "context": 204800,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-10T02:12:00.002Z"
-        },
-        "inputChange": "0.00%",
-        "outputChange": "-21.74%",
-        "timestamp": "2026-06-10T02:12:00.236Z"
       }
     ]
   }
