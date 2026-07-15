@@ -1,5 +1,66 @@
 [
   {
+    "date": "2026-07-15T01:17:23.085Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "kwaipilot/kat-coder-air-v2.5",
+        "newPrice": {
+          "input": 0.15,
+          "output": 0.6,
+          "context": 256000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-15T01:17:22.730Z"
+        },
+        "timestamp": "2026-07-15T01:17:23.084Z"
+      },
+      {
+        "type": "new",
+        "model": "kwaipilot/kat-coder-pro-v2.5",
+        "newPrice": {
+          "input": 0.74,
+          "output": 2.96,
+          "context": 256000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-15T01:17:22.730Z"
+        },
+        "timestamp": "2026-07-15T01:17:23.084Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.2",
+        "oldPrice": {
+          "input": 0.93,
+          "output": 3,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-14T01:20:18.886Z"
+        },
+        "newPrice": {
+          "input": 0.9072,
+          "output": 2.8512,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-15T01:17:22.731Z"
+        },
+        "inputChange": "-2.45%",
+        "outputChange": "-4.96%",
+        "timestamp": "2026-07-15T01:17:23.084Z"
+      },
+      {
+        "type": "new",
+        "model": "google/gemma-4-E4B-it",
+        "newPrice": {
+          "input": 0.02,
+          "output": 0.1,
+          "source": "deepInfra",
+          "fetchedAt": "2026-07-15T01:17:23.080Z"
+        },
+        "timestamp": "2026-07-15T01:17:23.084Z"
+      }
+    ]
+  },
+  {
     "date": "2026-07-14T01:20:19.207Z",
     "changes": [
       {
@@ -2800,53 +2861,6 @@
           "fetchedAt": "2026-06-16T02:41:07.567Z"
         },
         "timestamp": "2026-06-16T02:41:07.572Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-06-14T02:33:45.107Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "moonshotai/kimi-k2.7-code",
-        "oldPrice": {
-          "input": 0.95,
-          "output": 4,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-13T02:10:27.087Z"
-        },
-        "newPrice": {
-          "input": 0.75,
-          "output": 3.5,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-14T02:33:44.790Z"
-        },
-        "inputChange": "-21.05%",
-        "outputChange": "-12.50%",
-        "timestamp": "2026-06-14T02:33:45.106Z"
-      },
-      {
-        "type": "updated",
-        "model": "deepseek/deepseek-v4-flash",
-        "oldPrice": {
-          "input": 0.098,
-          "output": 0.196,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-13T02:10:27.089Z"
-        },
-        "newPrice": {
-          "input": 0.09,
-          "output": 0.18,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-14T02:33:44.792Z"
-        },
-        "inputChange": "-8.16%",
-        "outputChange": "-8.16%",
-        "timestamp": "2026-06-14T02:33:45.106Z"
       }
     ]
   }
