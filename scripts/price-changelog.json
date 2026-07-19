@@ -1,5 +1,136 @@
 [
   {
+    "date": "2026-07-19T01:27:59.923Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.2",
+        "oldPrice": {
+          "input": 0.9044,
+          "output": 2.8424,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-18T01:22:03.425Z"
+        },
+        "newPrice": {
+          "input": 0.259,
+          "output": 0.814,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-19T01:27:59.463Z"
+        },
+        "inputChange": "-71.36%",
+        "outputChange": "-71.36%",
+        "timestamp": "2026-07-19T01:27:59.922Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.7-code",
+        "oldPrice": {
+          "input": 1,
+          "output": 4.4,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-18T01:22:03.425Z"
+        },
+        "newPrice": {
+          "input": 0.85,
+          "output": 3.8,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-19T01:27:59.463Z"
+        },
+        "inputChange": "-15.00%",
+        "outputChange": "-13.64%",
+        "timestamp": "2026-07-19T01:27:59.922Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.6",
+        "oldPrice": {
+          "input": 0.95,
+          "output": 4,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-18T01:22:03.426Z"
+        },
+        "newPrice": {
+          "input": 0.684,
+          "output": 3.42,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-19T01:27:59.463Z"
+        },
+        "inputChange": "-28.00%",
+        "outputChange": "-14.50%",
+        "timestamp": "2026-07-19T01:27:59.922Z"
+      },
+      {
+        "type": "updated",
+        "model": "google/gemma-4-26b-a4b-it",
+        "oldPrice": {
+          "input": 0.1,
+          "output": 0.3,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-18T01:22:03.426Z"
+        },
+        "newPrice": {
+          "input": 0.07,
+          "output": 0.34,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-19T01:27:59.463Z"
+        },
+        "inputChange": "-30.00%",
+        "outputChange": "+13.33%",
+        "timestamp": "2026-07-19T01:27:59.922Z"
+      },
+      {
+        "type": "updated",
+        "model": "minimax/minimax-m2",
+        "oldPrice": {
+          "input": 0.255,
+          "output": 1.02,
+          "context": 204800,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-18T01:22:03.426Z"
+        },
+        "newPrice": {
+          "input": 0.3,
+          "output": 1.2,
+          "context": 204800,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-19T01:27:59.464Z"
+        },
+        "inputChange": "+17.65%",
+        "outputChange": "+17.65%",
+        "timestamp": "2026-07-19T01:27:59.923Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3-14b",
+        "oldPrice": {
+          "input": 0.12,
+          "output": 0.24,
+          "context": 131702,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-18T01:22:03.427Z"
+        },
+        "newPrice": {
+          "input": 0.2275,
+          "output": 0.91,
+          "context": 131702,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-19T01:27:59.464Z"
+        },
+        "inputChange": "+89.58%",
+        "outputChange": "+279.17%",
+        "timestamp": "2026-07-19T01:27:59.923Z"
+      }
+    ]
+  },
+  {
     "date": "2026-07-18T01:22:03.515Z",
     "changes": [
       {
