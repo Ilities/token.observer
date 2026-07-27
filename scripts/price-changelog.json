@@ -1,5 +1,73 @@
 [
   {
+    "date": "2026-07-27T01:51:41.202Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.2",
+        "oldPrice": {
+          "input": 0.7196,
+          "output": 2.2616,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-26T01:44:42.728Z"
+        },
+        "newPrice": {
+          "input": 0.6692,
+          "output": 2.1032,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.945Z"
+        },
+        "inputChange": "-7.00%",
+        "outputChange": "-7.00%",
+        "timestamp": "2026-07-27T01:51:41.202Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.7-code",
+        "oldPrice": {
+          "input": 0.78,
+          "output": 3.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-26T01:44:42.728Z"
+        },
+        "newPrice": {
+          "input": 0.73,
+          "output": 3.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.945Z"
+        },
+        "inputChange": "-6.41%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-07-27T01:51:41.202Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3-30b-a3b",
+        "oldPrice": {
+          "input": 0.13,
+          "output": 0.52,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-26T01:44:42.729Z"
+        },
+        "newPrice": {
+          "input": 0.12,
+          "output": 0.5,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.947Z"
+        },
+        "inputChange": "-7.69%",
+        "outputChange": "-3.85%",
+        "timestamp": "2026-07-27T01:51:41.202Z"
+      }
+    ]
+  },
+  {
     "date": "2026-07-26T01:44:43.261Z",
     "changes": [
       {
@@ -4201,135 +4269,6 @@
           "fetchedAt": "2026-06-27T02:05:24.949Z"
         },
         "timestamp": "2026-06-27T02:05:24.954Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-06-26T02:10:16.192Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "deepseek/deepseek-v4-flash",
-        "oldPrice": {
-          "input": 0.089,
-          "output": 0.224,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-25T02:08:25.640Z"
-        },
-        "newPrice": {
-          "input": 0.09,
-          "output": 0.18,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-26T02:10:15.934Z"
-        },
-        "inputChange": "+1.12%",
-        "outputChange": "-19.64%",
-        "timestamp": "2026-06-26T02:10:16.192Z"
-      },
-      {
-        "type": "updated",
-        "model": "minimax/minimax-m2.7",
-        "oldPrice": {
-          "input": 0.24,
-          "output": 0.96,
-          "context": 204800,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-25T02:08:25.640Z"
-        },
-        "newPrice": {
-          "input": 0.18,
-          "output": 0.72,
-          "context": 204800,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-26T02:10:15.934Z"
-        },
-        "inputChange": "-25.00%",
-        "outputChange": "-25.00%",
-        "timestamp": "2026-06-26T02:10:16.192Z"
-      },
-      {
-        "type": "updated",
-        "model": "nvidia/nemotron-3-super-120b-a12b",
-        "oldPrice": {
-          "input": 0.09,
-          "output": 0.45,
-          "context": 1000000,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-25T02:08:25.640Z"
-        },
-        "newPrice": {
-          "input": 0.085,
-          "output": 0.4,
-          "context": 1000000,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-26T02:10:15.934Z"
-        },
-        "inputChange": "-5.56%",
-        "outputChange": "-11.11%",
-        "timestamp": "2026-06-26T02:10:16.192Z"
-      },
-      {
-        "type": "updated",
-        "model": "minimax/minimax-m2.5",
-        "oldPrice": {
-          "input": 0.15,
-          "output": 0.9,
-          "context": 204800,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-25T02:08:25.640Z"
-        },
-        "newPrice": {
-          "input": 0.12,
-          "output": 0.48,
-          "context": 204800,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-26T02:10:15.934Z"
-        },
-        "inputChange": "-20.00%",
-        "outputChange": "-46.67%",
-        "timestamp": "2026-06-26T02:10:16.192Z"
-      },
-      {
-        "type": "updated",
-        "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
-        "oldPrice": {
-          "input": 0.1,
-          "output": 0.5,
-          "source": "deepInfra",
-          "fetchedAt": "2026-06-25T02:08:26.041Z"
-        },
-        "newPrice": {
-          "input": 0.085,
-          "output": 0.4,
-          "source": "deepInfra",
-          "fetchedAt": "2026-06-26T02:10:16.187Z"
-        },
-        "inputChange": "-15.00%",
-        "outputChange": "-20.00%",
-        "timestamp": "2026-06-26T02:10:16.192Z"
-      },
-      {
-        "type": "updated",
-        "model": "gemma-4-31B-it",
-        "oldPrice": {
-          "input": 0.38,
-          "output": 1.15,
-          "context": 131072,
-          "source": "sambanova",
-          "fetchedAt": "2026-06-25T02:08:25.743Z"
-        },
-        "newPrice": {
-          "input": 0.22,
-          "output": 0.59,
-          "context": 131072,
-          "source": "sambanova",
-          "fetchedAt": "2026-06-26T02:10:16.053Z"
-        },
-        "inputChange": "-42.11%",
-        "outputChange": "-48.70%",
-        "timestamp": "2026-06-26T02:10:16.192Z"
       }
     ]
   }
