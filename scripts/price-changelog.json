@@ -1,5 +1,188 @@
 [
   {
+    "date": "2026-07-28T01:26:11.799Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "qwen/qwen3.7-flash",
+        "newPrice": {
+          "input": 0.03,
+          "output": 0.13,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-28T01:26:11.515Z"
+        },
+        "timestamp": "2026-07-28T01:26:11.799Z"
+      },
+      {
+        "type": "updated",
+        "model": "openai/gpt-5.6-luna-pro",
+        "oldPrice": {
+          "input": 1,
+          "output": 6,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.945Z"
+        },
+        "newPrice": {
+          "input": 0.5,
+          "output": 3,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-28T01:26:11.515Z"
+        },
+        "inputChange": "-50.00%",
+        "outputChange": "-50.00%",
+        "timestamp": "2026-07-28T01:26:11.799Z"
+      },
+      {
+        "type": "updated",
+        "model": "openai/gpt-5.6-luna",
+        "oldPrice": {
+          "input": 1,
+          "output": 6,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.945Z"
+        },
+        "newPrice": {
+          "input": 0.5,
+          "output": 3,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-28T01:26:11.515Z"
+        },
+        "inputChange": "-50.00%",
+        "outputChange": "-50.00%",
+        "timestamp": "2026-07-28T01:26:11.799Z"
+      },
+      {
+        "type": "updated",
+        "model": "openai/gpt-5.6-terra-pro",
+        "oldPrice": {
+          "input": 2.5,
+          "output": 15,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.945Z"
+        },
+        "newPrice": {
+          "input": 1.25,
+          "output": 7.5,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-28T01:26:11.515Z"
+        },
+        "inputChange": "-50.00%",
+        "outputChange": "-50.00%",
+        "timestamp": "2026-07-28T01:26:11.799Z"
+      },
+      {
+        "type": "updated",
+        "model": "openai/gpt-5.6-terra",
+        "oldPrice": {
+          "input": 2.5,
+          "output": 15,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.945Z"
+        },
+        "newPrice": {
+          "input": 1.25,
+          "output": 7.5,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-28T01:26:11.515Z"
+        },
+        "inputChange": "-50.00%",
+        "outputChange": "-50.00%",
+        "timestamp": "2026-07-28T01:26:11.799Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.2",
+        "oldPrice": {
+          "input": 0.6692,
+          "output": 2.1032,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.945Z"
+        },
+        "newPrice": {
+          "input": 0.735,
+          "output": 2.31,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-28T01:26:11.515Z"
+        },
+        "inputChange": "+9.83%",
+        "outputChange": "+9.83%",
+        "timestamp": "2026-07-28T01:26:11.799Z"
+      },
+      {
+        "type": "updated",
+        "model": "google/gemma-4-26b-a4b-it",
+        "oldPrice": {
+          "input": 0.12,
+          "output": 0.35,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.946Z"
+        },
+        "newPrice": {
+          "input": 0.14,
+          "output": 0.42,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-28T01:26:11.516Z"
+        },
+        "inputChange": "+16.67%",
+        "outputChange": "+20.00%",
+        "timestamp": "2026-07-28T01:26:11.799Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3.5-35b-a3b",
+        "oldPrice": {
+          "input": 0.14,
+          "output": 1,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-27T01:51:34.946Z"
+        },
+        "newPrice": {
+          "input": 0.15,
+          "output": 1,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-07-28T01:26:11.516Z"
+        },
+        "inputChange": "+7.14%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-07-28T01:26:11.799Z"
+      },
+      {
+        "type": "updated",
+        "model": "google/gemma-4-31B-it-turbo",
+        "oldPrice": {
+          "input": 0.12,
+          "output": 0.37,
+          "source": "deepInfra",
+          "fetchedAt": "2026-07-27T01:51:35.247Z"
+        },
+        "newPrice": {
+          "input": 0.09,
+          "output": 0.34,
+          "source": "deepInfra",
+          "fetchedAt": "2026-07-28T01:26:11.794Z"
+        },
+        "inputChange": "-25.00%",
+        "outputChange": "-8.11%",
+        "timestamp": "2026-07-28T01:26:11.799Z"
+      }
+    ]
+  },
+  {
     "date": "2026-07-27T01:51:41.202Z",
     "changes": [
       {
@@ -4232,43 +4415,6 @@
         "inputChange": "-10.02%",
         "outputChange": "-10.00%",
         "timestamp": "2026-06-28T02:27:11.032Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-06-27T02:05:24.954Z",
-    "changes": [
-      {
-        "type": "updated",
-        "model": "qwen/qwen3.6-27b",
-        "oldPrice": {
-          "input": 0.2885,
-          "output": 3.17,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-26T02:10:15.934Z"
-        },
-        "newPrice": {
-          "input": 0.2885,
-          "output": 2.65,
-          "context": 262144,
-          "source": "openRouter",
-          "fetchedAt": "2026-06-27T02:05:24.619Z"
-        },
-        "inputChange": "0.00%",
-        "outputChange": "-16.40%",
-        "timestamp": "2026-06-27T02:05:24.954Z"
-      },
-      {
-        "type": "new",
-        "model": "Qwen/Qwen3.5-122B-A10B",
-        "newPrice": {
-          "input": 0.29,
-          "output": 2.4,
-          "source": "deepInfra",
-          "fetchedAt": "2026-06-27T02:05:24.949Z"
-        },
-        "timestamp": "2026-06-27T02:05:24.954Z"
       }
     ]
   }
