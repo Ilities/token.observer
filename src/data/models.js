@@ -63,6 +63,7 @@ export function compareOptions(modelId, usageProfileId, hardwareIndex = 0) {
     model,
     usage,
     tier,
+    hardware,
     costs: {
       closedApi: {
         label: tier.closedApiName,
@@ -104,7 +105,7 @@ export function compareOptions(modelId, usageProfileId, hardwareIndex = 0) {
       openApiMonthly,
       rentalMonthly,
       ownedMonthly,
-      hardware,
+      tier,
       paybackVsClosed,
       paybackVsOpen,
     }),
@@ -115,7 +116,7 @@ function getVerdict({
   openApiMonthly,
   rentalMonthly,
   ownedMonthly,
-  hardware,
+  tier,
   paybackVsClosed,
   paybackVsOpen,
 }) {
@@ -133,12 +134,12 @@ function getVerdict({
   if (paybackVsOpen !== null && paybackVsOpen < 18)
     return {
       recommendation: "buy_hardware",
-      reason: `Hardware (${hardware.name}) pays back in ${paybackVsOpen.toFixed(0)} months vs the open API. Buy used.`,
+      reason: `Hardware pays back in ${paybackVsOpen.toFixed(0)} months vs the open API. Buy used.`,
     };
   if (paybackVsClosed !== null && paybackVsClosed < 24)
     return {
       recommendation: "buy_hardware",
-      reason: `If you're currently paying ${hardware.name.closedApiName || "closed API"} rates, hardware pays back in ${paybackVsClosed.toFixed(0)} months.`,
+      reason: `If you're currently paying ${tier.closedApiName || "closed API"} rates, hardware pays back in ${paybackVsClosed.toFixed(0)} months.`,
     };
   return {
     recommendation: "api",
