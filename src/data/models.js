@@ -138,7 +138,7 @@ function getVerdict({
   if (paybackVsClosed !== null && paybackVsClosed < 24)
     return {
       recommendation: "buy_hardware",
-      reason: `If you're currently paying ${hardware.name.closedApiName || "closed API"} rates, hardware pays back in ${paybackVsClosed.toFixed(0)} months.`,
+      reason: `If you're currently paying ${tier.closedApiName || "closed API"} rates, hardware pays back in ${paybackVsClosed.toFixed(0)} months.`,
     };
   return {
     recommendation: "api",
