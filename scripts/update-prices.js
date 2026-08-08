@@ -177,8 +177,8 @@ function extractPrices(model, providerConfig) {
   const scale = scaleToPerM ? 1_000_000 : 1;
 
   return {
-    input: inputPrice ? inputPrice * scale : null,
-    output: outputPrice ? outputPrice * scale : null,
+    input: inputPrice != null && inputPrice > 0 ? inputPrice * scale : null,
+    output: outputPrice != null && outputPrice > 0 ? outputPrice * scale : null,
   };
 }
 
