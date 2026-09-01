@@ -1,5 +1,505 @@
 [
   {
+    "date": "2026-09-01T02:29:01.030Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "~z-ai/glm-latest",
+        "oldPrice": {
+          "input": 1.1875,
+          "output": 4.18,
+          "context": 1310720,
+          "source": "openRouter",
+          "fetchedAt": "2026-08-31T02:09:07.925Z"
+        },
+        "newPrice": {
+          "input": 1.17,
+          "output": 3.96,
+          "context": 1310720,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.753Z"
+        },
+        "inputChange": "-1.47%",
+        "outputChange": "-5.26%",
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "oldPrice": {
+          "input": 1.32,
+          "output": 3.96,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-08-31T02:09:07.926Z"
+        },
+        "newPrice": {
+          "input": 1.1154,
+          "output": 3.3462,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.753Z"
+        },
+        "inputChange": "-15.50%",
+        "outputChange": "-15.50%",
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "updated",
+        "model": "~deepseek/deepseek-v4-flash-latest",
+        "oldPrice": {
+          "input": 0.03,
+          "output": 0.16,
+          "context": 1310720,
+          "source": "openRouter",
+          "fetchedAt": "2026-08-31T02:09:07.926Z"
+        },
+        "newPrice": {
+          "input": 0.05,
+          "output": 0.16,
+          "context": 1310720,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.753Z"
+        },
+        "inputChange": "+66.67%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.6-luna-pro:batch",
+        "newPrice": {
+          "input": 0.1,
+          "output": 0.6,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.753Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.6-luna:batch",
+        "newPrice": {
+          "input": 0.1,
+          "output": 0.6,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.753Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.6-terra-pro:batch",
+        "newPrice": {
+          "input": 1,
+          "output": 6,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.753Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.6-terra:batch",
+        "newPrice": {
+          "input": 1,
+          "output": 6,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.753Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.6-sol-pro:batch",
+        "newPrice": {
+          "input": 1,
+          "output": 5,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.753Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.6-sol:batch",
+        "newPrice": {
+          "input": 1,
+          "output": 5,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.753Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.5-pro:batch",
+        "newPrice": {
+          "input": 15,
+          "output": 90,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.5:batch",
+        "newPrice": {
+          "input": 2.5,
+          "output": 15,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-flash",
+        "oldPrice": {
+          "input": 0.0899,
+          "output": 0.1797,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-08-31T02:09:07.926Z"
+        },
+        "newPrice": {
+          "input": 0.0809,
+          "output": 0.1618,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "inputChange": "-10.01%",
+        "outputChange": "-9.96%",
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.4-nano:batch",
+        "newPrice": {
+          "input": 0.1,
+          "output": 0.625,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.4-mini:batch",
+        "newPrice": {
+          "input": 0.375,
+          "output": 2.25,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.4-pro:batch",
+        "newPrice": {
+          "input": 15,
+          "output": 90,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.4:batch",
+        "newPrice": {
+          "input": 1.25,
+          "output": 7.5,
+          "context": 1050000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.2-pro:batch",
+        "newPrice": {
+          "input": 10.5,
+          "output": 84,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.2:batch",
+        "newPrice": {
+          "input": 0.875,
+          "output": 7,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5.1:batch",
+        "newPrice": {
+          "input": 0.625,
+          "output": 5,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5-pro:batch",
+        "newPrice": {
+          "input": 7.5,
+          "output": 60,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3-next-80b-a3b-instruct",
+        "oldPrice": {
+          "input": 0.09,
+          "output": 1.1,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-08-31T02:09:07.927Z"
+        },
+        "newPrice": {
+          "input": 0.1,
+          "output": 1.1,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "inputChange": "+11.11%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5:batch",
+        "newPrice": {
+          "input": 0.625,
+          "output": 5,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5-mini:batch",
+        "newPrice": {
+          "input": 0.125,
+          "output": 1,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.754Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-5-nano:batch",
+        "newPrice": {
+          "input": 0.025,
+          "output": 0.2,
+          "context": 400000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3-235b-a22b-2507",
+        "oldPrice": {
+          "input": 0.0875,
+          "output": 0.35,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-08-31T02:09:07.927Z"
+        },
+        "newPrice": {
+          "input": 0.09,
+          "output": 0.55,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "inputChange": "+2.86%",
+        "outputChange": "+57.14%",
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/o3:batch",
+        "newPrice": {
+          "input": 1,
+          "output": 4,
+          "context": 200000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/o4-mini:batch",
+        "newPrice": {
+          "input": 0.55,
+          "output": 2.2,
+          "context": 200000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-4.1:batch",
+        "newPrice": {
+          "input": 1,
+          "output": 4,
+          "context": 1047576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-4.1-mini:batch",
+        "newPrice": {
+          "input": 0.2,
+          "output": 0.8,
+          "context": 1047576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-4.1-nano:batch",
+        "newPrice": {
+          "input": 0.05,
+          "output": 0.2,
+          "context": 1047576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/o3-mini:batch",
+        "newPrice": {
+          "input": 0.55,
+          "output": 2.2,
+          "context": 200000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-4o-mini:batch",
+        "newPrice": {
+          "input": 0.075,
+          "output": 0.3,
+          "context": 128000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-4o:batch",
+        "newPrice": {
+          "input": 1.25,
+          "output": 5,
+          "context": 128000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-4-turbo:batch",
+        "newPrice": {
+          "input": 5,
+          "output": 15,
+          "context": 128000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "updated",
+        "model": "gryphe/mythomax-l2-13b",
+        "oldPrice": {
+          "input": 0.06,
+          "output": 0.06,
+          "context": 8192,
+          "source": "openRouter",
+          "fetchedAt": "2026-08-31T02:09:07.927Z"
+        },
+        "newPrice": {
+          "input": 0.4,
+          "output": 0.6,
+          "context": 8192,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "inputChange": "+566.67%",
+        "outputChange": "+900.00%",
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      },
+      {
+        "type": "new",
+        "model": "openai/gpt-3.5-turbo:batch",
+        "newPrice": {
+          "input": 0.25,
+          "output": 0.75,
+          "context": 16385,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-01T02:29:00.755Z"
+        },
+        "timestamp": "2026-09-01T02:29:01.028Z"
+      }
+    ]
+  },
+  {
     "date": "2026-08-31T02:09:08.254Z",
     "changes": [
       {
@@ -6934,65 +7434,6 @@
         "inputChange": "-5.00%",
         "outputChange": "0.00%",
         "timestamp": "2026-08-03T01:46:27.108Z"
-      }
-    ]
-  },
-  {
-    "date": "2026-08-02T01:43:52.563Z",
-    "changes": [
-      {
-        "type": "new",
-        "model": "~deepseek/deepseek-v4-flash-latest",
-        "newPrice": {
-          "input": 0.09,
-          "output": 0.18,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-08-02T01:43:52.272Z"
-        },
-        "timestamp": "2026-08-02T01:43:52.562Z"
-      },
-      {
-        "type": "updated",
-        "model": "deepseek/deepseek-v4-flash-0731",
-        "oldPrice": {
-          "input": 0.14,
-          "output": 0.28,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-08-01T01:47:39.135Z"
-        },
-        "newPrice": {
-          "input": 0.09,
-          "output": 0.18,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-08-02T01:43:52.272Z"
-        },
-        "inputChange": "-35.71%",
-        "outputChange": "-35.71%",
-        "timestamp": "2026-08-02T01:43:52.562Z"
-      },
-      {
-        "type": "updated",
-        "model": "z-ai/glm-5.2",
-        "oldPrice": {
-          "input": 1.12,
-          "output": 3.52,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-08-01T01:47:39.138Z"
-        },
-        "newPrice": {
-          "input": 0.4186,
-          "output": 1.3156,
-          "context": 1048576,
-          "source": "openRouter",
-          "fetchedAt": "2026-08-02T01:43:52.273Z"
-        },
-        "inputChange": "-62.63%",
-        "outputChange": "-62.62%",
-        "timestamp": "2026-08-02T01:43:52.562Z"
       }
     ]
   }
