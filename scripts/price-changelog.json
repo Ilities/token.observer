@@ -1,5 +1,148 @@
 [
   {
+    "date": "2026-09-06T01:46:08.858Z",
+    "changes": [
+      {
+        "type": "new",
+        "model": "qwen/qwen3.8-max-0902",
+        "newPrice": {
+          "input": 2,
+          "output": 6,
+          "context": 1000000,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-06T01:46:08.779Z"
+        },
+        "timestamp": "2026-09-06T01:46:08.856Z"
+      },
+      {
+        "type": "updated",
+        "model": "~z-ai/glm-latest",
+        "oldPrice": {
+          "input": 1.15,
+          "output": 3.5,
+          "context": 1310720,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-05T01:51:39.578Z"
+        },
+        "newPrice": {
+          "input": 1.17,
+          "output": 3.96,
+          "context": 1310720,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-06T01:46:08.780Z"
+        },
+        "inputChange": "+1.74%",
+        "outputChange": "+13.14%",
+        "timestamp": "2026-09-06T01:46:08.856Z"
+      },
+      {
+        "type": "updated",
+        "model": "~moonshotai/kimi-latest",
+        "oldPrice": {
+          "input": 2.5,
+          "output": 14,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-05T01:51:39.580Z"
+        },
+        "newPrice": {
+          "input": 2.55,
+          "output": 12.75,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-06T01:46:08.781Z"
+        },
+        "inputChange": "+2.00%",
+        "outputChange": "-8.93%",
+        "timestamp": "2026-09-06T01:46:08.856Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-pro",
+        "oldPrice": {
+          "input": 0.9714,
+          "output": 1.9429,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-05T01:51:39.580Z"
+        },
+        "newPrice": {
+          "input": 0.7788,
+          "output": 1.5576,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-06T01:46:08.781Z"
+        },
+        "inputChange": "-19.83%",
+        "outputChange": "-19.83%",
+        "timestamp": "2026-09-06T01:46:08.856Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-flash",
+        "oldPrice": {
+          "input": 0.0872,
+          "output": 0.1744,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-05T01:51:39.580Z"
+        },
+        "newPrice": {
+          "input": 0.0825,
+          "output": 0.1649,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-06T01:46:08.781Z"
+        },
+        "inputChange": "-5.39%",
+        "outputChange": "-5.45%",
+        "timestamp": "2026-09-06T01:46:08.856Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3.5-35b-a3b",
+        "oldPrice": {
+          "input": 0.08,
+          "output": 0.75,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-05T01:51:39.581Z"
+        },
+        "newPrice": {
+          "input": 0.3125,
+          "output": 1.25,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-06T01:46:08.781Z"
+        },
+        "inputChange": "+290.62%",
+        "outputChange": "+66.67%",
+        "timestamp": "2026-09-06T01:46:08.856Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-4.6",
+        "oldPrice": {
+          "input": 0.55,
+          "output": 2.2,
+          "context": 204800,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-05T01:51:39.581Z"
+        },
+        "newPrice": {
+          "input": 0.5,
+          "output": 2,
+          "context": 204800,
+          "source": "openRouter",
+          "fetchedAt": "2026-09-06T01:46:08.781Z"
+        },
+        "inputChange": "-9.09%",
+        "outputChange": "-9.09%",
+        "timestamp": "2026-09-06T01:46:08.856Z"
+      }
+    ]
+  },
+  {
     "date": "2026-09-05T01:51:39.887Z",
     "changes": [
       {
