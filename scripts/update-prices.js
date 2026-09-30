@@ -36,6 +36,8 @@ const CHANGELOG_FILE = join(ROOT_DIR, "scripts", "price-changelog.json");
 const SOURCE_BY_PROVIDER_NAME = {
   OpenRouter: "openRouter",
   DeepInfra: "deepInfra",
+  // Lowercase (not "sambaNova") because it must equal the fetcher's provider key
+  // (see APIS.sambanova / fetchProvider("sambanova")) written to prices.json.
   SambaNova: "sambanova",
 };
 
@@ -671,10 +673,6 @@ async function main() {
 
   // Apply fetched prices to the file the UI actually renders (models.json)
   const applied = applyPricesToModels(newPrices);
-  console.log(`💾 Updated ${applied.updated} curated model/provider prices in models.json`);
-  if (applied.updated > 0) {
-    console.log(`   (updated models: ${applied.updatedModelIds.join(", ")})`);
-  }
 
   console.log("\n✨ Price update complete!");
 
@@ -684,6 +682,15 @@ async function main() {
     if (count > 0) {
       console.log(`  ${source}: ${count} models`);
     }
+  }
+
+  // Report how many rendered prices changed (even when zero) so a refresh that
+  // changes nothing is visible at the end of the run.
+  console.log(
+    `\n📈 Model prices updated: ${applied.updated} provider price(s) across ${applied.updatedModelIds.length} model(s) in models.json`,
+  );
+  if (applied.updated > 0) {
+    console.log(`   (updated models: ${applied.updatedModelIds.join(", ")})`);
   }
 
   // Exit with error if no data fetched (for CI)
