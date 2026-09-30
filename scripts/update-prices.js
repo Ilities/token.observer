@@ -22,13 +22,94 @@
 
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = join(__dirname, "..");
-const DATA_FILE = join(ROOT_DIR, "src", "data", "models.js");
+// models.json is the data actually rendered by the UI (models.js only re-exports it).
+const MODELS_FILE = join(ROOT_DIR, "src", "data", "models.json");
 const PRICES_FILE = join(ROOT_DIR, "src", "data", "prices.json");
 const CHANGELOG_FILE = join(ROOT_DIR, "scripts", "price-changelog.json");
+
+// Maps the human-readable provider name used in models.json to the provider
+// key (stored as `source`) used in prices.json.
+const SOURCE_BY_PROVIDER_NAME = {
+  OpenRouter: "openRouter",
+  DeepInfra: "deepInfra",
+  SambaNova: "sambanova",
+};
+
+// Explicit, curated mapping from a models.json model id + provider display name
+// to the provider-native slug used in prices.json. Providers/models that are
+// not listed here are intentionally left with their curated value.
+const MODEL_SLUG_MAP = {
+  "qwen35-9b": {
+    OpenRouter: "qwen/qwen3.5-9b",
+    DeepInfra: "Qwen/Qwen3.5-9B",
+  },
+  "qwen35-27b": {
+    OpenRouter: "qwen/qwen3.5-27b",
+    DeepInfra: "Qwen/Qwen3.5-27B",
+  },
+  "qwen35-35b": {
+    OpenRouter: "qwen/qwen3.5-35b-a3b",
+    DeepInfra: "Qwen/Qwen3.5-35B-A3B",
+  },
+  "qwen35-122b": {
+    OpenRouter: "qwen/qwen3.5-122b-a10b",
+  },
+  "glm-4.5-air": {
+    OpenRouter: "z-ai/glm-4.5-air",
+  },
+  "glm-4.7": {
+    OpenRouter: "z-ai/glm-4.7",
+    DeepInfra: "zai-org/GLM-4.7",
+  },
+  "glm-4.7-flash": {
+    OpenRouter: "z-ai/glm-4.7-flash",
+  },
+  "minimax-m25": {
+    OpenRouter: "minimax/minimax-m2.5",
+  },
+  "minimax-m27": {
+    OpenRouter: "minimax/minimax-m2.7",
+    DeepInfra: "MiniMaxAI/MiniMax-M2.7-Turbo",
+    SambaNova: "MiniMax-M2.7",
+  },
+  "deepseek-v3.2": {
+    OpenRouter: "deepseek/deepseek-v3.2",
+    DeepInfra: "deepseek-ai/DeepSeek-V3.2",
+    SambaNova: "DeepSeek-V3.2",
+  },
+  "deepseek-r1": {
+    OpenRouter: "deepseek/deepseek-r1",
+    DeepInfra: "deepseek-ai/DeepSeek-R1-0528",
+  },
+  "kimi-k2": {
+    OpenRouter: "moonshotai/kimi-k2",
+  },
+  "kimi-k2.5": {
+    OpenRouter: "moonshotai/kimi-k2.5",
+  },
+  "glm-5": {
+    OpenRouter: "z-ai/glm-5",
+  },
+  "glm-5.1": {
+    OpenRouter: "z-ai/glm-5.1",
+  },
+};
+
+// Reject junk values (e.g. negative or absurd prices) so they never reach the UI.
+const MAX_PRICE_PER_M = 100000;
+
+export function isValidPrice(value) {
+  return (
+    typeof value === "number" &&
+    Number.isFinite(value) &&
+    value >= 0 &&
+    value <= MAX_PRICE_PER_M
+  );
+}
 
 // API Endpoints for all providers
 // Most follow OpenAI-compatible format with pricing.prompt and pricing.completion
@@ -346,31 +427,129 @@ function comparePrices(oldPrices, newPrices) {
 }
 
 /**
- * Update models.js with new prices (preserves structure)
+ * Apply fetched prices to the curated models data (in memory).
+ *
+ * Only entries with an explicit mapping are touched. A mapped entry is left
+ * with its curated value when the fetched slug is missing or its values fail
+ * validation, so the UI never renders junk.
+ *
+ * @returns {{updated:number, skipped:number, unmapped:number, updatedModelIds:string[]}}
  */
-function updateModelsFile(newPrices) {
-  if (!existsSync(DATA_FILE)) {
-    console.error("models.js not found!");
-    return false;
+export function applyPricesToData(data, newPrices) {
+  const result = { updated: 0, skipped: 0, unmapped: 0, updatedModelIds: [] };
+
+  const fetchedBySource = {};
+  for (const [slug, entry] of Object.entries(newPrices?.models || {})) {
+    if (!entry?.source) continue;
+    (fetchedBySource[entry.source] ||= {})[slug] = entry;
   }
 
-  let content = readFileSync(DATA_FILE, "utf8");
+  for (const model of data?.MODELS || []) {
+    const slugMap = MODEL_SLUG_MAP[model.id];
+    if (!slugMap) continue;
 
-  // Update the "verified" date comment
-  const today = new Date();
-  const dateStr = today.toLocaleString("en-US", { month: "long", year: "numeric" });
-  content = content.replace(
-    /\/\/ All pricing data verified [A-Za-z]+ \d{4}/,
-    `// All pricing data verified ${dateStr}`,
-  );
+    let modelUpdated = false;
+    for (const provider of model.apiProviders || []) {
+      const slug = slugMap[provider.name];
+      if (!slug) {
+        result.unmapped++;
+        continue;
+      }
 
-  // Note: For production, you'd want more sophisticated parsing
-  // This is a simplified version that just updates the timestamp
-  // A full implementation would parse and update individual prices
+      const source = SOURCE_BY_PROVIDER_NAME[provider.name];
+      const entry = source ? fetchedBySource[source]?.[slug] : undefined;
+      if (!entry || !isValidPrice(entry.input) || !isValidPrice(entry.output)) {
+        result.skipped++;
+        continue;
+      }
 
-  writeFileSync(DATA_FILE, content);
-  console.log("Updated models.js timestamp");
-  return true;
+      provider.input = entry.input;
+      provider.output = entry.output;
+      result.updated++;
+      modelUpdated = true;
+    }
+
+    if (modelUpdated) result.updatedModelIds.push(model.id);
+  }
+
+  return result;
+}
+
+/**
+ * Find the index of the bracket matching the one at `openIdx` in a JSON string,
+ * ignoring brackets that appear inside strings.
+ */
+function findMatchingBracket(text, openIdx) {
+  const open = text[openIdx];
+  const close = open === "[" ? "]" : "}";
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+
+  for (let i = openIdx; i < text.length; i++) {
+    const ch = text[i];
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (ch === "\\") escaped = true;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') inString = true;
+    else if (ch === open) depth++;
+    else if (ch === close && --depth === 0) return i;
+  }
+
+  return -1;
+}
+
+/**
+ * Rewrite the apiProviders array for each changed model, preserving the rest of
+ * the file (and therefore keeping diffs limited to the prices that changed).
+ */
+function patchModelsFile(raw, data, updatedModelIds) {
+  let patched = raw;
+
+  for (const modelId of updatedModelIds) {
+    const model = data.MODELS.find((m) => m.id === modelId);
+    const idIdx = patched.indexOf(`"id": "${modelId}"`);
+    if (idIdx === -1) continue;
+
+    const apiKeyIdx = patched.indexOf('"apiProviders"', idIdx);
+    if (apiKeyIdx === -1) continue;
+
+    const arrStart = patched.indexOf("[", apiKeyIdx);
+    const arrEnd = findMatchingBracket(patched, arrStart);
+    if (arrStart === -1 || arrEnd === -1) continue;
+
+    const serialized = JSON.stringify(model.apiProviders, null, 2)
+      .split("\n")
+      .map((line, i) => (i === 0 ? line : `      ${line}`))
+      .join("\n");
+
+    patched = patched.slice(0, arrStart) + serialized + patched.slice(arrEnd + 1);
+  }
+
+  return patched;
+}
+
+/**
+ * Update src/data/models.json (the file the UI actually renders) with new prices.
+ */
+export function applyPricesToModels(newPrices, modelsFile = MODELS_FILE) {
+  if (!existsSync(modelsFile)) {
+    console.error("models.json not found!");
+    return { updated: 0, skipped: 0, unmapped: 0, updatedModelIds: [] };
+  }
+
+  const raw = readFileSync(modelsFile, "utf8");
+  const data = JSON.parse(raw);
+  const result = applyPricesToData(data, newPrices);
+
+  if (result.updated > 0) {
+    writeFileSync(modelsFile, patchModelsFile(raw, data, result.updatedModelIds));
+  }
+
+  return result;
 }
 
 /**
@@ -490,8 +669,12 @@ async function main() {
     console.log("✅ No price changes detected");
   }
 
-  // Update models.js timestamp
-  updateModelsFile(newPrices);
+  // Apply fetched prices to the file the UI actually renders (models.json)
+  const applied = applyPricesToModels(newPrices);
+  console.log(`💾 Updated ${applied.updated} curated model/provider prices in models.json`);
+  if (applied.updated > 0) {
+    console.log(`   (updated models: ${applied.updatedModelIds.join(", ")})`);
+  }
 
   console.log("\n✨ Price update complete!");
 
@@ -508,10 +691,24 @@ async function main() {
     console.error("⚠️ Warning: No pricing data fetched from any source");
     process.exit(1);
   }
+
+  // Guardrail: a run that changes nothing in the rendered dataset must fail loudly
+  // rather than report success like the old no-op did.
+  if (applied.updated === 0) {
+    console.error(
+      "⚠️ Warning: No curated model prices were updated — models.json is unchanged",
+    );
+    process.exit(1);
+  }
 }
 
-// Run
-main().catch((error) => {
-  console.error("Fatal error:", error);
-  process.exit(1);
-});
+const isMain =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isMain) {
+  // Run
+  main().catch((error) => {
+    console.error("Fatal error:", error);
+    process.exit(1);
+  });
+}
