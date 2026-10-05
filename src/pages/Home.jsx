@@ -10,6 +10,7 @@ function Ticker() {
     "Qwen3.5 122B = Claude Sonnet 4.6 quality at $0.20/M input",
     "MiniMax M2.5 = Claude Opus 4.6 speed at 1/10th the cost",
     "MiniMax M2.7 = Self-improving agentic model at $0.30/M input",
+    "Qwen Flash Next = 1M context at $0.09/M input",
     "RunPod A100 @ $1.33/hr · H100 @ $2.17/hr · billed per second",
     "Qwen3.5 27B fits on a single RTX 4090",
     "LLM API prices dropped 80% in 2025→2026",

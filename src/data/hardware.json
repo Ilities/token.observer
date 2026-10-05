@@ -103,6 +103,7 @@
       "maxPracticalParams": "70B",
       "recommendedModels": [
         "qwen35-122b",
+        "qwen-flash-next",
         "qwen35-35b",
         "kimi-k2",
         "kimi-k2-thinking",
@@ -157,6 +158,7 @@
       "maxPracticalParams": "120B",
       "recommendedModels": [
         "qwen35-122b",
+        "qwen-flash-next",
         "qwen35-235b",
         "glm-4.7",
         "gpt-oss-120b",
@@ -194,6 +196,7 @@
       "maxPracticalParams": "120B",
       "recommendedModels": [
         "qwen35-122b",
+        "qwen-flash-next",
         "qwen35-235b",
         "kimi-k2.5",
         "glm-4.7",
@@ -326,6 +329,7 @@
   "MODEL_VRAM_MAP": {
     "qwen35-9b": { "params": 9, "family": "Qwen" },
     "qwen35-35b": { "params": 35, "family": "Qwen", "active": 3 },
+    "qwen-flash-next": { "params": 80, "family": "Qwen", "active": 3 },
     "qwen35-122b": { "params": 122, "family": "Qwen", "active": 10 },
     "qwen35-235b": { "params": 235, "family": "Qwen", "active": 22 },
     "qwen35-397b": { "params": 397, "family": "Qwen", "active": 17 },

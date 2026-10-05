@@ -542,6 +542,151 @@
       ]
     },
     {
+      "id": "qwen-flash-next",
+      "tier": "fast",
+      "name": "Qwen Flash Next",
+      "family": "Qwen / Alibaba",
+      "type": "MoE",
+      "totalParams": "80B",
+      "activeParams": "3B",
+      "releaseDate": "Sep 2026",
+      "license": "Apache 2.0",
+      "context": "1M",
+      "architecture": "Sparse MoE with hybrid gated DeltaNet attention and multi-token prediction",
+      "closestApi": "Claude Haiku 4.5",
+      "verdict": "VIABLE",
+      "verdictNote": "Only 3B active params. Needs ~60GB VRAM at Q4 — single A100 80GB, 2× RTX 5090, or 128GB Mac. 1M context at flash pricing.",
+      "benchmarks": {
+        "mmlu": 86.4,
+        "mmluPro": 83.1,
+        "swebench": 73.2,
+        "gpqa": 84.5,
+        "livecodebench": 76.8,
+        "arena": 1268
+      },
+      "apiProviders": [
+        {
+          "name": "Alibaba Cloud",
+          "input": 0.09,
+          "output": 0.36
+        },
+        {
+          "name": "OpenRouter",
+          "input": 0.15,
+          "output": 0.47
+        },
+        {
+          "name": "DeepInfra",
+          "input": 0.113,
+          "output": 0.382
+        },
+        {
+          "name": "Groq",
+          "input": 0.1,
+          "output": 0.4
+        },
+        {
+          "name": "Fireworks",
+          "input": 0.13,
+          "output": 0.44
+        },
+        {
+          "name": "Together AI",
+          "input": 0.16,
+          "output": 0.5
+        },
+        {
+          "name": "Lepton AI",
+          "input": 0.12,
+          "output": 0.41
+        },
+        {
+          "name": "SambaNova",
+          "input": 0.11,
+          "output": 0.39
+        },
+        {
+          "name": "Novita",
+          "input": 0.12,
+          "output": 0.42
+        },
+        {
+          "name": "Replicate",
+          "input": 0.17,
+          "output": 0.52
+        },
+        {
+          "name": "FriendliAI",
+          "input": 0.14,
+          "output": 0.45
+        },
+        {
+          "name": "SiliconFlow",
+          "input": 0.095,
+          "output": 0.35
+        },
+        {
+          "name": "Anyscale",
+          "input": 0.18,
+          "output": 0.56
+        },
+        {
+          "name": "Cerebras",
+          "input": 0.19,
+          "output": 0.6
+        }
+      ],
+      "purchaseOptions": [
+        {
+          "name": "1× A100 80GB",
+          "totalVram": "80GB",
+          "purchaseCost": 10000,
+          "usedCost": 6000,
+          "monthlyElectricity": 20,
+          "canRunModel": "Q4 at ~40-60 t/s — 60GB VRAM",
+          "quality": "Full quality"
+        },
+        {
+          "name": "2× RTX 5090 (64GB)",
+          "totalVram": "64GB",
+          "purchaseCost": 4400,
+          "usedCost": 3000,
+          "monthlyElectricity": 32,
+          "canRunModel": "Q4 at ~25-40 t/s — 60GB split across 2 GPUs",
+          "quality": "Full quality"
+        },
+        {
+          "name": "Mac Studio M4 Max (128GB)",
+          "totalVram": "128GB unified",
+          "purchaseCost": 4700,
+          "usedCost": null,
+          "monthlyElectricity": 8,
+          "canRunModel": "Q4 at ~30-45 t/s via MLX — 60GB required",
+          "quality": "Very good"
+        }
+      ],
+      "rentalOptions": [
+        {
+          "name": "Vast.ai 2× RTX 5090",
+          "costPerHr": 1.3,
+          "costPerDay24": 31.2,
+          "provider": "Vast.ai"
+        },
+        {
+          "name": "RunPod A100 Community",
+          "costPerHr": 1.33,
+          "costPerDay24": 31.92,
+          "provider": "RunPod"
+        },
+        {
+          "name": "RunPod H100 Community",
+          "costPerHr": 2.17,
+          "costPerDay24": 52.08,
+          "provider": "RunPod"
+        }
+      ]
+    },
+    {
       "id": "glm-4.5-air",
       "tier": "fast",
       "name": "GLM-4.5 Air",
