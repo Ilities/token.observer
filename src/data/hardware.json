@@ -162,7 +162,8 @@
         "gpt-oss-120b",
         "deepseek-v2.5",
         "stepfun-step3.5-flash",
-        "nemotron-ultra-253b"
+        "nemotron-ultra-253b",
+        "mistral-large-4"
       ],
       "bestModel": "qwen35-235b",
       "notes": "Mac Studio 512GB can run 405B at Q3. DGX Spark optimized for NVIDIA ecosystem. Strix Halo budget option. ⚠️ 1T MoE models (Kimi K2.5, GLM-5) technically fit but run at ~20 tokens/sec — viable for experimentation only, not production."
@@ -201,7 +202,8 @@
         "deepseek-v3.2",
         "stepfun-step3.5-flash",
         "minimax-m2.5",
-        "minimax-m2.7"
+        "minimax-m2.7",
+        "mistral-large-4"
       ],
       "bestModel": "qwen35-235b",
       "notes": "H200 141GB is the inference king. L40S 48GB best price/performance for 70B class models."
@@ -242,7 +244,8 @@
         "stepfun-step3.5-flash",
         "minimax-m2.5",
         "minimax-m2.7",
-        "nemotron-ultra-253b"
+        "nemotron-ultra-253b",
+        "mistral-large-4"
       ],
       "bestModel": "qwen35-397b",
       "notes": "4× H100 is SMB sweet spot. 8× RTX 5090 cheaper but PCIe bottleneck. Run 405B class models. ⚠️ Mac Ultra NOT recommended for 700B+ MoE models — H100 cluster required for viable throughput."
@@ -280,7 +283,8 @@
         "deepseek-v3.2",
         "deepseek-r1",
         "minimax-m2.5",
-        "minimax-m2.7"
+        "minimax-m2.7",
+        "mistral-large-4"
       ],
       "bestModel": "deepseek-v3.2",
       "notes": "HGX H200 runs 700B+ at Q6_K. NVL36 is overkill for most - target hyperscalers. ⚠️ Mac Ultra excluded — FP8 compute and HBM bandwidth essential for 700B+ MoE."
@@ -317,7 +321,8 @@
         "glm-5.1",
         "deepseek-v3.2",
         "deepseek-r1",
-        "minimax-m2.5"
+        "minimax-m2.5",
+        "mistral-large-4"
       ],
       "bestModel": "kimi-k2.5",
       "notes": "If you need this, you already have a team of ML engineers. Run everything at Q8_0 or BF16. ⚠️ Mac Ultra not viable — this tier is for production throughput at scale."
@@ -346,6 +351,7 @@
     "gpt-oss-120b": { "params": 117, "family": "GPT-OSS", "active": 15 },
     "gpt-oss-20b": { "params": 20, "family": "GPT-OSS" },
     "minimax-m2.5": { "params": 230, "family": "MiniMax", "active": 10 },
-    "minimax-m2.7": { "params": 229, "family": "MiniMax", "active": 20 }
+    "minimax-m2.7": { "params": 229, "family": "MiniMax", "active": 20 },
+    "mistral-large-4": { "params": 1050, "family": "Mistral", "active": 52 }
   }
 }
