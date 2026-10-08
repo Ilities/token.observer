@@ -2230,6 +2230,76 @@
           "provider": "RunPod"
         }
       ]
+    },
+    {
+      "id": "mistral-large-4",
+      "tier": "top",
+      "name": "Mistral Large 4",
+      "family": "Mistral",
+      "type": "MoE",
+      "totalParams": "1.05T",
+      "activeParams": "52B",
+      "releaseDate": "Oct 2026",
+      "license": "Open weights pending — preview, release end of Oct 2026",
+      "context": "1M",
+      "architecture": "Granular MoE, 1.05T total / 52B active, 1.6B vision encoder, multimodal (image input)",
+      "closestApi": "Claude Opus 4.6",
+      "verdict": "IMPRACTICAL",
+      "verdictNote": "1.05T params, 52B active. Open-weight public preview since Oct 6, 2026 — weights promised end of Oct 2026, so the model is API-only today. Requires ~250GB+ at Q2-Q3; production needs 8× H100/H200. ⚠️ Mac Studio can load at Q1-Q2 but runs at ~20 t/s — experimentation only. API pricing is currently a preview discount ($0.68/$2.09 vs list $1.36/$4.18).",
+      "benchmarks": {
+        "DeepSWE 1.1": 61.7,
+        "Terminal Bench 4": 26.8,
+        "AutomationBench": 59.9,
+        "Cybench": 93,
+        "AA Intelligence Index": 38.4
+      },
+      "apiProviders": [
+        {
+          "name": "Mistral",
+          "input": 0.68,
+          "output": 2.09,
+          "note": "Preview price — list $1.36/$4.18"
+        },
+        {
+          "name": "OpenRouter",
+          "input": 0.68,
+          "output": 2.09
+        }
+      ],
+      "purchaseOptions": [
+        {
+          "name": "8× H200 141GB",
+          "totalVram": "1.1TB",
+          "purchaseCost": 280000,
+          "usedCost": null,
+          "monthlyElectricity": 180,
+          "canRunModel": "FP8/Q4 at ~20-40 t/s",
+          "quality": "Full quality"
+        },
+        {
+          "name": "8× H100 80GB",
+          "totalVram": "640GB",
+          "purchaseCost": 200000,
+          "usedCost": 120000,
+          "monthlyElectricity": 150,
+          "canRunModel": "Q2-Q3 at ~15-30 t/s — 250GB minimum",
+          "quality": "Acceptable at Q2-Q3"
+        }
+      ],
+      "rentalOptions": [
+        {
+          "name": "RunPod 8× H200",
+          "costPerHr": 25,
+          "costPerDay24": 600,
+          "provider": "RunPod"
+        },
+        {
+          "name": "RunPod 8× H100",
+          "costPerHr": 17.36,
+          "costPerDay24": 416.64,
+          "provider": "RunPod"
+        }
+      ]
     }
   ],
   "USAGE_PROFILES": [
