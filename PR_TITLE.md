@@ -1,0 +1,1 @@
+Add contributor guide (CONTRIBUTING.md)
