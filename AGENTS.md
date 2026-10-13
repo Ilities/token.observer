@@ -74,3 +74,8 @@ These commands map to their corresponding tools. For example, `vp dev --port 300
 - [ ] Run `vp install` after pulling remote changes and before getting started.
 - [ ] Run `vp check` and `vp test` to validate changes.
 <!--VITE PLUS END-->
+
+## Where to start
+
+New to this repository? See [ARCHITECTURE.md](ARCHITECTURE.md) for a map of the code and a
+recommended reading path.
