@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   ScatterChart,
   Scatter,
@@ -18,6 +18,24 @@ import {
   monthsBehind,
   getClimbData,
 } from "../data/frontier";
+
+// Track a CSS media query in React state
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(() =>
+    typeof window !== "undefined" && window.matchMedia ? window.matchMedia(query).matches : false,
+  );
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return undefined;
+    const mql = window.matchMedia(query);
+    const onChange = () => setMatches(mql.matches);
+    onChange();
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, [query]);
+
+  return matches;
+}
 
 // Custom tooltip component
 function CustomTooltip({ active, payload }) {
@@ -192,6 +210,7 @@ function CrossoverShape(props) {
 
 export default function FrontierTimelineGraph() {
   const [hoveredCategory, setHoveredCategory] = useState(null);
+  const isNarrow = useMediaQuery("(max-width: 768px)");
 
   // Process frontier timeline data
   const frontierData = useMemo(() => {
@@ -227,10 +246,10 @@ export default function FrontierTimelineGraph() {
 
   // X-axis labels (time)
   const xAxisTicks = [
-    { value: 36, label: "Mar 2023" },
-    { value: 24, label: "Mar 2024" },
-    { value: 12, label: "Mar 2025" },
-    { value: 0, label: "Mar 2026 (Now)" },
+    { value: 36, label: "Mar 2023", shortLabel: "Mar '23" },
+    { value: 24, label: "Mar 2024", shortLabel: "Mar '24" },
+    { value: 12, label: "Mar 2025", shortLabel: "Mar '25" },
+    { value: 0, label: "Mar 2026 (Now)", shortLabel: "Now" },
   ];
 
   return (
@@ -271,23 +290,33 @@ export default function FrontierTimelineGraph() {
       </div>
 
       {/* Chart */}
-      <div style={{ height: 550 }}>
+      <div style={{ height: isNarrow ? 320 : 550 }}>
         <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
+          <ScatterChart
+            margin={
+              isNarrow
+                ? { top: 16, right: 12, left: 0, bottom: 44 }
+                : { top: 20, right: 30, left: 20, bottom: 60 }
+            }
+          >
             <CartesianGrid stroke="var(--academia-border)" strokeDasharray="3 3" />
             <XAxis
               type="number"
               dataKey="x"
               domain={[0, 36]}
               ticks={xAxisTicks.map((t) => t.value)}
-              tickFormatter={(val) => xAxisTicks.find((t) => t.value === val)?.label || val}
-              tick={{ fill: "var(--academia-muted-foreground)", fontSize: 10 }}
+              tickFormatter={(val) => {
+                const tick = xAxisTicks.find((t) => t.value === val);
+                if (!tick) return val;
+                return isNarrow ? tick.shortLabel : tick.label;
+              }}
+              tick={{ fill: "var(--academia-muted-foreground)", fontSize: isNarrow ? 9 : 10 }}
               label={{
                 value: "Months Behind Frontier →",
                 position: "bottom",
-                offset: 40,
+                offset: isNarrow ? 28 : 40,
                 fill: "var(--academia-muted-foreground)",
-                fontSize: 11,
+                fontSize: isNarrow ? 10 : 11,
                 fontFamily: "var(--font-display)",
               }}
               reversed={true}
@@ -296,15 +325,19 @@ export default function FrontierTimelineGraph() {
               type="number"
               dataKey="y"
               domain={[40, 100]}
-              tick={{ fill: "var(--academia-muted-foreground)", fontSize: 10 }}
-              label={{
-                value: "Intelligence Score",
-                angle: -90,
-                position: "insideLeft",
-                fill: "var(--academia-muted-foreground)",
-                fontSize: 11,
-                fontFamily: "var(--font-display)",
-              }}
+              tick={{ fill: "var(--academia-muted-foreground)", fontSize: isNarrow ? 9 : 10 }}
+              label={
+                isNarrow
+                  ? undefined
+                  : {
+                      value: "Intelligence Score",
+                      angle: -90,
+                      position: "insideLeft",
+                      fill: "var(--academia-muted-foreground)",
+                      fontSize: 11,
+                      fontFamily: "var(--font-display)",
+                    }
+              }
             />
             <ZAxis type="number" range={[60, 120]} />
             <Tooltip
@@ -350,13 +383,17 @@ export default function FrontierTimelineGraph() {
                   stroke={category.color}
                   strokeDasharray="3 3"
                   opacity={hoveredCategory === category.id ? 1 : 0.3}
-                  label={{
-                    value: `${category.icon} ${category.name}`,
-                    position: "right",
-                    fill: category.color,
-                    fontSize: 10,
-                    fontFamily: "var(--font-display)",
-                  }}
+                  label={
+                    isNarrow
+                      ? undefined
+                      : {
+                          value: `${category.icon} ${category.name}`,
+                          position: "right",
+                          fill: category.color,
+                          fontSize: 10,
+                          fontFamily: "var(--font-display)",
+                        }
+                  }
                 />
               );
             })}
@@ -369,8 +406,8 @@ export default function FrontierTimelineGraph() {
         style={{
           display: "flex",
           flexWrap: "wrap",
-          gap: 12,
-          marginTop: 24,
+          gap: isNarrow ? 8 : 12,
+          marginTop: isNarrow ? 16 : 24,
           paddingTop: 16,
           borderTop: "1px solid var(--academia-border)",
         }}
@@ -380,7 +417,7 @@ export default function FrontierTimelineGraph() {
             display: "flex",
             alignItems: "center",
             gap: 8,
-            padding: "6px 12px",
+            padding: isNarrow ? "4px 8px" : "6px 12px",
             background: "var(--academia-accent)",
             borderRadius: 2,
           }}
@@ -396,7 +433,7 @@ export default function FrontierTimelineGraph() {
           <span
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: 11,
+              fontSize: isNarrow ? 10 : 11,
               fontWeight: 600,
               color: "#000",
             }}
@@ -416,12 +453,13 @@ export default function FrontierTimelineGraph() {
                 display: "flex",
                 alignItems: "center",
                 gap: 8,
-                padding: "6px 12px",
+                padding: isNarrow ? "4px 8px" : "6px 12px",
                 background: hoveredCategory === category.id ? category.color : "transparent",
                 borderRadius: 2,
                 cursor: "pointer",
                 transition: "background 0.2s ease-out",
                 border: `1px solid ${category.color}`,
+                minWidth: 0,
               }}
               onMouseEnter={() => setHoveredCategory(category.id)}
               onMouseLeave={() => setHoveredCategory(null)}
@@ -437,10 +475,11 @@ export default function FrontierTimelineGraph() {
               <span
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: 11,
+                  fontSize: isNarrow ? 10 : 11,
                   fontWeight: 600,
                   color:
                     hoveredCategory === category.id ? "#000" : "var(--academia-muted-foreground)",
+                  overflowWrap: "anywhere",
                 }}
               >
                 {category.icon} {category.name} ({count})
