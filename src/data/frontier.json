@@ -379,6 +379,16 @@
       "note": "Dual 3090 or RTX 5090 matches Claude 3.5 Sonnet"
     },
     {
+      "modelId": "qwen-flash-next",
+      "modelName": "Qwen Flash Next",
+      "hardwareCategory": "top-end-gaming",
+      "frontierEquivalent": "gemini-1.5-pro",
+      "frontierDate": "2024-09",
+      "frontierScore": 84,
+      "modelScore": 86.4,
+      "note": "Dual RTX 5090 runs a 1M-context flash MoE matching Gemini 1.5 Pro"
+    },
+    {
       "modelId": "gpt-oss-120b",
       "modelName": "GPT-OSS 120B",
       "hardwareCategory": "unified-memory",

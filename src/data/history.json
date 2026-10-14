@@ -854,6 +854,22 @@
       }
     },
     {
+      "id": "qwen-flash-next",
+      "name": "Qwen Flash Next",
+      "family": "Qwen",
+      "organization": "Alibaba",
+      "type": "open",
+      "releaseDate": "2026-09-10",
+      "benchmarks": {
+        "mmlu": 86.4,
+        "mmluPro": 83.1,
+        "swebench": 73.2,
+        "gpqa": 84.5,
+        "humanEval": 89.0,
+        "arena": 1268
+      }
+    },
+    {
       "id": "deepseek-v2",
       "name": "DeepSeek V2",
       "family": "DeepSeek",
