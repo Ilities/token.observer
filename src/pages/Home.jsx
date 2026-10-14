@@ -907,7 +907,7 @@ function CategoryDetail({ category, quantType, getModelDetails }) {
           to={`/models/${category.bestModel}`}
           style={{
             background: "var(--academia-accent)",
-            color: "#000",
+            color: "var(--academia-background)",
             padding: "10px 20px",
             fontFamily: "var(--font-display)",
             fontSize: 12,
@@ -995,8 +995,12 @@ function CategoryDetail({ category, quantType, getModelDetails }) {
             <div
               key={model.id}
               style={{
-                background: model.fits ? "var(--academia-background-alt)" : "#ff000008",
-                border: model.fits ? "1px solid var(--academia-border)" : "1px solid #ef4444",
+                background: model.fits
+                  ? "var(--academia-background-alt)"
+                  : "var(--theme-danger-tint)",
+                border: model.fits
+                  ? "1px solid var(--academia-border)"
+                  : "1px solid var(--theme-danger)",
                 padding: 16,
                 opacity: model.fits ? 1 : 0.6,
               }}
@@ -1010,7 +1014,7 @@ function CategoryDetail({ category, quantType, getModelDetails }) {
                     fontFamily: "var(--font-display)",
                     fontSize: 14,
                     fontWeight: 700,
-                    color: model.fits ? "var(--academia-foreground)" : "#ef4444",
+                    color: model.fits ? "var(--academia-foreground)" : "var(--theme-danger)",
                     textDecoration: "none",
                   }}
                 >
@@ -1021,7 +1025,7 @@ function CategoryDetail({ category, quantType, getModelDetails }) {
                         marginLeft: 8,
                         fontSize: 10,
                         background: "var(--academia-accent)",
-                        color: "#000",
+                        color: "var(--academia-background)",
                         padding: "2px 6px",
                       }}
                     >
@@ -1033,7 +1037,7 @@ function CategoryDetail({ category, quantType, getModelDetails }) {
                   <span
                     style={{
                       fontSize: 10,
-                      color: "#ef4444",
+                      color: "var(--theme-danger)",
                       fontFamily: "var(--font-display)",
                     }}
                   >
@@ -1051,7 +1055,9 @@ function CategoryDetail({ category, quantType, getModelDetails }) {
                 style={{ fontSize: 11, color: "var(--academia-muted-foreground)", marginTop: 4 }}
               >
                 VRAM:{" "}
-                <strong style={{ color: model.fits ? "var(--academia-accent)" : "#ef4444" }}>
+                <strong
+                  style={{ color: model.fits ? "var(--academia-accent)" : "var(--theme-danger)" }}
+                >
                   {model.requiredVram}GB
                 </strong>{" "}
                 @ {quantType.toUpperCase()}
@@ -1065,7 +1071,7 @@ function CategoryDetail({ category, quantType, getModelDetails }) {
       {bestModel && (
         <div
           style={{
-            background: "rgba(255, 200, 100, 0.1)",
+            background: "var(--theme-callout-bg)",
             border: "1px solid var(--academia-accent)",
             padding: 20,
           }}

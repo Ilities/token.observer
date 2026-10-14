@@ -77,7 +77,7 @@ export default function History() {
                 fontWeight: 600,
                 cursor: "pointer",
                 background: activeTab === tab.value ? "var(--accent)" : "var(--surface)",
-                color: activeTab === tab.value ? "#000" : "var(--text-muted)",
+                color: activeTab === tab.value ? "var(--bg)" : "var(--text-muted)",
                 border:
                   activeTab === tab.value ? "1px solid var(--accent)" : "1px solid var(--border)",
               }}
@@ -100,7 +100,7 @@ export default function History() {
                 fontWeight: 600,
                 cursor: "pointer",
                 background: selectedBenchmark === bench ? "var(--accent)" : "var(--surface)",
-                color: selectedBenchmark === bench ? "#000" : "var(--text-muted)",
+                color: selectedBenchmark === bench ? "var(--bg)" : "var(--text-muted)",
                 border:
                   selectedBenchmark === bench
                     ? "1px solid var(--accent)"
@@ -329,7 +329,7 @@ function TimelineTab({ selectedBenchmark }) {
               fontWeight: 600,
               cursor: "pointer",
               background: chartType === opt.value ? "var(--accent)" : "var(--surface)",
-              color: chartType === opt.value ? "#000" : "var(--text-muted)",
+              color: chartType === opt.value ? "var(--bg)" : "var(--text-muted)",
               border:
                 chartType === opt.value ? "1px solid var(--accent)" : "1px solid var(--border)",
             }}
@@ -765,7 +765,7 @@ function TimeMachineTab({ selectedBenchmark }) {
                     to={`/models/${model.id}`}
                     style={{
                       background: "var(--accent)",
-                      color: "#000",
+                      color: "var(--bg)",
                       padding: "10px 20px",
                       fontFamily: "var(--font-display)",
                       fontSize: 12,

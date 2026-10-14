@@ -75,7 +75,7 @@ function CustomTooltip({ active, payload }) {
               fontFamily: "var(--font-display)",
               fontSize: 12,
               fontWeight: 700,
-              color: "#000",
+              color: "var(--academia-background)",
             }}
           >
             Intelligence: {data.intelligenceScore}
@@ -398,7 +398,7 @@ export default function FrontierTimelineGraph() {
               fontFamily: "var(--font-display)",
               fontSize: 11,
               fontWeight: 600,
-              color: "#000",
+              color: "var(--academia-background)",
             }}
           >
             🏆 Frontier (Closed)
@@ -440,7 +440,9 @@ export default function FrontierTimelineGraph() {
                   fontSize: 11,
                   fontWeight: 600,
                   color:
-                    hoveredCategory === category.id ? "#000" : "var(--academia-muted-foreground)",
+                    hoveredCategory === category.id
+                      ? "var(--academia-background)"
+                      : "var(--academia-muted-foreground)",
                 }}
               >
                 {category.icon} {category.name} ({count})
