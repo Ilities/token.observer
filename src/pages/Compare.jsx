@@ -1,5 +1,20 @@
 import { useState } from "react";
 import { SORTED_MODELS, TIERS } from "../data/models";
+import { dual } from "../data/currency";
+
+// Renders a price in USD with the EUR equivalent on a muted second line.
+function Price({ value, decimals, group = false, prefix = "", suffix = "" }) {
+  const formatted = dual(value, decimals, group);
+  if (!formatted) return "—";
+  return (
+    <>
+      {`${prefix}${formatted.usd}${suffix}`}
+      <div style={{ fontSize: 11, color: "var(--academia-muted-foreground)" }}>
+        {`${prefix}${formatted.eur}${suffix}`}
+      </div>
+    </>
+  );
+}
 
 // Provider URLs for linking (direct to pricing pages)
 const PROVIDER_URLS = {
@@ -289,9 +304,9 @@ export default function Compare() {
               <thead>
                 <tr>
                   <th>Provider</th>
-                  <th>Input $/M</th>
-                  <th>Output $/M</th>
-                  <th>Blended $/M</th>
+                  <th>Input $/M (€/M)</th>
+                  <th>Output $/M (€/M)</th>
+                  <th>Blended $/M (€/M)</th>
                   <th>Notes</th>
                 </tr>
               </thead>
@@ -357,7 +372,7 @@ export default function Compare() {
                             fontFamily: "var(--font-body)",
                           }}
                         >
-                          {p.input ? `$${p.input}` : "—"}
+                          <Price value={p.input} />
                         </td>
                         <td
                           style={{
@@ -365,7 +380,7 @@ export default function Compare() {
                             fontFamily: "var(--font-body)",
                           }}
                         >
-                          {p.output ? `$${p.output}` : "—"}
+                          <Price value={p.output} />
                         </td>
                         <td
                           style={{
@@ -376,7 +391,7 @@ export default function Compare() {
                             fontWeight: isCheapest ? 600 : 400,
                           }}
                         >
-                          {bl ? `$${bl.toFixed(2)}` : "—"}
+                          <Price value={bl} decimals={2} />
                         </td>
                         <td
                           style={{
@@ -472,7 +487,7 @@ export default function Compare() {
                           color: "var(--academia-foreground)",
                         }}
                       >
-                        ${opt.purchaseCost.toLocaleString()}
+                        <Price value={opt.purchaseCost} group />
                       </div>
                     </div>
                     <div>
@@ -496,7 +511,7 @@ export default function Compare() {
                             : "var(--academia-muted-foreground)",
                         }}
                       >
-                        {opt.usedCost ? `$${opt.usedCost.toLocaleString()}` : "—"}
+                        <Price value={opt.usedCost} group />
                       </div>
                     </div>
                   </div>
@@ -509,7 +524,10 @@ export default function Compare() {
                   >
                     <div>{opt.canRunModel}</div>
                     <div style={{ marginTop: 4 }}>{opt.quality}</div>
-                    <div style={{ marginTop: 4 }}>Electricity: ~${opt.monthlyElectricity}/mo</div>
+                    <div style={{ marginTop: 4 }}>
+                      Electricity:{" "}
+                      <Price value={opt.monthlyElectricity} group prefix="~" suffix="/mo" />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -574,7 +592,7 @@ export default function Compare() {
                       color: "var(--academia-accent-dark)",
                     }}
                   >
-                    ${opt.costPerHr}/hr
+                    <Price value={opt.costPerHr} group suffix="/hr" />
                   </div>
                   <div
                     style={{
@@ -583,7 +601,7 @@ export default function Compare() {
                       marginTop: 4,
                     }}
                   >
-                    ${opt.costPerDay24}/day (24h)
+                    <Price value={opt.costPerDay24} group suffix="/day (24h)" />
                   </div>
                 </div>
               ))}
