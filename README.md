@@ -5,6 +5,9 @@
 An open investigation into the real cost of LLM inference:
 **Local hardware vs rented cloud GPUs vs paying per token to Anthropic and friends.**
 
+New to the repo? See [ARCHITECTURE.md](ARCHITECTURE.md) for a map of the code and a
+recommended reading path.
+
 ## What's inside
 
 - **Crossover analysis** — at what throughput does self-hosting beat the API?
