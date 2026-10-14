@@ -8,7 +8,10 @@
 /* --------------------------------------------------------------------------
    Design Tokens - Color System (Library at Night)
    -------------------------------------------------------------------------- */
-:root {
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
   /* Foundation Colors */
   --academia-background: #1c1714;
   --academia-background-alt: #251e19;
@@ -64,6 +67,64 @@
   --transition-base: 300ms ease-out;
   --transition-slow: 500ms ease-out;
   --transition-dramatic: 700ms ease-out;
+
+  /* Theme surfaces (dark) */
+  --theme-nav-bg: rgba(28, 23, 20, 0.95);
+  --theme-noise-opacity: 0.03;
+  --theme-vignette: rgba(28, 23, 20, 0.4);
+  --theme-danger: #ef4444;
+  --theme-danger-tint: #ff000008;
+  --theme-callout-bg: rgba(255, 200, 100, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   Light Theme - "Reading Room"
+   Parchment backdrop, iron-gall ink, gilded accents
+   -------------------------------------------------------------------------- */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Foundation Colors */
+  --academia-background: #f6f0e4;
+  --academia-background-alt: #eee5d4;
+  --academia-foreground: #2c2520;
+  --academia-muted: #e3d8c4;
+  --academia-muted-foreground: #6d5f4e;
+  --academia-border: #d6c8b1;
+
+  /* Accent Colors */
+  --academia-accent: #8a6d1f;
+  --academia-accent-light: #a5842e;
+  --academia-accent-dark: #6f5616;
+  --academia-crimson: #8b2635;
+
+  /* Legacy colors (kept for compatibility during transition) */
+  --bg: #f6f0e4;
+  --surface: #eee5d4;
+  --surface2: #e3d8c4;
+  --border: #d6c8b1;
+  --border-bright: #c2b092;
+  --text: #2c2520;
+  --text-muted: #6d5f4e;
+  --text-dim: #9a8b76;
+  --accent: #8a6d1f;
+  --accent-dim: #8a6d1f22;
+  --red: #8b2635;
+  --red-dim: #8b263522;
+  --green: #8a6d1f;
+  --green-dim: #8a6d1f22;
+  --orange: #6f5616;
+
+  /* Shadows */
+  --shadow-card: 0 8px 24px rgba(70, 55, 35, 0.12);
+
+  /* Theme surfaces (light) */
+  --theme-nav-bg: rgba(246, 240, 228, 0.92);
+  --theme-noise-opacity: 0.02;
+  --theme-vignette: rgba(120, 100, 70, 0.14);
+  --theme-danger: #b3261e;
+  --theme-danger-tint: #b3261e10;
+  --theme-callout-bg: rgba(138, 109, 31, 0.12);
 }
 
 /* --------------------------------------------------------------------------
@@ -103,7 +164,7 @@ body::before {
   height: 100%;
   pointer-events: none;
   z-index: 9998;
-  opacity: 0.03;
+  opacity: var(--theme-noise-opacity);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
@@ -121,7 +182,7 @@ body::after {
     ellipse at center,
     transparent 0%,
     transparent 50%,
-    rgba(28, 23, 20, 0.4) 100%
+    var(--theme-vignette) 100%
   );
 }
 

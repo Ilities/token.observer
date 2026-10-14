@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Nav() {
   const { pathname } = useLocation();
@@ -17,7 +18,7 @@ export default function Nav() {
         borderBottom: "1px solid var(--academia-border)",
         position: "sticky",
         top: 0,
-        background: "rgba(28, 23, 20, 0.95)",
+        background: "var(--theme-nav-bg)",
         backdropFilter: "blur(8px)",
         zIndex: 100,
       }}
@@ -74,6 +75,7 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
       </div>
     </nav>

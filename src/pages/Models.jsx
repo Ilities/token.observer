@@ -111,7 +111,10 @@ export function ModelsList() {
                   activeTab === tab.value
                     ? "var(--academia-accent)"
                     : "var(--academia-background-alt)",
-                color: activeTab === tab.value ? "#000" : "var(--academia-foreground)",
+                color:
+                  activeTab === tab.value
+                    ? "var(--academia-background)"
+                    : "var(--academia-foreground)",
                 border:
                   activeTab === tab.value
                     ? "1px solid var(--academia-accent)"
