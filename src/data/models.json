@@ -2300,6 +2300,81 @@
           "provider": "RunPod"
         }
       ]
+    },
+    {
+      "id": "deepseek-v4.1-flash-1017",
+      "tier": "top",
+      "name": "DeepSeek V4.1 Flash 1017",
+      "family": "DeepSeek",
+      "type": "MoE",
+      "totalParams": "552B",
+      "activeParams": "8B prefill / 16B decode",
+      "releaseDate": "Oct 2026",
+      "license": "MIT",
+      "context": "1M",
+      "architecture": "Causal Encoder-Decoder (CED) multimodal MoE, 552B total with 8B active prefill / 16B decode, CSA2 sparse attention and FP4 KV cache",
+      "closestApi": "Claude Opus 5.0",
+      "verdict": "HARD",
+      "verdictNote": "552B params but only 8B/16B active. Requires about 500GB at Q4 — a 512GB unified-memory box is too tight with the 1M-token KV cache, so production needs 8× H100/H200. Excellent agentic and coding performance at Flash prices.",
+      "benchmarks": {
+        "gpqa": 90.9,
+        "DeepSWE v1.1": 77.0,
+        "Terminal-Bench 2.1": 90.6,
+        "HLE": 36.8,
+        "AutomationBench": 54.8
+      },
+      "apiProviders": [
+        {
+          "name": "DeepInfra",
+          "input": 0.2,
+          "output": 0.6
+        },
+        {
+          "name": "OpenRouter",
+          "input": 0.3,
+          "output": 1.2
+        },
+        {
+          "name": "DeepSeek Official",
+          "input": 0.3,
+          "output": 1.2,
+          "note": "Peak rate; off-peak $0.15/$0.60"
+        }
+      ],
+      "purchaseOptions": [
+        {
+          "name": "8× H100 80GB",
+          "totalVram": "640GB",
+          "purchaseCost": 200000,
+          "usedCost": 120000,
+          "monthlyElectricity": 150,
+          "canRunModel": "Q4 at ~30-50 t/s — ~497GB required",
+          "quality": "Very good"
+        },
+        {
+          "name": "8× H200 141GB",
+          "totalVram": "1.1TB",
+          "purchaseCost": 280000,
+          "usedCost": null,
+          "monthlyElectricity": 180,
+          "canRunModel": "FP8/Q4 at ~40-70 t/s",
+          "quality": "Full quality"
+        }
+      ],
+      "rentalOptions": [
+        {
+          "name": "RunPod 8× H100",
+          "costPerHr": 17.36,
+          "costPerDay24": 416.64,
+          "provider": "RunPod"
+        },
+        {
+          "name": "RunPod 8× H200",
+          "costPerHr": 25,
+          "costPerDay24": 600,
+          "provider": "RunPod"
+        }
+      ]
     }
   ],
   "USAGE_PROFILES": [
