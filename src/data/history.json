@@ -936,6 +936,22 @@
       }
     },
     {
+      "id": "deepseek-v4.1-flash-1017",
+      "name": "DeepSeek V4.1 Flash 1017",
+      "family": "DeepSeek",
+      "organization": "DeepSeek",
+      "type": "open",
+      "releaseDate": "2026-10-17",
+      "benchmarks": {
+        "mmlu": null,
+        "mmluPro": null,
+        "swebench": null,
+        "gpqa": 90.9,
+        "humanEval": null,
+        "aime": null
+      }
+    },
+    {
       "id": "mistral-7b",
       "name": "Mistral 7B",
       "family": "Mistral",

@@ -245,7 +245,8 @@
         "minimax-m2.5",
         "minimax-m2.7",
         "nemotron-ultra-253b",
-        "mistral-large-4"
+        "mistral-large-4",
+        "deepseek-v4.1-flash-1017"
       ],
       "bestModel": "qwen35-397b",
       "notes": "4× H100 is SMB sweet spot. 8× RTX 5090 cheaper but PCIe bottleneck. Run 405B class models. ⚠️ Mac Ultra NOT recommended for 700B+ MoE models — H100 cluster required for viable throughput."
@@ -284,7 +285,8 @@
         "deepseek-r1",
         "minimax-m2.5",
         "minimax-m2.7",
-        "mistral-large-4"
+        "mistral-large-4",
+        "deepseek-v4.1-flash-1017"
       ],
       "bestModel": "deepseek-v3.2",
       "notes": "HGX H200 runs 700B+ at Q6_K. NVL36 is overkill for most - target hyperscalers. ⚠️ Mac Ultra excluded — FP8 compute and HBM bandwidth essential for 700B+ MoE."
@@ -322,7 +324,8 @@
         "deepseek-v3.2",
         "deepseek-r1",
         "minimax-m2.5",
-        "mistral-large-4"
+        "mistral-large-4",
+        "deepseek-v4.1-flash-1017"
       ],
       "bestModel": "kimi-k2.5",
       "notes": "If you need this, you already have a team of ML engineers. Run everything at Q8_0 or BF16. ⚠️ Mac Ultra not viable — this tier is for production throughput at scale."
@@ -337,6 +340,7 @@
     "deepseek-v3.2": { "params": 685, "family": "DeepSeek", "active": 42 },
     "deepseek-r1": { "params": 671, "family": "DeepSeek", "active": 37 },
     "deepseek-v2.5": { "params": 236, "family": "DeepSeek", "active": 21 },
+    "deepseek-v4.1-flash-1017": { "params": 552, "family": "DeepSeek", "active": 16 },
     "kimi-k2": { "params": 32, "family": "Kimi" },
     "kimi-k2-thinking": { "params": 32, "family": "Kimi" },
     "kimi-k2.5": { "params": 1000, "family": "Kimi", "active": 32 },
