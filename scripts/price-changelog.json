@@ -1,5 +1,352 @@
 [
   {
+    "date": "2026-11-08T03:09:54.171Z",
+    "changes": [
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "oldPrice": {
+          "input": 0.15,
+          "output": 0.6,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.819Z"
+        },
+        "newPrice": {
+          "input": 0.006,
+          "output": 0.5,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "inputChange": "-96.00%",
+        "outputChange": "-16.67%",
+        "timestamp": "2026-11-08T03:09:54.169Z"
+      },
+      {
+        "type": "new",
+        "model": "deepseek/deepseek-v4.1-flash-1017:batch",
+        "newPrice": {
+          "input": 0.011,
+          "output": 0.2,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "timestamp": "2026-11-08T03:09:54.169Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4.1-flash:batch",
+        "oldPrice": {
+          "input": 0.112,
+          "output": 0.336,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.011,
+          "output": 0.2,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "inputChange": "-90.18%",
+        "outputChange": "-40.48%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "~z-ai/glm-flash-latest",
+        "oldPrice": {
+          "input": 0.0284,
+          "output": 0.0923,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.0335,
+          "output": 0.083,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "inputChange": "+17.96%",
+        "outputChange": "-10.08%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.3-flash",
+        "oldPrice": {
+          "input": 0.0284,
+          "output": 0.0923,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.0335,
+          "output": 0.083,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "inputChange": "+17.96%",
+        "outputChange": "-10.08%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "z-ai/glm-5.3:batch",
+        "oldPrice": {
+          "input": 0.45,
+          "output": 2,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.37,
+          "output": 1.5,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "inputChange": "-17.78%",
+        "outputChange": "-25.00%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "oldPrice": {
+          "input": 0.1165,
+          "output": 4.66,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.111,
+          "output": 4.44,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "inputChange": "-4.72%",
+        "outputChange": "-4.72%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "~deepseek/deepseek-v4-flash-latest",
+        "oldPrice": {
+          "input": 0.059,
+          "output": 0.3,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.0434,
+          "output": 0.3,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "inputChange": "-26.44%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-flash-0731",
+        "oldPrice": {
+          "input": 0.059,
+          "output": 0.3,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.0434,
+          "output": 0.3,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "inputChange": "-26.44%",
+        "outputChange": "0.00%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k3:batch",
+        "oldPrice": {
+          "input": 2.28,
+          "output": 11.4,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 1.084,
+          "output": 6,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "inputChange": "-52.46%",
+        "outputChange": "-47.37%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "new",
+        "model": "z-ai/glm-5.2:batch",
+        "newPrice": {
+          "input": 0.37,
+          "output": 1.5,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.874Z"
+        },
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "~moonshotai/kimi-latest",
+        "oldPrice": {
+          "input": 0.1634,
+          "output": 10.1489,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.1824,
+          "output": 10.5448,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.875Z"
+        },
+        "inputChange": "+11.63%",
+        "outputChange": "+3.90%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "qwen/qwen3.6-27b",
+        "oldPrice": {
+          "input": 0.45,
+          "output": 2.7,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.32,
+          "output": 3.2,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.875Z"
+        },
+        "inputChange": "-28.89%",
+        "outputChange": "+18.52%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "deepseek/deepseek-v4-pro",
+        "oldPrice": {
+          "input": 0.9483,
+          "output": 1.8966,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.9,
+          "output": 1.5,
+          "context": 1048576,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.875Z"
+        },
+        "inputChange": "-5.09%",
+        "outputChange": "-20.91%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "moonshotai/kimi-k2.5",
+        "oldPrice": {
+          "input": 0.5,
+          "output": 2.5,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.820Z"
+        },
+        "newPrice": {
+          "input": 0.532,
+          "output": 3.325,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.875Z"
+        },
+        "inputChange": "+6.40%",
+        "outputChange": "+33.00%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "new",
+        "model": "morph/morph-v3-large:batch",
+        "newPrice": {
+          "input": 0.45,
+          "output": 0.95,
+          "context": 262144,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.875Z"
+        },
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "new",
+        "model": "morph/morph-v3-fast:batch",
+        "newPrice": {
+          "input": 0.4,
+          "output": 0.6,
+          "context": 81920,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.875Z"
+        },
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      },
+      {
+        "type": "updated",
+        "model": "meta-llama/llama-3.2-3b-instruct",
+        "oldPrice": {
+          "input": 0.0509,
+          "output": 0.335,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-07T03:37:59.821Z"
+        },
+        "newPrice": {
+          "input": 0.05,
+          "output": 0.33,
+          "context": 131072,
+          "source": "openRouter",
+          "fetchedAt": "2026-11-08T03:09:53.876Z"
+        },
+        "inputChange": "-1.77%",
+        "outputChange": "-1.49%",
+        "timestamp": "2026-11-08T03:09:54.170Z"
+      }
+    ]
+  },
+  {
     "date": "2026-11-07T03:38:00.113Z",
     "changes": [
       {
